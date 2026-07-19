@@ -6,7 +6,6 @@ interface HeaderProps {
   query: string;
   onQueryChange: (q: string) => void;
   onClearQuery: () => void;
-  total: number;
   onSuggestClick: () => void;
 }
 
@@ -14,7 +13,6 @@ export default function Header({
   query,
   onQueryChange,
   onClearQuery,
-  total,
   onSuggestClick,
 }: HeaderProps) {
   return (

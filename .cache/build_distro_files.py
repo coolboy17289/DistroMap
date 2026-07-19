@@ -9,7 +9,7 @@ For every distro in .cache/api/all.json, this script writes:
                                        Vite frontend, including the raw
                                        markdown body as a string field)
 
-Both share the same source regex/structured-data fetch pipeline in
+Both share the source regex/structured-data fetch pipeline in
 .cache/fetch_distros.py — run them in order, refresh in under a minute.
 """
 import json
@@ -28,9 +28,6 @@ WIKIDATA_HOST = "https://www.wikidata.org/wiki"
 WIKI_HOST     = "https://en.wikipedia.org/wiki"
 
 # Approximate defaults for fields some distros don't expose on Wikidata.
-# Also keeps the curated `desktop_environments` list (formerly
-# hard-coded into distros.json) reproducible from source so the build
-# script output stays stable.
 FAMILY_DEFAULTS = {
     "debian":    {"release_model": "Point releases (~2 yr)",       "package_manager": "apt",      "desktop_environments": []},
     "ubuntu":    {"release_model": "Point releases (LTS + interim)", "package_manager": "apt",    "desktop_environments": ["GNOME", "KDE Plasma", "XFCE"]},
@@ -48,8 +45,6 @@ FAMILY_DEFAULTS = {
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-
-# ── Markdown dossier renderer (used twice: to .md file and to .md string) ─────
 
 def render_md(d: dict) -> str:
     """Render a single distro to its Markdown dossier body (no leading heading)."""
@@ -114,11 +109,28 @@ def render_md(d: dict) -> str:
     return "\n".join(parts)
 
 
-# ── Frontend payload (single JSON for Vite) ──────────────────────────────
+def _favicon_url(d: dict) -> str | None:
+    """
+    Resolve the favicon via Google Favicon Service so the DistroNode
+    can render each distro's actual website favicon. Falls back to None
+    when there's no usable `official_website`. DistroNode chains
+    favicon -> Wikipedia thumbnail -> letter, so this primary miss
+    is fine as long as the upstream domain is OK.
+    """
+    site = d.get("official_website") or ""
+    if not site:
+        return None
+    try:
+        host = urlparse(site).hostname
+    except ValueError:
+        return None
+    if not host:
+        return None
+    return f"https://www.google.com/s2/favicons?domain={host}&sz=64"
+
 
 def frontend_payload(d: dict, parent_map: dict, popularity: dict) -> dict:
     """Convert a .cache/api/all.json record into the Vite-friendly shape."""
-    accent = FAMILY_ACCENT.get(d["slug"], FAMILY_ACCENT.get(d.get("family", ""), "#22d3ee"))
     defaults = FAMILY_DEFAULTS.get(d["slug"], {})
 
     # Walk the actual parent chain to compute depth from root (kernel = 0).
@@ -140,12 +152,12 @@ def frontend_payload(d: dict, parent_map: dict, popularity: dict) -> dict:
         "display": d["display"],
         "parent": d["parent"],
         "depth": depth,
-        "accent": accent,
         "family": d.get("family") or slug_to_family(d["slug"]),
         "qid": d.get("qid"),
         "short_desc": d.get("short_desc"),
         "extract":    d.get("extract"),
         "thumbnail":  d.get("thumbnail"),
+        "favicon_url": _favicon_url(d),
         "wiki_url":   d.get("wiki_url"),
         "official_website": d.get("official_website"),
         "developer":  d.get("developer"),
@@ -156,7 +168,6 @@ def frontend_payload(d: dict, parent_map: dict, popularity: dict) -> dict:
         "popularity": pop_score,
         "popularity_signals": _pop_signals(pop_row),
         "desktop_environments": defaults.get("desktop_environments", []),
-        # Markdown body embedded so Vue can render the full dossier.
         "markdown": render_md(d),
     }
     return rec
@@ -188,14 +199,7 @@ def _friendly_based_on(b):
     return b
 
 
-# ── v0.4 — manual override merge (shallow, slug-keyed) ──────────────────
-#
-# Top-level underscore keys in the override file are documentation /
-# comments and are ignored. For every other top-level key (a slug),
-# we shallow-merge those fields on top of the API record. Lists are
-# replaced whole; None values are kept (Wikidata already returns None
-# for missing fields). This is the least-surprising behaviour for the
-# maintainer: "what I wrote wins", no deep-merging surprises.
+# v0.4 — manual override merge (shallow, slug-keyed).
 def _load_overrides() -> dict:
     if not MAR.exists():
         return {}
@@ -215,11 +219,7 @@ def _apply_overrides(record: dict, overrides: dict) -> dict:
     return record
 
 
-# ── v0.6 — popularity merge ───────────────────────────────────────────
-#
-# .cache/api/popularity.json looks like { slug: { pageviews_30d, score,
-# source, fetched_at }, ... }. Slugs with no data get a null signal
-# so the frontend can render a "not yet fetched" hint.
+# v0.6 — popularity merge
 def _load_popularity() -> dict:
     if not POP.exists():
         return {}
@@ -243,12 +243,10 @@ def _pop_signals(pop_row: dict | None) -> dict | None:
     }
 
 
-# ── Pipeline ────────────────────────────────────────────────────────────
-
+# Pipeline
 def main() -> None:
     data = json.loads(SRC.read_text(encoding="utf-8"))
 
-    # v0.4 — load & apply manual override layer (shallow merge, per slug).
     overrides = _load_overrides()
     if overrides:
         for d in data:
@@ -257,7 +255,6 @@ def main() -> None:
     else:
         print("  no manual_overrides.json found -- using Wikidata as-is")
 
-    # v0.6 — load popularity signals (1-5 score + raw pageviews).
     popularity = _load_popularity()
     if popularity:
         scored = sum(1 for slug, fields in popularity.items()
@@ -269,7 +266,6 @@ def main() -> None:
 
     parent_map = {d["slug"]: d["parent"] for d in data}
 
-    # 1. Write per-distro Markdown files
     DISTROS_OUT.mkdir(parents=True, exist_ok=True)
     for d in data:
         slug = d["slug"]
@@ -277,7 +273,6 @@ def main() -> None:
         (DISTROS_OUT / slug / f"{slug}.md").write_text(render_md(d), encoding="utf-8")
     print(f"  wrote {len(data)} dossiers under {DISTROS_OUT}/")
 
-    # 2. Write a single JSON for the frontend
     FE_OUT.mkdir(parents=True, exist_ok=True)
     fe_payload = [frontend_payload(d, parent_map, popularity) for d in data]
     FE_OUT.joinpath("distros.json").write_text(

@@ -7,6 +7,7 @@
 | Display name | Manjaro |
 | Wikidata ID | `Q1362599` &nbsp;·&nbsp; [open](https://www.wikidata.org/wiki/Q1362599) |
 | Wikipedia | [Manjaro on en.wikipedia](https://en.wikipedia.org/wiki/Manjaro) |
+| Official website | <https://manjaro.org> |
 | Parent in DistroMap tree | [`arch`](../arch/arch.md) |
 
 ## Summary

@@ -50,7 +50,6 @@ export default function App() {
         query={query}
         onQueryChange={setQuery}
         onClearQuery={() => setQuery('')}
-        total={distros.length}
         onSuggestClick={() => setIsSuggestOpen(true)}
       />
 

@@ -4,7 +4,8 @@
     "inception": "2017-09-27"
   },
   "manjaro": {
-    "qid": "Q1362599"
+    "qid": "Q1362599",
+    "official_website": "https://manjaro.org"
   },
   "nobara": {
     "developer": "Thomas Crider (Glorious Eggroll)"
@@ -13,7 +14,8 @@
     "developer": "Arch Linux Team"
   },
   "fedora": {
-    "developer": "Fedora Project (Red Hat)"
+    "developer": "Fedora Project (Red Hat)",
+    "official_website": "https://fedoraproject.org/"
   },
   "linux_mint": {
     "desktop_environments": ["Cinnamon", "MATE", "XFCE"]

@@ -238,55 +238,64 @@ a different filename and update the header).
 
 ## Deploying
 
-DistroMap ships split across two hosts on purpose:
+DistroMap ships on **Vercel free tier**, full-stack. No other accounts
+are required.
 
-| Service     | Where it runs | Why |
-|-------------|---------------|-----|
-| Vite SPA    | **Vercel**    | Static bundle, edge cache, free preview deploys per branch |
-| FastAPI     | **Fly.io**    | Long-running process, persistent volume for the suggestion queue |
+| Layer | Where it runs | Free-tier constraints |
+|-------|---------------|----------------------|
+| Static Vite SPA    | **Vercel** (`frontend/dist`) | 100 GB/mo bandwidth |
+| FastAPI suggestion intake | **Vercel Python function** (`api/index.py`) | 100 GB-hr/mo, 10s execution |
+| Suggestion queue   | **Vercel KV** (Upstash Redis REST) | 256 MB, 30K commands/mo |
 
-Why not both on Vercel? Vercel Functions are serverless and stateless,
-so the file-on-disk queue at `.cache/api/suggestions.json` would be
-wiped between invocations. Fly.io runs it as a real container with a
-mounted volume.
+Frontend and API share the same origin on Vercel (`/api` is a relative
+path), so no CORS config is required and the SuggestForm's badge
+always reads **backend:live**.
 
-### Deploy the frontend (Vercel)
+### One-time setup
 
-```bash
-# One-time, from the repo root:
-vercel link                  # pick or create the project
-vercel env add VITE_API_URL production   # paste the Fly URL when prompted
-# Then for every deploy:
-vercel --prod                # reads vercel.json, builds frontend/, deploys dist/
-```
+1. Pull the repo on GitHub, import it in Vercel's "Add New Project"
+   flow. Vercel reads `vercel.json` automatically → it knows to treat
+   the project as a Vite app with a Python function.
+2. From the project dashboard, open **Storage → Create Database → KV**.
+   Vercel auto-injects `KV_REST_API_URL` and `KV_REST_API_TOKEN` into
+   the Production + Preview environments; the FastAPI app picks them
+   up on import and switches from file mode to KV mode automatically.
 
-`vercel.json` tells Vercel to treat `frontend/` as the Vite project
-root (`buildCommand: npm run build`, `outputDirectory: dist`). For
-preview URLs (`*.<hash>.vercel.app`) CORS is allowed automatically
-via the regex baked into `backend/app.py`.
-
-### Deploy the backend (Fly.io)
+### Deploys
 
 ```bash
-# First-time, from the repo root:
-fly launch --copy-config --no-deploy     # creates app "distromap-api"
-fly volumes create distro_suggestions -s 1 -r iad
-fly deploy                               # builds via Dockerfile, runs uvicorn:8080
+# from the repo root
+vercel --prod                 # production deploy
 
-# Update CORS once the Vercel canonical URL is known:
-fly secrets set ALLOWED_ORIGINS="https://distromap-git-main.vercel.app"
+# every PR / branch gets its own preview URL automatically
+vercel                        # preview deploy
 ```
 
-Fly mounts the volume `distro_suggestions` at `/app/.cache/api`, which
-is exactly where `backend/app.py` writes `suggestions.json`. Writes
-persist across deploys; no extra migration needed.
+### Custom domain
+
+`distromap.com` (or similar) just works — set it under
+**Settings → Domains**. Same Vercel deployment, same KV store, no
+extra config.
 
 ### Locally simulating deploy
 
-`npm run dev` (Vite on 5173) + `npm run backend` (uvicorn on 8765) is
-identical to production minus TLS. The Vite proxy already forwards
-`/api → 127.0.0.1:8765`, so the SuggestForm's modal badge says
-**backend:live** exactly like it will on Vercel.
+```bash
+cd frontend
+npm run dev      # Vite on 5173 + proxy /api → 127.0.0.1:8765
+npm run backend  # uvicorn on 8765 (file mode, no KV needed)
+```
+
+Without KV env vars the backend uses the local `tempfile + os.replace`
+path that the prior concurrency test already validated (10/10 rows).
+Once you set `KV_REST_API_URL` + `KV_REST_API_TOKEN` (e.g. via
+`direnv` or a `.env` you `source`), the same backend switches to KV
+mode without restart-free retest pain.
+
+### Why not just stick the backend on Fly.io?
+
+Vercel KV at 30K commands/mo + 256 MB covers a maintainer-only queue
+forever. Paying for a second host was overkill for a public-website
+intake form.
 
 ---
 

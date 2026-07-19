@@ -28,6 +28,8 @@ import json
 import os
 import tempfile
 import threading
+import urllib.parse
+import urllib.request
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -39,6 +41,18 @@ from pydantic import BaseModel, Field, constr
 
 ROOT = Path(__file__).resolve().parents[1]
 SUGGESTIONS_FILE = ROOT / ".cache" / "api" / "suggestions.json"
+
+# Vercel KV (Upstash Redis REST) auto-injects these env vars when a
+# KV store is linked from Vercel dashboard → Storage. We default to
+# the file layer (existing locally-tested code) when either is
+# missing so `npm run backend` keeps working without any setup.
+KV_URL = os.environ.get("KV_REST_API_URL", "").strip()
+KV_TOKEN = os.environ.get("KV_REST_API_TOKEN", "").strip()
+KV_KEY = "distromap:suggestions"
+
+
+def _using_kv() -> bool:
+    return bool(KV_URL) and bool(KV_TOKEN)
 
 app = FastAPI(
     title="DistroMap Suggestions API",
@@ -121,17 +135,18 @@ def _ensure_file() -> None:
 
 
 def _read_all() -> list[dict[str, Any]]:
+    """Read all suggestions; routes through KV when configured, file otherwise."""
+    if _using_kv():
+        return _kv_read_all()
     _ensure_file()
     return json.loads(SUGGESTIONS_FILE.read_text(encoding="utf-8") or "[]")
 
 
 def _write_all(rows: list[dict[str, Any]]) -> None:
-    """
-    Atomic, crash-safe write. A crashed mid-write would otherwise leave
-    the file truncated to 0 bytes and brick subsequent POSTs — we
-    write to a temp file in the SAME directory and `os.replace()`
-    onto the target (atomic on POSIX, best-effort on Windows).
-    """
+    """Write the full suggestions list. When in KV mode, prefer atomic kv_replace."""
+    if _using_kv():
+        _kv_replace(rows)
+        return
     _ensure_file()
     payload = json.dumps(rows, indent=2, ensure_ascii=False)
     fd, tmp_path = tempfile.mkstemp(
@@ -146,7 +161,6 @@ def _write_all(rows: list[dict[str, Any]]) -> None:
             os.fsync(fh.fileno())
         os.replace(tmp_path, SUGGESTIONS_FILE)
     except Exception:
-        # Best-effort cleanup; never leave .tmp files lying around.
         try:
             os.unlink(tmp_path)
         except OSError:
@@ -154,33 +168,181 @@ def _write_all(rows: list[dict[str, Any]]) -> None:
         raise
 
 
+# ── Vercel KV (Upstash Redis REST) adapter ────────────────────────
+#
+# Why urllib and not httpx?
+#   Cold-start budget on Vercel Python is ~600-1000 ms total; `import
+#   httpx` adds ~80 ms and a transitive bytes payload we'd rather not
+#   pay. Upstash's REST API is dead simple JSON-in / JSON-out, so the
+#   stdlib is enough.
+#
+# Why Lua for the atomic write path?
+#   GET-then-SET is two round-trips with a race window: two concurrent
+#   POSTs both read [], both append, last SET wins. Lua executes
+#   atomically on the Redis server, so we lose no rows. EVAL also
+#   returns the dup-check result so we can return a 409 from one
+#   round-trip without an extra GET.
+_KV_APPEND_LUA = """
+local cur = redis.call('GET', KEYS[1])
+local arr
+if cur then
+  arr = cjson.decode(cur)
+else
+  arr = {}
+end
+for _, v in ipairs(arr) do
+  if v.slug == ARGV[2] and v.wikipedia_title == ARGV[3] then
+    return {-1, #arr}
+  end
+end
+table.insert(arr, cjson.decode(ARGV[1]))
+redis.call('SET', KEYS[1], cjson.encode(arr))
+return {0, #arr}
+"""
+
+
+def _kv_post(_url_unused: str, payload: list[Any]) -> Any:
+    """
+    Upstash Redis REST: every command (GET, SET, EVAL...) is POSTed
+    to the bare KV_REST_API_URL with a JSON command-array body and a
+    Bearer-token Authorization header. There is no /get or /set URL
+    path — the path is always `/` and the command lives in the body.
+    Upstash returns `{"result": <value>}` JSON which we pass back
+    unchanged for callers to interpret.
+    """
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(
+        KV_URL,
+        data=body,
+        headers={
+            "Authorization": f"Bearer {KV_TOKEN}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=5) as r:
+        return json.loads(r.read())
+
+
+def _kv_result(out: Any) -> Any:
+    """Strip Upstash's `{"result": ...}` envelope; pass through raw arrays too."""
+    if isinstance(out, dict) and "result" in out:
+        return out["result"]
+    return out
+
+
+def _kv_read_all() -> list[dict[str, Any]]:
+    """
+    `GET distromap:suggestions`. The result is a JSON string (or
+    nil — Upstash returns `null` for missing keys). Empty / nil /
+    undecodable → empty list.
+    """
+    out = _kv_post(KV_URL, ["GET", KV_KEY])
+    raw = _kv_result(out)
+    if not raw:
+        return []
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        return []
+
+
+def _kv_replace(rows: list[dict[str, Any]]) -> None:
+    """
+    Wholesale write. `SET distromap:suggestions <json>` with a 1-year
+    EX so old keys don't accumulate forever on a free tier. Use
+    `_kv_append_one` for the normal POST flow (atomic Lua).
+    """
+    value = json.dumps(rows, ensure_ascii=False)
+    _kv_post(KV_URL, ["SET", KV_KEY, value, "EX", 60 * 60 * 24 * 365])
+
+
+def _kv_append_one(row: dict[str, Any]) -> tuple[bool, int]:
+    """
+    Returns (ok, new_length) for the POST flow.
+
+    Uses Upstash REST EVAL with a short Lua script that:
+      - reads the current JSON array at KV_KEY,
+      - rejects if a record with the same (slug, wikipedia_title) exists,
+      - appends the new record,
+      - writes the array back.
+
+    EVAL is atomic on the Redis server, so two concurrent POSTs
+    can't both read the same array and lose rows in a GET-then-SET
+    race window. The Lua script returns a 2-element array:
+      [0, new_length] on success, [-1, current_length] on duplicate.
+    """
+    body = [
+        "EVAL",
+        _KV_APPEND_LUA,
+        1,
+        KV_KEY,
+        json.dumps(row),
+        row.get("slug", ""),
+        row.get("wikipedia_title", ""),
+    ]
+    out = _kv_post(KV_URL, body)
+    result = _kv_result(out)
+    if not isinstance(result, list) or len(result) < 2:
+        raise RuntimeError(f"unexpected EVAL response: {out!r}")
+    status, length = int(result[0]), int(result[1])
+    return (status == 0, length)
+
+
 # ── Routes ────────────────────────────────────────────────────────────
 
 
 @app.get("/api/health")
 def health() -> dict[str, Any]:
-    # Take the file lock so a concurrent POST can't leave us reading
-    # a half-written (~empty) JSON. _read_all() is fast and the lock
-    # contention on a maintainer-only API is essentially zero.
-    with _FILE_LOCK:
+    # KV mode is atomic server-side; file mode needs the lock to
+    # avoid reading a half-written JSON. Branching on mode keeps
+    # file-mode concurrency race-tested without paying for an
+    # extra lock acquisition in KV mode that does nothing.
+    if _using_kv():
         rows = _read_all()
-    return {"ok": True, "suggestions": len(rows), "file": str(SUGGESTIONS_FILE)}
+    else:
+        with _FILE_LOCK:
+            rows = _read_all()
+    out: dict[str, Any] = {
+        "ok": True,
+        "suggestions": len(rows),
+        "mode": "kv" if _using_kv() else "file",
+    }
+    if not _using_kv():
+        out["file"] = str(SUGGESTIONS_FILE)
+    return out
 
 
 @app.get("/api/suggestions")
 def list_suggestions(limit: int = 100) -> list[dict[str, Any]]:
     if limit < 1 or limit > 500:
         raise HTTPException(status_code=400, detail="limit must be 1..500")
-    with _FILE_LOCK:
+    if _using_kv():
         rows = _read_all()
+    else:
+        with _FILE_LOCK:
+            rows = _read_all()
     return rows[-limit:][::-1]  # newest first
 
 
 @app.post("/api/suggestions", status_code=201)
 def post_suggestion(payload: SuggestionIn) -> dict[str, Any]:
-    # Locked read-modify-write so two concurrent POSTs can't lose a
-    # row. The lock spans the de-dup check + the append + the atomic
-    # write so they form one logical unit.
+    row = payload.dict()
+    row["id"] = f"{payload.slug}-{int(datetime.now(timezone.utc).timestamp())}-{uuid.uuid4().hex[:6]}"
+    row["received_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+
+    if _using_kv():
+        # Single atomic round-trip; Lua does dup-check + append.
+        ok, length = _kv_append_one(row)
+        if not ok:
+            raise HTTPException(
+                status_code=409,
+                detail=f"Suggestion for slug '{payload.slug}' already on file.",
+            )
+        return {"ok": True, "id": row["id"], "total": length}
+
+    # File mode — locked read-modify-write so concurrent POSTs don't
+    # lose rows; tests already verified 10 concurrent POSTs all land.
     with _FILE_LOCK:
         rows = _read_all()
         if any(r.get("slug") == payload.slug and r.get("wikipedia_title") == payload.wikipedia_title
@@ -189,10 +351,6 @@ def post_suggestion(payload: SuggestionIn) -> dict[str, Any]:
                 status_code=409,
                 detail=f"Suggestion for slug '{payload.slug}' already on file.",
             )
-
-        row = payload.dict()
-        row["id"] = f"{payload.slug}-{int(datetime.now(timezone.utc).timestamp())}-{uuid.uuid4().hex[:6]}"
-        row["received_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
         rows.append(row)
         _write_all(rows)
     return {"ok": True, "id": row["id"]}

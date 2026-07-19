@@ -1,5 +1,9 @@
 fastapi>=0.110.0
-uvicorn[standard]>=0.27.0
+# Mangum bridges FastAPI's ASGI app to Vercel's Python WSGI runtime.
+# Without this, Vercel wraps the app as WSGI and any `async def`
+# route 500s. Local dev bypasses Mangum entirely (uvicorn talks ASGI
+# straight to the FastAPI app), so this is a serverless-only dep.
+mangum>=0.17,<1
 # v0.5 — pin Pydantic to the v2 line so `constr(..., pattern=...)` works
 # cleanly. Older `regex=` is deprecated; we already migrated to `pattern=`.
 pydantic>=2.7,<3

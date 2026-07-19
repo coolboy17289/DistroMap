@@ -28,7 +28,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
       <header className="sticky top-0 z-10 bg-panel border-b border-panel-border">
         <div className="px-5 py-3.5 flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-400">
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
               {distro.family} family
             </div>
             <h2 className="text-xl font-bold mt-1 text-ink-50 truncate">
@@ -43,7 +43,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
             onClick={onClose}
             aria-label="Close panel"
             className="rounded border border-panel-border px-2 py-1 text-ink-400
-                       hover:text-cyan-300 hover:border-cyan-500/40 transition-colors
+                       hover:text-ink-50 hover:border-ink-600 transition-colors
                        font-mono text-[11px]"
           >
             esc
@@ -57,7 +57,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
             <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-ink-400">
               Popularity
             </div>
-            <span className="font-mono text-[12px] text-cyan-300 tracking-wider">
+            <span className="font-mono text-[12px] text-ink-50 tracking-wider">
               {distro.popularity}/5
             </span>
           </div>
@@ -68,13 +68,13 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
             >
               {distro.popularity_signals.pageviews_30d.toLocaleString()} views/day ·
               {' '}
-              <span className="text-cyan-300">
+              <span className="text-ink-100">
                 {distro.popularity_signals.source || 'no-source'}
               </span>
             </p>
           ) : (
             <p className="mt-1.5 font-mono text-[10px] text-ink-500">
-              raw signal not yet fetched — run <code className="text-cyan-300">fetch_popularity.py</code>
+              raw signal not yet fetched — run <code className="text-ink-100">fetch_popularity.py</code>
             </p>
           )}
         </section>
@@ -125,8 +125,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
               href={distro.official_website}
               target="_blank"
               rel="noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 underline-offset-2
-                         hover:underline break-all"
+              className="text-ink-50 underline underline-offset-2 hover:no-underline break-all"
             >
               {distro.official_website}
             </a>
@@ -140,8 +139,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
             href={distro.wiki_url}
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400 hover:text-cyan-300 underline-offset-2
-                       hover:underline break-all"
+            className="text-ink-50 underline underline-offset-2 hover:no-underline break-all"
           >
             {distro.wiki_url}
           </a>
@@ -153,7 +151,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
               href={`https://www.wikidata.org/wiki/${distro.qid}`}
               target="_blank"
               rel="noreferrer"
-              className="font-mono text-[12px] text-cyan-400 hover:text-cyan-300"
+              className="font-mono text-[12px] text-ink-50 underline underline-offset-2 hover:no-underline"
             >
               {distro.qid}
             </a>

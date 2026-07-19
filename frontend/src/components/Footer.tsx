@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-wrap items-center gap-3">
           <span>data:</span>
           <a
-            className="text-cyan-400 hover:text-cyan-300"
+            className="text-ink-100 hover:text-ink-50 underline underline-offset-2 hover:no-underline"
             href="https://en.wikipedia.org/api/rest_v1/"
             target="_blank"
             rel="noreferrer"
@@ -14,7 +14,7 @@ export default function Footer() {
           </a>
           <span className="text-ink-600">·</span>
           <a
-            className="text-cyan-400 hover:text-cyan-300"
+            className="text-ink-100 hover:text-ink-50 underline underline-offset-2 hover:no-underline"
             href="https://www.wikidata.org/wiki/Wikidata:Data_access"
             target="_blank"
             rel="noreferrer"

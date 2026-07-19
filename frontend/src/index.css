@@ -12,18 +12,18 @@
   ::-webkit-scrollbar-thumb   { background: rgba(148, 163, 184, 0.18); border-radius: 4px; }
   ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.32); }
   ::-webkit-scrollbar-track   { background: transparent; }
-  ::selection                 { background-color: rgba(34, 211, 238, 0.28); color: #e6edf3; }
-  *:focus-visible             { outline: 2px solid rgba(34, 211, 238, 0.55); outline-offset: 2px; border-radius: 4px; }
+  ::selection                 { background-color: rgba(230, 237, 243, 0.18); color: #e6edf3; }
+  *:focus-visible             { outline: 1px solid #e6edf3; outline-offset: 2px; border-radius: 4px; }
 }
 
-/* ── React Flow edge theming (minimal: solid strokes, no flow) ── */
+/* ── React Flow edge theming — strict 3-color, no accent ── */
 .react-flow__edge-path {
   stroke: #30363d;
   stroke-width: 1;
 }
 .react-flow__edge.selected .react-flow__edge-path,
 .react-flow__edge.is-on-path .react-flow__edge-path {
-  stroke: #22d3ee;
+  stroke: #e6edf3;
   stroke-width: 1.5;
 }
 
@@ -36,6 +36,6 @@
 }
 .react-flow__controls button:hover {
   background: #21262d !important;
-  color: #22d3ee !important;
-  fill: #22d3ee !important;
+  color: #e6edf3 !important;
+  fill: #e6edf3 !important;
 }

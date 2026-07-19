@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import distrosJson from '@/data/distros.json';
 import Header from '@/components/Header';
 import GraphCanvas from '@/components/GraphCanvas';
@@ -46,6 +45,14 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-bg text-ink-50">
+      <style>{`
+        @keyframes sidebar-in {
+          from { opacity: 0; transform: translateX(40px) }
+          to   { opacity: 1; transform: translateX(0) }
+        }
+        .sidebar-slide { animation: sidebar-in 220ms ease-out both }
+      `}</style>
+
       <Header
         query={query}
         onQueryChange={setQuery}
@@ -72,33 +79,24 @@ export default function App() {
           />
         </section>
 
-        <AnimatePresence>
-          {/* SidePanel renders its own <aside> root; we wrap it in a
-              motion.div (not motion.aside) — nesting <aside> inside <aside>
-              is invalid HTML, and motion.div keeps the same animation API. */}
-          {selectedDistro && (
-            <motion.div
-              key={selectedDistro.slug}
-              initial={{ x: 60, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 60, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 260, damping: 32 }}
-              className="z-30
-                         fixed inset-x-0 bottom-0 max-h-[80vh]
-                         lg:absolute lg:inset-y-0 lg:right-0 lg:bottom-auto lg:max-h-none
-                         lg:w-[360px]"
-            >
-              <SidePanel distro={selectedDistro} onClose={onClosePanel} />
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {selectedDistro && (
+          <div
+            key={selectedDistro.slug}
+            className="sidebar-slide z-30
+                       fixed inset-x-0 bottom-0 max-h-[80vh]
+                       lg:absolute lg:inset-y-0 lg:right-0 lg:bottom-auto lg:max-h-none
+                       lg:w-[360px]"
+          >
+            <SidePanel distro={selectedDistro} onClose={onClosePanel} />
+          </div>
+        )}
       </main>
 
       <Footer />
 
-      {/* v0.5 — user-submitted suggestions live outside the main grid
-          so the modal can overlay the full canvas without z-fighting
-          with the sticky header or the side panel. */}
+      {/* Suggestion modal lives outside the main grid so it can
+          overlay the full canvas without z-fighting with the sticky
+          header or side panel. */}
       <SuggestForm open={isSuggestOpen} onClose={() => setIsSuggestOpen(false)} />
     </div>
   );

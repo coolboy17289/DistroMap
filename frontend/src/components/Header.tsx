@@ -16,7 +16,7 @@ export default function Header({
   onSuggestClick,
 }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-30 border-b border-panel-border bg-bg/85 backdrop-blur-md">
+    <header className="sticky top-0 z-30 border-b border-panel-border bg-bg">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-3 flex items-center gap-4">
         <a href="/" className="flex items-center gap-3 shrink-0" aria-label="DistroMap home">
           <img
@@ -38,7 +38,7 @@ export default function Header({
             aria-label="Suggest a distribution"
             className="rounded border border-panel-border px-2 py-1
                        text-[11px] font-mono uppercase tracking-wider
-                       text-ink-400 hover:text-cyan-300 hover:border-cyan-500/40
+                       text-ink-400 hover:text-ink-50 hover:border-ink-600
                        transition-colors"
           >
             <span aria-hidden="true" className="mr-0.5">+</span>

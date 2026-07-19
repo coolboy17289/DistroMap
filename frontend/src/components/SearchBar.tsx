@@ -34,9 +34,9 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Search Linux distributions…"
-          className="w-full bg-bg/70 border border-panel-border rounded-md pl-9 pr-12 py-2
-                     text-sm text-ink-50 placeholder-ink-400 outline-none transition-all
-                     focus:border-cyan-500/50 focus:bg-panel-strong focus:shadow-glow-cyan"
+          className="w-full bg-bg border border-panel-border rounded-md pl-9 pr-12 py-2
+                     text-sm text-ink-50 placeholder-ink-400 outline-none
+                     focus:border-ink-50 transition-colors duration-150"
         />
         {value ? (
           <button
@@ -44,7 +44,7 @@ const SearchBar = forwardRef<HTMLInputElement, SearchBarProps>(
             onClick={onClear}
             className="absolute right-2 top-1/2 -translate-y-1/2 px-2 py-0.5 rounded
                        text-[10px] font-mono uppercase tracking-wider text-ink-400
-                       hover:text-cyan-400 hover:bg-panel-strong"
+                       hover:text-ink-50 transition-colors"
           >
             clear
           </button>

@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview --port 5173",
     "typecheck": "tsc -b --noEmit",
-    "backend": "bash ../serve_backend.sh"
+    "backend": "bash ./scripts/serve_backend.sh"
   },
   "dependencies": {
     "@xyflow/react": "^12.3.5",

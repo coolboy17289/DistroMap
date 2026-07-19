@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import path from 'node:path';
 
-// DistroMap frontend — v0.4 rewrite.
-// React + TypeScript + React Flow + Tailwind v3 + Framer Motion.
-// No Vue (per the design brief).
+// DistroMap frontend — React + TypeScript + React Flow + Tailwind v3 + Framer Motion.
+// No Vue (per the design brief). Build configs are plain JS so Vite doesn't
+// need ts-node at startup.
 export default defineConfig({
   plugins: [react()],
   resolve: {

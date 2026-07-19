@@ -1,27 +1,26 @@
-import type { Config } from 'tailwindcss';
-
 // Family accent palette — must match distros.json. Semantically stable.
-const FAMILY_ACCENTS: Record<string, string> = {
-  kernel: '#22d3ee',     // cyan (the glowing center)
-  debian: '#22d3ee',     // cyan
-  arch: '#34d399',       // Linux green
-  fedora: '#51a2da',     // Fedora blue
-  gentoo: '#a78bfa',     // purple
-  slackware: '#f0883e',  // amber
+const FAMILY_ACCENTS = {
+  kernel:   '#22d3ee', // cyan (the glowing center)
+  debian:   '#22d3ee',
+  arch:     '#34d399', // Linux green
+  fedora:   '#51a2da', // Fedora blue
+  gentoo:   '#a78bfa', // purple
+  slackware:'#f0883e', // amber
 };
 
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        bg: '#0d1117',                  // deep black/charcoal (main bg)
-        panel: '#161b22',               // card/panel
-        'panel-strong': '#21262d',      // elevated panel
-        'panel-border': '#30363d',      // subtle border
+        bg:               '#0d1117', // deep black/charcoal (main bg)
+        panel:            '#161b22', // card/panel
+        'panel-strong':   '#21262d', // elevated panel
+        'panel-border':   '#30363d', // subtle border
         ink: {
-          50: '#e6edf3',
+          50:  '#e6edf3',
           100: '#cbd5e1',
           400: '#8b949e',
           500: '#6e7681',
@@ -29,12 +28,12 @@ export default {
           800: '#30363d',
           900: '#21262d',
         },
-        family: FAMILY_ACCENTS,
+        family:  FAMILY_ACCENTS,
         accent: {
-          cyan: '#22d3ee',
-          green: '#34d399',
+          cyan:   '#22d3ee',
+          green:  '#34d399',
           purple: '#a78bfa',
-          amber: '#f0883e',
+          amber:  '#f0883e',
         },
       },
       fontFamily: {
@@ -72,4 +71,4 @@ export default {
     },
   },
   plugins: [],
-} satisfies Config;
+};

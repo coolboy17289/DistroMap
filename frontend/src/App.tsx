@@ -72,8 +72,11 @@ export default function App() {
         </section>
 
         <AnimatePresence>
+          {/* SidePanel renders its own <aside> root; we wrap it in a
+              motion.div (not motion.aside) — nesting <aside> inside <aside>
+              is invalid HTML, and motion.div keeps the same animation API. */}
           {selectedDistro && (
-            <motion.aside
+            <motion.div
               key={selectedDistro.slug}
               initial={{ x: 60, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -85,7 +88,7 @@ export default function App() {
                          lg:w-[360px]"
             >
               <SidePanel distro={selectedDistro} onClose={onClosePanel} />
-            </motion.aside>
+            </motion.div>
           )}
         </AnimatePresence>
       </main>

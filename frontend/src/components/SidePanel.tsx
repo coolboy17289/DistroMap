@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import type { Distro } from '@/types';
 
 interface SidePanelProps {
@@ -40,15 +39,9 @@ function FieldRow({
 
 export default function SidePanel({ distro, onClose }: SidePanelProps) {
   return (
-    <motion.aside
-      key={distro.slug}
-      initial={{ x: 60, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: 60, opacity: 0 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 32 }}
-      className="h-full w-full bg-panel/95 backdrop-blur-md
-                 border-l border-panel-border overflow-y-auto"
-    >
+    <aside className="h-full w-full bg-panel/95 backdrop-blur-md
+                      border-t lg:border-t-0 lg:border-l border-panel-border
+                      overflow-y-auto">
       <header className="sticky top-0 z-10 bg-panel/95 backdrop-blur-md border-b border-panel-border">
         <div className="px-5 py-4 flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -81,10 +74,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
       <div className="px-5 py-5 space-y-5">
         <section className="rounded-lg border border-panel-border bg-panel-strong p-4">
           <div className="flex items-center justify-between">
-            <div
-              className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400"
-              aria-hidden="true"
-            >
+            <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-ink-400">
               Popularity
             </div>
             <Stars value={distro.popularity} />
@@ -101,7 +91,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
           )}
         </FieldRow>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FieldRow label="Release model">{distro.release_model}</FieldRow>
           <FieldRow label="Package manager">{distro.package_manager}</FieldRow>
         </div>
@@ -124,7 +114,7 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
           )}
         </FieldRow>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <FieldRow label="First released">
             {distro.inception ?? <span className="text-ink-500">—</span>}
           </FieldRow>
@@ -172,6 +162,6 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
           </FieldRow>
         )}
       </div>
-    </motion.aside>
+    </aside>
   );
 }

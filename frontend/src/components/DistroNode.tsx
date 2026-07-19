@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Handle, Position, type NodeProps } from '@xyflow/react';
+import { type NodeProps } from '@xyflow/react';
 import type { DistroFlowNode } from '@/types';
 
 const RADIUS_BY_DEPTH: Record<number, number> = { 0: 52, 1: 30, 2: 22, 3: 16 };
@@ -15,13 +15,6 @@ function DistroNodeComponent({ data }: NodeProps<DistroFlowNode>) {
       style={{ opacity, transition: 'opacity 200ms ease' }}
       className="relative flex items-center justify-center"
     >
-      <Handle
-        type="target"
-        position={Position.Top}
-        style={{ width: 1, height: 1, minWidth: 1, minHeight: 1, opacity: 0 }}
-        isConnectable={false}
-      />
-
       {isKernel && (
         <div
           aria-hidden="true"
@@ -74,13 +67,6 @@ function DistroNodeComponent({ data }: NodeProps<DistroFlowNode>) {
           {distro.display}
         </div>
       </div>
-
-      <Handle
-        type="source"
-        position={Position.Bottom}
-        style={{ width: 1, height: 1, minWidth: 1, minHeight: 1, opacity: 0 }}
-        isConnectable={false}
-      />
     </div>
   );
 }

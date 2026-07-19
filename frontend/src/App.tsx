@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import distrosJson from '@/data/distros.json';
 import Header from '@/components/Header';
 import GraphCanvas from '@/components/GraphCanvas';
@@ -39,6 +40,8 @@ export default function App() {
     setSelected((cur) => (cur && distros.some((d) => d.slug === cur) ? cur : null));
   }, []);
 
+  const onClosePanel = useCallback(() => setSelected(null), []);
+
   return (
     <div className="min-h-screen flex flex-col bg-bg text-ink-50">
       <Header
@@ -68,20 +71,26 @@ export default function App() {
           />
         </section>
 
-        {selectedDistro && (
-          <aside className="hidden lg:block absolute inset-y-0 right-0 z-10 w-[360px] animate-panel-in">
-            <SidePanel distro={selectedDistro} onClose={() => setSelected(null)} />
-          </aside>
-        )}
+        <AnimatePresence>
+          {selectedDistro && (
+            <motion.aside
+              key={selectedDistro.slug}
+              initial={{ x: 60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 60, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 260, damping: 32 }}
+              className="z-30
+                         fixed inset-x-0 bottom-0 max-h-[80vh]
+                         lg:absolute lg:inset-y-0 lg:right-0 lg:bottom-auto lg:max-h-none
+                         lg:w-[360px]"
+            >
+              <SidePanel distro={selectedDistro} onClose={onClosePanel} />
+            </motion.aside>
+          )}
+        </AnimatePresence>
       </main>
 
       <Footer />
-      {/* Mobile fallback: panel renders inline below the canvas when selected */}
-      {selectedDistro && (
-        <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 max-h-[80vh] animate-panel-in">
-          <SidePanel distro={selectedDistro} onClose={() => setSelected(null)} />
-        </div>
-      )}
     </div>
   );
 }

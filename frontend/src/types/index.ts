@@ -60,6 +60,8 @@ export type DistroFlowEdge = Edge<DistroEdgeData>;
 export interface GraphLayout {
   nodes: DistroFlowNode[];
   edges: DistroFlowEdge[];
-  /** Useful downstream for legend / stats. */
+  /** parent-slug → list of direct child slugs. O(1) child lookups. */
+  childrenByParent: Map<string, string[]>;
+  /** Family roots (depth 1) only — handy for legend / stats. */
   nonKernelFamilyRoots: DistroFlowNode[];
 }

@@ -33,10 +33,16 @@ const TAU = Math.PI * 2;
 export function buildLayout(distros: Distro[]): GraphLayout {
   const parent = new Map<string, string | null>(distros.map((d) => [d.slug, d.parent]));
   const childrenOf = new Map<string | null, Distro[]>();
+  const childrenByParent: Map<string, string[]> = new Map();
   for (const d of distros) {
     const k = parent.get(d.slug) ?? null;
     if (!childrenOf.has(k)) childrenOf.set(k, []);
     childrenOf.get(k)!.push(d);
+    if (d.parent) {
+      const list = childrenByParent.get(d.parent) ?? [];
+      list.push(d.slug);
+      childrenByParent.set(d.parent, list);
+    }
   }
   for (const arr of childrenOf.values()) {
     arr.sort((a, b) => a.slug.localeCompare(b.slug));
@@ -107,5 +113,5 @@ export function buildLayout(distros: Distro[]): GraphLayout {
 
   const nonKernelFamilyRoots = nodes.filter((n) => n.data.distro.depth === 1);
 
-  return { nodes, edges, nonKernelFamilyRoots };
+  return { nodes, edges, childrenByParent, nonKernelFamilyRoots };
 }

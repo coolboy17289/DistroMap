@@ -9,7 +9,11 @@ import {
 import '@xyflow/react/dist/style.css';
 
 import { buildLayout } from '@/lib/layout';
-import type { Distro, DistroFlowNode, DistroFlowEdge } from '@/types';
+import type {
+  Distro,
+  DistroFlowEdge,
+  DistroFlowNode,
+} from '@/types';
 import DistroNode from './DistroNode';
 
 interface GraphCanvasProps {
@@ -30,7 +34,7 @@ export default function GraphCanvas({
   const [hovered, setHovered] = useState<string | null>(null);
   const trimmed = query.trim().toLowerCase();
 
-  // Compute which nodes match the search, if any.
+  // Which nodes match the search, if any — null when query is empty.
   const matching = useMemo(() => {
     if (!trimmed) return null;
     const set = new Set<string>();
@@ -46,42 +50,38 @@ export default function GraphCanvas({
     return set;
   }, [trimmed, distros]);
 
-  // Polar layout — bounceable cache.
-  const baseLayout = useMemo(() => buildLayout(distros), [distros]);
+  const layout = useMemo(() => buildLayout(distros), [distros]);
 
-  // Decorate nodes with the current highlight / dim state.
+  // Decoration pass — O(N + M) thanks to childrenByParent's map lookup.
   const nodes = useMemo<DistroFlowNode[]>(() => {
-    return baseLayout.nodes.map((n) => {
+    const focus = selected ?? hovered;
+    return layout.nodes.map((n) => {
       let highlighted: boolean;
       let dimmed: boolean;
 
       if (matching) {
         highlighted = matching.has(n.id);
         dimmed = !highlighted;
-      } else if (selected || hovered) {
-        const focus = selected ?? hovered;
+      } else if (focus) {
         const isFocus = n.id === focus;
-        const isAncestor =
-          !isFocus && distros.some((d) => d.slug === n.id && d.parent === focus);
-        const isDescendant =
-          !isFocus && (focus === 'linux_kernel' || isAncestor); // family roots light up on hover of the kernel
-        highlighted = isFocus || isAncestor || isDescendant || n.id === 'linux_kernel';
+        const isDirectChild = !isFocus && layout.childrenByParent.get(focus)?.includes(n.id) === true;
+        highlighted =
+          isFocus ||
+          isDirectChild ||
+          (focus === 'linux_kernel') ||
+          n.id === 'linux_kernel';
         dimmed = !highlighted;
       } else {
         highlighted = n.id === 'linux_kernel';
         dimmed = !highlighted;
       }
-
-      return {
-        ...n,
-        data: { ...n.data, highlighted, dimmed },
-      };
+      return { ...n, data: { ...n.data, highlighted, dimmed } };
     });
-  }, [baseLayout, selected, hovered, matching, distros]);
+  }, [layout, selected, hovered, matching]);
 
-  // Decorate edges — selected-path edges become cyan + thicker.
+  // Selected-path edges become cyan + thicker; others get the slow flow dash.
   const edges = useMemo<DistroFlowEdge[]>(() => {
-    return baseLayout.edges.map((e) => {
+    return layout.edges.map((e) => {
       const onPath = !!(selected && (e.source === selected || e.target === selected));
       return {
         ...e,
@@ -89,7 +89,7 @@ export default function GraphCanvas({
         data: { onPath },
       };
     });
-  }, [baseLayout, selected]);
+  }, [layout, selected]);
 
   const onNodeClick: NodeMouseHandler = useCallback(
     (_e, node) => onSelect(node.id),
@@ -101,6 +101,15 @@ export default function GraphCanvas({
   );
   const onNodeLeave: NodeMouseHandler = useCallback(() => setHovered(null), []);
   const onPaneClick = useCallback(() => onSelect(null), [onSelect]);
+
+  // MiniMap nodeColor — opt in to per-distro accents.
+  const nodeColor = useCallback(
+    (n: DistroFlowNode) => {
+      const accent = n.data?.distro?.accent as string | undefined;
+      return typeof accent === 'string' ? accent : '#22d3ee';
+    },
+    [],
+  );
 
   return (
     <div className="h-full w-full">
@@ -126,6 +135,7 @@ export default function GraphCanvas({
           pannable
           zoomable
           maskColor="rgba(13, 17, 23, 0.7)"
+          nodeColor={nodeColor}
           style={{ background: '#161b22' }}
         />
         <Controls position="bottom-right" />

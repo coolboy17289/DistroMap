@@ -63,14 +63,14 @@ export default function GraphCanvas({
         highlighted = matching.has(n.id);
         dimmed = !highlighted;
       } else if (focus) {
-        const        // isFocus covers the distro itself; isDirectChild covers its immediate
+        // isFocus covers the distro itself; isDirectChild covers its immediate
         // descendants (so when focus is the kernel, all family roots light up;
         // when focus is Debian, Ubuntu + Linux Mint light up). No need for
         // dedicated "kernel is always highlighted" clauses.
         const isFocus = n.id === focus;
         const isDirectChild =
           !isFocus &&
-          layout.childrenByParent.get(focus)?.includes(n.id) === true;
+          (layout.childrenByParent.get(focus)?.includes(n.id) ?? false);
         highlighted = isFocus || isDirectChild;
         dimmed = !highlighted;
       } else {

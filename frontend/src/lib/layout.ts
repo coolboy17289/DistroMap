@@ -48,14 +48,16 @@ export function buildLayout(distros: Distro[]): GraphLayout {
     arr.sort((a, b) => a.slug.localeCompare(b.slug));
   }
 
-  // depth via parent-chain walk
+  // depth via parent-chain walk.
+  // `cur` is `string | null | undefined` because Map.get returns
+  // `T | undefined`; we narrow with `?? null` so the loop stays simple.
   const depth = new Map<string, 0 | 1 | 2 | 3>();
   for (const d of distros) {
     let dp = 0;
-    let cur: string | null = d.slug;
+    let cur: string | null | undefined = d.slug;
     while (parent.get(cur ?? '') ?? null) {
       dp += 1;
-      cur = parent.get(cur ?? '');
+      cur = parent.get(cur ?? '') ?? null;
       if (dp > 16) break; // cycle guard
     }
     depth.set(d.slug, Math.min(dp, 3) as 0 | 1 | 2 | 3);

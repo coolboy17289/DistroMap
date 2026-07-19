@@ -5,12 +5,7 @@
 @layer base {
   html { color-scheme: dark; }
   body {
-    background:
-      radial-gradient(60% 50% at 50%   0%, rgba(34, 211, 238, 0.07), transparent 65%),
-      radial-gradient(40% 35% at 80% 100%, rgba(52, 211, 153, 0.04), transparent 70%),
-      radial-gradient(35% 30% at  0%  80%, rgba(167, 139, 250, 0.04), transparent 70%),
-      #0d1117;
-    background-attachment: fixed;
+    background: #0d1117;
     min-height: 100vh;
   }
   ::-webkit-scrollbar         { width: 8px; height: 8px; }
@@ -21,23 +16,15 @@
   *:focus-visible             { outline: 2px solid rgba(34, 211, 238, 0.55); outline-offset: 2px; border-radius: 4px; }
 }
 
-/* ── React Flow edge theming ───────────────────────────────────── */
+/* ── React Flow edge theming (minimal: solid strokes, no flow) ── */
 .react-flow__edge-path {
   stroke: #30363d;
-  stroke-width: 1.25;
+  stroke-width: 1;
 }
 .react-flow__edge.selected .react-flow__edge-path,
 .react-flow__edge.is-on-path .react-flow__edge-path {
   stroke: #22d3ee;
-  stroke-width: 1.75;
-  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.4));
-}
-.react-flow__edge.flow .react-flow__edge-path {
-  stroke-dasharray: 6 6;
-  animation: edgeFlow 1.6s linear infinite;
-}
-@keyframes edgeFlow {
-  to { stroke-dashoffset: -24; }
+  stroke-width: 1.5;
 }
 
 .react-flow__attribution { display: none !important; }
@@ -51,8 +38,4 @@
   background: #21262d !important;
   color: #22d3ee !important;
   fill: #22d3ee !important;
-}
-.react-flow__minimap {
-  background: #161b22 !important;
-  border: 1px solid #30363d !important;
 }

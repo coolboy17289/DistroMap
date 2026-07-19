@@ -1,11 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import {
-  ReactFlow,
-  Background,
-  Controls,
-  MiniMap,
-  type NodeMouseHandler,
-} from '@xyflow/react';
+import { ReactFlow, Controls, type NodeMouseHandler } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
 import { buildLayout } from '@/lib/layout';
@@ -63,10 +57,6 @@ export default function GraphCanvas({
         highlighted = matching.has(n.id);
         dimmed = !highlighted;
       } else if (focus) {
-        // isFocus covers the distro itself; isDirectChild covers its immediate
-        // descendants (so when focus is the kernel, all family roots light up;
-        // when focus is Debian, Ubuntu + Linux Mint light up). No need for
-        // dedicated "kernel is always highlighted" clauses.
         const isFocus = n.id === focus;
         const isDirectChild =
           !isFocus &&
@@ -81,13 +71,13 @@ export default function GraphCanvas({
     });
   }, [layout, selected, hovered, matching]);
 
-  // Selected-path edges become cyan + thicker; others get the slow flow dash.
+  // Selected-path edges become cyan; others stay neutral.
   const edges = useMemo<DistroFlowEdge[]>(() => {
     return layout.edges.map((e) => {
       const onPath = !!(selected && (e.source === selected || e.target === selected));
       return {
         ...e,
-        className: onPath ? 'is-on-path' : 'flow',
+        className: onPath ? 'is-on-path' : '',
         data: { onPath },
       };
     });
@@ -104,15 +94,6 @@ export default function GraphCanvas({
   const onNodeLeave: NodeMouseHandler = useCallback(() => setHovered(null), []);
   const onPaneClick = useCallback(() => onSelect(null), [onSelect]);
 
-  // MiniMap nodeColor — opt in to per-distro accents.
-  const nodeColor = useCallback(
-    (n: DistroFlowNode) => {
-      const accent = n.data?.distro?.accent as string | undefined;
-      return typeof accent === 'string' ? accent : '#22d3ee';
-    },
-    [],
-  );
-
   return (
     <div className="h-full w-full">
       <ReactFlow
@@ -120,8 +101,8 @@ export default function GraphCanvas({
         edges={edges}
         nodeTypes={NODE_TYPES}
         fitView
-        fitViewOptions={{ padding: 0.25 }}
-        minZoom={0.3}
+        fitViewOptions={{ padding: 0.3 }}
+        minZoom={0.4}
         maxZoom={2.5}
         nodesDraggable={false}
         nodesConnectable={false}
@@ -132,15 +113,7 @@ export default function GraphCanvas({
         onPaneClick={onPaneClick}
         proOptions={{ hideAttribution: true }}
       >
-        <Background gap={32} size={1} color="#21262d" />
-        <MiniMap
-          pannable
-          zoomable
-          maskColor="rgba(13, 17, 23, 0.7)"
-          nodeColor={nodeColor}
-          style={{ background: '#161b22' }}
-        />
-        <Controls position="bottom-right" />
+        <Controls position="bottom-right" showInteractive={false} />
       </ReactFlow>
     </div>
   );

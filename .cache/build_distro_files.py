@@ -15,6 +15,7 @@ Both share the same source regex/structured-data fetch pipeline in
 import json
 from pathlib import Path
 from datetime import datetime, timezone
+from urllib.parse import urlparse
 
 ROOT = Path(".")
 SRC       = ROOT / ".cache" / "api" / "all.json"
@@ -25,24 +26,6 @@ FE_OUT      = ROOT / "frontend" / "src" / "data"
 
 WIKIDATA_HOST = "https://www.wikidata.org/wiki"
 WIKI_HOST     = "https://en.wikipedia.org/wiki"
-
-# Per-family accent palette — keep in sync with frontend/tailwind.config.js
-# and frontend/src/data/distros.json (used as the seed when the api JSON
-# doesn't know a per-distro accent).
-FAMILY_ACCENT = {
-    "debian":    "#22d3ee",
-    "ubuntu":    "#67e8f9",
-    "linux_mint":"#a5f3fc",
-    "pop_os":    "#7dd3fc",
-    "arch":      "#818cf8",
-    "manjaro":   "#a5b4fc",
-    "endeavouros":"#6366f1",
-    "fedora":    "#fbbf24",
-    "nobara":    "#fcd34d",
-    "gentoo":    "#34d399",
-    "slackware": "#cbd5e1",
-    "linux_kernel":"#22d3ee",
-}
 
 # Approximate defaults for fields some distros don't expose on Wikidata.
 # Also keeps the curated `desktop_environments` list (formerly

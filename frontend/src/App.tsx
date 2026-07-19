@@ -58,12 +58,11 @@ export default function App() {
         <section className="absolute inset-0">
           {query.trim() && (
             <div
-              className="pointer-events-none absolute top-3 right-4 z-20 px-3 py-1.5
-                         rounded-md bg-panel/80 border border-cyan-500/30
-                         font-mono text-[11px] text-cyan-300 animate-slide-in
-                         shadow-glow-cyan"
+              className="pointer-events-none absolute top-3 right-4 z-20 px-2.5 py-1
+                         rounded border border-panel-border
+                         font-mono text-[11px] text-ink-400"
             >
-              filter:&nbsp;<span className="text-cyan-100">"{query}"</span>
+              filter:&nbsp;<span className="text-ink-50">"{query}"</span>
             </div>
           )}
           <GraphCanvas

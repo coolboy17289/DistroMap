@@ -21,12 +21,13 @@ export interface Distro {
   parent: string | null;
   depth: 0 | 1 | 2 | 3;
   family: DistroFamily;
-  accent: string;
   qid: string | null;
 
   short_desc: string;
   extract: string;
   thumbnail: string | null;
+  /** Resolved via Google Favicon Service from `official_website`. */
+  favicon_url: string | null;
   wiki_url: string;
 
   official_website: string | null;

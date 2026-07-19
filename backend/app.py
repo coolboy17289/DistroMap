@@ -51,8 +51,43 @@ KV_TOKEN = os.environ.get("KV_REST_API_TOKEN", "").strip()
 KV_KEY = "distromap:suggestions"
 
 
+def _kv_health() -> str | None:
+    """
+    Return None if KV is configured correctly, else a reason string that
+    prints explaining why we're staying in file mode.
+
+    urllib.parse.urlparse is lenient — it accepts strings like
+    `not-a-url` as a path. We layer extra checks: netloc present +
+    http(s) scheme. For deeper validation we'd send a `["PING"]` to
+    the KV at startup, but that adds a startup round-trip on every
+    cold start, so we keep validation cheap and let the first real
+    request surface auth/network failures with a 500 → localStorage
+    fallback in the frontend.
+    """
+    if not KV_URL or not KV_TOKEN:
+        return "env vars not set"
+    try:
+        parsed = urllib.parse.urlparse(KV_URL)
+    except ValueError as e:
+        return f"unparseable URL: {e}"
+    if parsed.scheme not in ("http", "https"):
+        return f"unsupported scheme {parsed.scheme!r}"
+    if not parsed.netloc:
+        return "missing host"
+    return None
+
+
 def _using_kv() -> bool:
-    return bool(KV_URL) and bool(KV_TOKEN)
+    return _kv_health() is None
+
+
+_kv_disabled_reason = _kv_health()
+if _kv_disabled_reason and (KV_URL or KV_TOKEN):
+    # Print once at import time so a misconfigured production deploy
+    # surfaces in `vercel logs` immediately. We deliberately never
+    # mention KV_TOKEN itself — only whether it was set, to avoid
+    # leaking any information about secret presence.
+    print(f"[distromap] KV disabled: {_kv_disabled_reason}")
 
 app = FastAPI(
     title="DistroMap Suggestions API",
@@ -201,7 +236,7 @@ return {0, #arr}
 """
 
 
-def _kv_post(_url_unused: str, payload: list[Any]) -> Any:
+def _kv_post(payload: list[Any]) -> Any:
     """
     Upstash Redis REST: every command (GET, SET, EVAL...) is POSTed
     to the bare KV_REST_API_URL with a JSON command-array body and a
@@ -237,7 +272,7 @@ def _kv_read_all() -> list[dict[str, Any]]:
     nil — Upstash returns `null` for missing keys). Empty / nil /
     undecodable → empty list.
     """
-    out = _kv_post(KV_URL, ["GET", KV_KEY])
+    out = _kv_post(["GET", KV_KEY])
     raw = _kv_result(out)
     if not raw:
         return []
@@ -254,7 +289,7 @@ def _kv_replace(rows: list[dict[str, Any]]) -> None:
     `_kv_append_one` for the normal POST flow (atomic Lua).
     """
     value = json.dumps(rows, ensure_ascii=False)
-    _kv_post(KV_URL, ["SET", KV_KEY, value, "EX", 60 * 60 * 24 * 365])
+    _kv_post(["SET", KV_KEY, value, "EX", 60 * 60 * 24 * 365])
 
 
 def _kv_append_one(row: dict[str, Any]) -> tuple[bool, int]:
@@ -281,7 +316,7 @@ def _kv_append_one(row: dict[str, Any]) -> tuple[bool, int]:
         row.get("slug", ""),
         row.get("wikipedia_title", ""),
     ]
-    out = _kv_post(KV_URL, body)
+    out = _kv_post(body)
     result = _kv_result(out)
     if not isinstance(result, list) or len(result) < 2:
         raise RuntimeError(f"unexpected EVAL response: {out!r}")

@@ -33,26 +33,15 @@ export default function Header({
           />
         </a>
         <SearchBar value={query} onChange={onQueryChange} onClear={onClearQuery} />
-        <div className="flex items-center gap-2 shrink-0">
-          <span
-            className="hidden md:inline-flex items-center gap-1.5 font-mono text-[11px] text-ink-400 mr-2"
-            aria-label={`Tracking ${total} distributions`}
-          >
-            <span className="px-1.5 py-0.5 rounded bg-panel border border-panel-border text-cyan-300">
-              {total}
-            </span>
-            distros
-          </span>
+        <div className="flex items-center gap-1 shrink-0">
           <button
             type="button"
             onClick={onSuggestClick}
             aria-label="Suggest a distribution"
-            title="Suggest a distribution (v0.5)"
-            className="rounded-md border border-cyan-500/40 px-2.5 py-1.5
-                       text-[12px] font-mono uppercase tracking-wider
-                       text-cyan-300 bg-cyan-500/5
-                       hover:bg-cyan-500/15 hover:text-cyan-200 hover:border-cyan-400
-                       transition-all"
+            className="rounded border border-panel-border px-2 py-1
+                       text-[11px] font-mono uppercase tracking-wider
+                       text-ink-400 hover:text-cyan-300 hover:border-cyan-500/40
+                       transition-colors"
           >
             <span aria-hidden="true" className="mr-0.5">+</span>
             <span className="hidden sm:inline">suggest</span>

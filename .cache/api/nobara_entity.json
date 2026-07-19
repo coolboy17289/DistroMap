@@ -1,0 +1,1656 @@
+{
+  "entities": {
+    "Q121027163": {
+      "pageid": 115470166,
+      "ns": 0,
+      "title": "Q121027163",
+      "lastrevid": 2517028834,
+      "modified": "2026-07-13T11:39:11Z",
+      "type": "item",
+      "id": "Q121027163",
+      "labels": {
+        "pl": {
+          "language": "pl",
+          "value": "Nobara Linux"
+        },
+        "ca": {
+          "language": "ca",
+          "value": "Nobara Linux"
+        },
+        "sah": {
+          "language": "sah",
+          "value": "Nobara Linux"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "نوبارا لينكس"
+        },
+        "zh-tw": {
+          "language": "zh-tw",
+          "value": "Nobara Linux"
+        },
+        "zh": {
+          "language": "zh",
+          "value": "Nobara Linux"
+        },
+        "zh-hant": {
+          "language": "zh-hant",
+          "value": "Nobara Linux"
+        },
+        "ja": {
+          "language": "ja",
+          "value": "Nobara Linux"
+        },
+        "mul": {
+          "language": "mul",
+          "value": "Nobara Linux"
+        },
+        "en": {
+          "language": "en",
+          "value": "Nobara (operating system)"
+        },
+        "ru": {
+          "language": "ru",
+          "value": "Nobara (операционная система)"
+        }
+      },
+      "descriptions": {
+        "en": {
+          "language": "en",
+          "value": "Linux distribution"
+        },
+        "de": {
+          "language": "de",
+          "value": "Gaming-Linux-Distribution"
+        },
+        "es": {
+          "language": "es",
+          "value": "distribución de GNU/Linux basada en Fedora"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "توزيعة لينكس"
+        },
+        "fr": {
+          "language": "fr",
+          "value": "distribution Linux"
+        },
+        "zh-tw": {
+          "language": "zh-tw",
+          "value": "Linux散佈版"
+        },
+        "zh": {
+          "language": "zh",
+          "value": "Linux散佈版"
+        },
+        "zh-hant": {
+          "language": "zh-hant",
+          "value": "Linux散佈版"
+        },
+        "nl": {
+          "language": "nl",
+          "value": "Linux distributie"
+        }
+      },
+      "aliases": {
+        "mul": [
+          {
+            "language": "mul",
+            "value": "Nobara"
+          }
+        ]
+      },
+      "claims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "0435f46ea8b084260e4844c5e50f5dfae8f00428",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 131669,
+                  "id": "Q131669"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$71578B36-91AD-4DC0-9853-0866F21AC53A",
+            "rank": "normal"
+          }
+        ],
+        "P373": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P373",
+              "hash": "d7037f67d23db4b01ac495a1d8a14c65a930ddbd",
+              "datavalue": {
+                "value": "Nobara Linux",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q121027163$a5e2530b-2555-4176-8700-1b7858129539",
+            "rank": "normal"
+          }
+        ],
+        "P279": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P279",
+              "hash": "4007aaa54ca74302854e681af38482777d013462",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 388,
+                  "id": "Q388"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$aa6b6dbe-48c4-cf79-4763-1cdc1d87948f",
+            "rank": "normal"
+          }
+        ],
+        "P571": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P571",
+              "hash": "81bd620cbfad8b0ca9b94b976c23e285ebb665d7",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            "type": "statement",
+            "id": "Q121027163$c35e3e17-4c50-a309-e4dd-84521b7dae98",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "e7ca831816e512e8346307e849954226be23495f",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "e509d0fb522095b7ef4b5b88b00d1be7d9a94c0b",
+                      "datavalue": {
+                        "value": "https://www.heise.de/tests/Nobara-37-im-Test-Linux-Distribution-fuer-Gamer-und-Content-Creator-7476245.html",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "bf35d976468aeeac5d32349e036b82b8b8d16303",
+                      "datavalue": {
+                        "value": {
+                          "text": "Nobara 37 im Test: Linux-Distribution für Gamer und Content Creator",
+                          "language": "de"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476"
+                ]
+              }
+            ]
+          }
+        ],
+        "P144": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P144",
+              "hash": "097794f397692ce874c7b821260a40c770fb3be5",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 48267,
+                  "id": "Q48267"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$e47a2411-408e-f5d1-95ad-858e2671f1eb",
+            "rank": "normal"
+          }
+        ],
+        "P400": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "e5d4048ae65395f5a4c700cdbdcf6c1a77ccdb49",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 272629,
+                  "id": "Q272629"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$fbdf137e-48f9-4db2-ca41-e9d847fac728",
+            "rank": "normal"
+          }
+        ],
+        "P856": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P856",
+              "hash": "5787f45928f41b02e6c31536328dc7818add82f0",
+              "datavalue": {
+                "value": "https://nobaraproject.org/",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407"
+            ],
+            "id": "Q121027163$9b27799d-4731-7b5e-35da-46d39707bbe9",
+            "rank": "normal"
+          }
+        ],
+        "P154": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P154",
+              "hash": "738a91c47e65bae6685cf4782b50af8cf9c2f653",
+              "datavalue": {
+                "value": "Nobara logotype.png",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "id": "Q121027163$053ceb96-4496-9f93-b526-a2bf6fcc1a43",
+            "rank": "normal"
+          }
+        ],
+        "P348": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "787b144268abf7f1fe5c41388af1590ce6dd404e",
+              "datavalue": {
+                "value": "36",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "4023106b4fae7746a99380ab3eef13f8e8205211",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-12-05T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577"
+            ],
+            "id": "Q121027163$108d5660-4806-64e6-bee6-e9cb3b77d35f",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "4862e17ee82d67178a82f02014024e3efc552efb",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "f72b4b5a45d36d7a1578e5f91bf29b78ea485cc1",
+                      "datavalue": {
+                        "value": "https://distrowatch.com/table.php?distribution=nobara",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "b3639af279d941df44577f14bb0d82dd2e4fabd8",
+                      "datavalue": {
+                        "value": {
+                          "text": "DistroWatch.com: Nobara Project",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "c2f92d20f22132ba8057323e8f1ee5e0fe5ee781",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-12-10T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P813"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "c513fafa80b82f8b1631e0911f108b453b094766",
+              "datavalue": {
+                "value": "37",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "17b047dbfd3eb0dd68c9e3b914473c75c772137a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-01-06T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577"
+            ],
+            "id": "Q121027163$7dc8cb4d-472e-b12b-f2b3-da266afa51b1",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "0c9e1f33b991ddc21fae0e46c58911ae4b9379db",
+                "snaks": {
+                  "P1065": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1065",
+                      "hash": "9315051a8822653ff393942515e1febab80b4cfb",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20230112000558/https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P2960": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2960",
+                      "hash": "ddca3d9e2baf5833326aaf521d076e6441870469",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-01-12T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "c2f92d20f22132ba8057323e8f1ee5e0fe5ee781",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-12-10T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "aca5443810ae7399b7827926044649479b280d4c",
+                      "datavalue": {
+                        "value": {
+                          "text": "Download Nobara",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P1065",
+                  "P2960",
+                  "P813",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "5afaf67ab356b4102b8ae17cd8db83dc7b5d0f13",
+              "datavalue": {
+                "value": "38",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "c82344ca18b639ebb63c4752fbf27534e26b0d6e",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-06-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$8d69c613-4849-cf87-bd60-9121b7fdae03",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "0a23cd1a9c16d440b286a5b553fc5e8012a060ec",
+                "snaks": {
+                  "P1065": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1065",
+                      "hash": "e641df466008b445360309c2af10e3e17037070a",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20230629025203/https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P2960": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2960",
+                      "hash": "f726542cd9c092eda7f655184eb222133e4185b3",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-06-29T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "aca5443810ae7399b7827926044649479b280d4c",
+                      "datavalue": {
+                        "value": {
+                          "text": "Download Nobara",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "c2f92d20f22132ba8057323e8f1ee5e0fe5ee781",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-12-10T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "1cff9ae35ab0eb9c4cd51502f38b7660f2573150",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P1065",
+                  "P2960",
+                  "P1476",
+                  "P813",
+                  "P854"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "ec2af4c9bf7f6bfc29530feb64b7fac356646898",
+              "datavalue": {
+                "value": "39",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "869b48fe12c3935a953fd59c6eba9ade5d366890",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-12-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$a659d617-47bd-fcb2-94d9-ec1853ac34f1",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "c3dd45b7790b8a1fea1bd7307502ae37a8c0e3c7",
+                "snaks": {
+                  "P1065": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1065",
+                      "hash": "92b37bab23c02bd233aca330e1cdb52723bfad8b",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20231227235357/https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P2960": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2960",
+                      "hash": "088fffb31485ebd04916caed0bcdff24f94997c5",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2023-12-27T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "aca5443810ae7399b7827926044649479b280d4c",
+                      "datavalue": {
+                        "value": {
+                          "text": "Download Nobara",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "268002474ee587ff6ff8fc5e0a9c7390fcfb8de6",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-02-25T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "1cff9ae35ab0eb9c4cd51502f38b7660f2573150",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P1065",
+                  "P2960",
+                  "P1476",
+                  "P813",
+                  "P854"
+                ]
+              },
+              {
+                "hash": "aeab912ec14190c3e31f5186e95641bf866f5a09",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "4395fe3d69f4740682d99bd2e1706277d2a4528e",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/category/changelog/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "83a696f7bedecef0719ad8d8e28026e0d601e9ba",
+                      "datavalue": {
+                        "value": {
+                          "text": "Changelog – Nobara Linux",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "268002474ee587ff6ff8fc5e0a9c7390fcfb8de6",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-02-25T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1065": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1065",
+                      "hash": "bda3e4c99fda0b529dd1c20946861a359042371b",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20240126231215/https://nobaraproject.org/category/changelog/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P2960": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2960",
+                      "hash": "ee481c11ac8100cce2427babd7707bc8db6c57d2",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-01-26T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P813",
+                  "P1065",
+                  "P2960"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "636c1ba7d905c97037607fc7de0fc98e1d80b27e",
+              "datavalue": {
+                "value": "40",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "8fca572f40b359866ca0523a8dd0f1d08e7204d1",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-08-15T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$9496c4e1-4c5d-0d8c-2d42-f1b9543e86b9",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "81eede041fb477f9f220fd0e5129bf0a2ac09eda",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "1cff9ae35ab0eb9c4cd51502f38b7660f2573150",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/download-nobara/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "0e9098e727aedaca929c7a21bf9af932925a9c29",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-11-08T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "8fca572f40b359866ca0523a8dd0f1d08e7204d1",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-08-15T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "aca5443810ae7399b7827926044649479b280d4c",
+                      "datavalue": {
+                        "value": {
+                          "text": "Download Nobara",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P813",
+                  "P577",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "e28387ec032ea81c8cee73aad607df988e82e0d2",
+              "datavalue": {
+                "value": "41",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "b424a9b30de88c68630d8c500491eadc6db13795",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-01-01T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$c6d7f0dd-45d6-0978-315a-ebb8eb1ee9f3",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "2a74072094fce90918a1e8d6e356d35fbda8e8f8",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "cb2be02910af10e9d7ec3da079da68834055a628",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/2025/01/01/january-01-2025/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "b424a9b30de88c68630d8c500491eadc6db13795",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-01-01T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "6052d7851f07633e148c98aa8a88c18902e7adb2",
+                      "datavalue": {
+                        "value": {
+                          "text": "January 01, 2025",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "f8ab6c654be250ebb391e5cb2e428325b3ccab71",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-01-01T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P577",
+                  "P1476",
+                  "P407",
+                  "P813"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "eb1c9e9bc9b9439c3c8fd2bb61905a3d0f105e9a",
+              "datavalue": {
+                "value": "42",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "1782154fe4143329d15efd0ca21f4df1968f33a5",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-05-13T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$f6223e8c-4b51-7f82-09e2-76e6827759ca",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "822295eaec094baaef7d478a9acbb4374c8b322d",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "01ac3d976b5d39da362d825aac5443555e444298",
+                      "datavalue": {
+                        "value": "https://nobaraproject.org/2025/05/13/may-132025/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "df5f2c72927d570fb12561ee428dfae55c5161d2",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-05-14T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "3ccb0762a240a6536b975dd7fd29311c7140b014",
+                      "datavalue": {
+                        "value": {
+                          "text": "May 13,2025",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "d60e9b42e8f5ee0da030c57a77a5d44a9cf09ca4",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-05-14T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P577",
+                  "P1476",
+                  "P407",
+                  "P813"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "e9ec144d612658971602f9f496fbdf26a4561924",
+              "datavalue": {
+                "value": "43",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "0ca1dc3a494dd86964d29ecd28840941884facf2",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-12-26T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q121027163$27b74e9c-4085-671d-80f3-dc2cfdeaac30",
+            "rank": "preferred",
+            "references": [
+              {
+                "hash": "c9e085a2daae01a623f5e0786429f6d2fb90e42d",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "f6399439dce4aa51662708b77f3af5456ec51d94",
+                      "datavalue": {
+                        "value": "https://www.linuxcompatible.org/story/nobara-43-20251226-released/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "0ca1dc3a494dd86964d29ecd28840941884facf2",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-12-26T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "a92a25f6665e53dbea027675b86656027648fa44",
+                      "datavalue": {
+                        "value": {
+                          "text": "December 26, 2025",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P577",
+                  "P1476"
+                ]
+              }
+            ]
+          }
+        ],
+        "P407": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "c757ac6da9712097bc0871742564687f009a3f64",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 20923490,
+                  "id": "Q20923490"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$ec5ad44b-4e56-3b09-a4d8-8c6b89e83c81",
+            "rank": "normal"
+          }
+        ],
+        "P3033": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "616551049c590b2849e31f5bd55ec7220430a8cd",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 492650,
+                  "id": "Q492650"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$831da163-49e1-21c3-fb72-383cea2f63c1",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "55c18b9f2442aba4e4ada315c9192e8d95770eb6",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 18851353,
+                  "id": "Q18851353"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$45fb4f83-403b-43db-6319-ff4b6bb4a092",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "d7cc9b95b6a8c71527910d2477ffbdc57bdaa738",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 22661286,
+                  "id": "Q22661286"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$7c38fba7-464f-b459-2614-e089befb4bc3",
+            "rank": "normal"
+          }
+        ],
+        "P3112": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3112",
+              "hash": "87948e2a34b0d9d9e93918eee80d5e944c86f834",
+              "datavalue": {
+                "value": "nobara",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q121027163$b0772563-42e3-f92e-e574-8b85de187d08",
+            "rank": "normal"
+          }
+        ],
+        "P178": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P178",
+              "hash": "8bbd97074c7ea5bf5bae333db53d590ba4aee7f9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 125940290,
+                  "id": "Q125940290"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q121027163$89c38913-41e7-8107-d915-e612d81594f7",
+            "rank": "normal"
+          }
+        ],
+        "P11909": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P11909",
+              "hash": "8fac913f981b9cd9cdd55bc7e9ceab64989df262",
+              "datavalue": {
+                "value": "nobara",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q121027163$5b755af0-431a-63f4-3009-2ff4346215d9",
+            "rank": "normal"
+          }
+        ]
+      },
+      "sitelinks": {
+        "commonswiki": {
+          "site": "commonswiki",
+          "title": "Category:Nobara Linux",
+          "badges": []
+        },
+        "plwiki": {
+          "site": "plwiki",
+          "title": "Nobara (dystrybucja Linuksa)",
+          "badges": []
+        },
+        "dewiki": {
+          "site": "dewiki",
+          "title": "Nobara Linux",
+          "badges": []
+        },
+        "cawiki": {
+          "site": "cawiki",
+          "title": "Nobara Linux",
+          "badges": []
+        },
+        "eswiki": {
+          "site": "eswiki",
+          "title": "Nobara Linux",
+          "badges": []
+        },
+        "itwiki": {
+          "site": "itwiki",
+          "title": "Nobara Linux",
+          "badges": []
+        },
+        "jawiki": {
+          "site": "jawiki",
+          "title": "Nobara Linux",
+          "badges": []
+        },
+        "enwiki": {
+          "site": "enwiki",
+          "title": "Nobara (operating system)",
+          "badges": []
+        },
+        "ruwiki": {
+          "site": "ruwiki",
+          "title": "Nobara (операционная система)",
+          "badges": []
+        }
+      }
+    }
+  }
+}

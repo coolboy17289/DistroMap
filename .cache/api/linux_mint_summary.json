@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Linux Mint",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Linux Mint</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q2027",
+  "titles": {
+    "canonical": "Linux_Mint",
+    "normalized": "Linux Mint",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Linux Mint</span></span>"
+  },
+  "pageid": 8577251,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/LinuxMint22-Wilma-English.png/330px-LinuxMint22-Wilma-English.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/ac/LinuxMint22-Wilma-English.png",
+    "width": 1920,
+    "height": 1080
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1360887277",
+  "tid": "13ed54a5-6f9f-11f1-a0fe-7f47bd68bd7c",
+  "timestamp": "2026-06-24T07:34:05Z",
+  "description": "Ubuntu or Debian-based Linux distribution",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Linux_Mint",
+      "revisions": "https://en.wikipedia.org/wiki/Linux_Mint?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Linux_Mint?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Linux_Mint"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Linux_Mint",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Linux_Mint",
+      "edit": "https://en.wikipedia.org/wiki/Linux_Mint?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Linux_Mint"
+    }
+  },
+  "extract": "Linux Mint is a community-developed Linux distribution based on Ubuntu. First released in 2006, Linux Mint is often noted for its ease of use, out-of-the-box functionality, and appeal to desktop users. It comes bundled with a selection of free and open-source software. The default desktop environment is Cinnamon, developed by the Linux Mint team, with MATE and Xfce available as alternatives. A Debian based version of Linux Mint also exists, called Linux Mint Debian Edition (LMDE). Linux Mint is available for x86-64 systems.",
+  "extract_html": "<p><b>Linux Mint</b> is a community-developed Linux distribution based on Ubuntu. First released in 2006, Linux Mint is often noted for its ease of use, out-of-the-box functionality, and appeal to desktop users. It comes bundled with a selection of free and open-source software. The default desktop environment is Cinnamon, developed by the Linux Mint team, with MATE and Xfce available as alternatives. A Debian based version of Linux Mint also exists, called <span class=\"mw-selflink-fragment\">Linux Mint Debian Edition (LMDE)</span>. Linux Mint is available for x86-64 systems.</p>"
+}

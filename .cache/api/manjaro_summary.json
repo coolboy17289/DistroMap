@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Manjaro",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Manjaro</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q3285992",
+  "titles": {
+    "canonical": "Manjaro",
+    "normalized": "Manjaro",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Manjaro</span></span>"
+  },
+  "pageid": 38162120,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Manjaro_Linux_24.0_KDE_Plasma_Desktop_English.png/330px-Manjaro_Linux_24.0_KDE_Plasma_Desktop_English.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/30/Manjaro_Linux_24.0_KDE_Plasma_Desktop_English.png",
+    "width": 1600,
+    "height": 900
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1358058762",
+  "tid": "56ccc287-6185-11f1-9374-278e8a16f12f",
+  "timestamp": "2026-06-06T08:54:34Z",
+  "description": "Linux distribution based on Arch Linux with rolling releases",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Manjaro",
+      "revisions": "https://en.wikipedia.org/wiki/Manjaro?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Manjaro?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Manjaro"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Manjaro",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Manjaro",
+      "edit": "https://en.wikipedia.org/wiki/Manjaro?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Manjaro"
+    }
+  },
+  "extract": "Manjaro is a free and open-source Linux distribution based on the Arch Linux operating system with a focus on user-friendliness, accessibility, and improved software testing and stability compared to its upstream sources. It uses a rolling release update model with Pacman-derived package managers. Manjaro is developed mainly in Austria, France and Germany.",
+  "extract_html": "<p><b>Manjaro</b> is a free and open-source Linux distribution based on the Arch Linux operating system with a focus on user-friendliness, accessibility, and improved software testing and stability compared to its upstream sources. It uses a rolling release update model with Pacman-derived package managers. Manjaro is developed mainly in Austria, France and Germany.</p>"
+}

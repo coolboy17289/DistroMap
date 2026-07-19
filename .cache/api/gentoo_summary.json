@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Gentoo Linux",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Gentoo Linux</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q170378",
+  "titles": {
+    "canonical": "Gentoo_Linux",
+    "normalized": "Gentoo Linux",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Gentoo Linux</span></span>"
+  },
+  "pageid": 94419,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Gentoo_Live_GUI_USB_running_KDE.png/330px-Gentoo_Live_GUI_USB_running_KDE.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/0/05/Gentoo_Live_GUI_USB_running_KDE.png",
+    "width": 1920,
+    "height": 1080
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1364745606",
+  "tid": "357aed95-827c-11f1-9cf5-e54e999cb5c8",
+  "timestamp": "2026-07-18T07:42:21Z",
+  "description": "Linux distribution",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Gentoo_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Gentoo_Linux?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Gentoo_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Gentoo_Linux"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Gentoo_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Gentoo_Linux",
+      "edit": "https://en.wikipedia.org/wiki/Gentoo_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Gentoo_Linux"
+    }
+  },
+  "extract": "Gentoo Linux is a Linux distribution built using the Portage package management system. Unlike a binary software distribution, the source code is compiled locally according to the user's preferences and is often optimized for the specific type of computer. Precompiled binaries are available for some packages, but only for systems using Glibc; no precompiled binaries are available for Musl-based systems. Gentoo runs on a wide variety of processor architectures.",
+  "extract_html": "<p><b>Gentoo Linux</b> is a Linux distribution built using the Portage package management system. Unlike a binary software distribution, the source code is compiled locally according to the user's preferences and is often optimized for the specific type of computer. Precompiled binaries are available for some packages, but only for systems using Glibc; no precompiled binaries are available for Musl-based systems. Gentoo runs on a wide variety of processor architectures.</p>"
+}

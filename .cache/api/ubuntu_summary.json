@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Ubuntu",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Ubuntu</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q381",
+  "titles": {
+    "canonical": "Ubuntu",
+    "normalized": "Ubuntu",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Ubuntu</span></span>"
+  },
+  "pageid": 990298,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ubuntu-logo-2022.svg/330px-Ubuntu-logo-2022.svg.png",
+    "width": 330,
+    "height": 116
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Ubuntu-logo-2022.svg/960px-Ubuntu-logo-2022.svg.png",
+    "width": 512,
+    "height": 180
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1364900102",
+  "tid": "9d870de9-8328-11f1-9b4c-b45a4f93a666",
+  "timestamp": "2026-07-19T04:16:29Z",
+  "description": "Linux distribution developed by Canonical",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Ubuntu",
+      "revisions": "https://en.wikipedia.org/wiki/Ubuntu?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Ubuntu?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ubuntu"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Ubuntu",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Ubuntu",
+      "edit": "https://en.wikipedia.org/wiki/Ubuntu?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Ubuntu"
+    }
+  },
+  "extract": "Ubuntu is a Linux distribution based on Debian and composed primarily of free and open-source software. Developed by the British company Canonical and a community of contributors under a meritocratic governance model, Ubuntu is released in multiple official editions: Desktop, Server, and Core for IoT and robotic devices.",
+  "extract_html": "<p><b>Ubuntu</b> is a Linux distribution based on Debian and composed primarily of free and open-source software. Developed by the British company Canonical and a community of contributors under a meritocratic governance model, Ubuntu is released in multiple official editions: <i>Desktop</i>, <i>Server</i>, and <i>Core</i> for IoT and robotic devices.</p>"
+}

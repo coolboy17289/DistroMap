@@ -1,0 +1,87 @@
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import distrosJson from '@/data/distros.json';
+import Header from '@/components/Header';
+import GraphCanvas from '@/components/GraphCanvas';
+import SidePanel from '@/components/SidePanel';
+import Footer from '@/components/Footer';
+import type { Distro } from '@/types';
+
+const distros = distrosJson as Distro[];
+
+export default function App() {
+  const [query, setQuery] = useState('');
+  const [selected, setSelected] = useState<string | null>(null);
+
+  const selectedDistro = useMemo(
+    () => (selected ? distros.find((d) => d.slug === selected) ?? null : null),
+    [selected],
+  );
+
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      const t = e.target as HTMLElement | null;
+      const tag = t?.tagName;
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || t?.isContentEditable) return;
+      if (e.key === '/' || ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k')) {
+        e.preventDefault();
+        const input = document.querySelector<HTMLInputElement>('input[type="search"]');
+        input?.focus();
+      } else if (e.key === 'Escape') {
+        setSelected(null);
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
+  // When the underlying dataset changes identity, clear stale selection
+  useEffect(() => {
+    setSelected((cur) => (cur && distros.some((d) => d.slug === cur) ? cur : null));
+  }, []);
+
+  return (
+    <div className="min-h-screen flex flex-col bg-bg text-ink-50">
+      <Header
+        query={query}
+        onQueryChange={setQuery}
+        onClearQuery={() => setQuery('')}
+        total={distros.length}
+      />
+
+      <main className="flex-1 relative">
+        <section className="absolute inset-0">
+          {query.trim() && (
+            <div
+              className="pointer-events-none absolute top-3 right-4 z-20 px-3 py-1.5
+                         rounded-md bg-panel/80 border border-cyan-500/30
+                         font-mono text-[11px] text-cyan-300 animate-slide-in
+                         shadow-glow-cyan"
+            >
+              filter:&nbsp;<span className="text-cyan-100">"{query}"</span>
+            </div>
+          )}
+          <GraphCanvas
+            distros={distros}
+            query={query}
+            selected={selected}
+            onSelect={setSelected}
+          />
+        </section>
+
+        {selectedDistro && (
+          <aside className="hidden lg:block absolute inset-y-0 right-0 z-10 w-[360px] animate-panel-in">
+            <SidePanel distro={selectedDistro} onClose={() => setSelected(null)} />
+          </aside>
+        )}
+      </main>
+
+      <Footer />
+      {/* Mobile fallback: panel renders inline below the canvas when selected */}
+      {selectedDistro && (
+        <div className="lg:hidden fixed inset-x-0 bottom-0 z-30 max-h-[80vh] animate-panel-in">
+          <SidePanel distro={selectedDistro} onClose={() => setSelected(null)} />
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,2721 @@
+{
+  "entities": {
+    "Q81388644": {
+      "pageid": 80751874,
+      "ns": 0,
+      "title": "Q81388644",
+      "lastrevid": 2519034098,
+      "modified": "2026-07-18T09:22:14Z",
+      "type": "item",
+      "id": "Q81388644",
+      "labels": {
+        "bn": {
+          "language": "bn",
+          "value": "পপ! ওএস"
+        },
+        "ml": {
+          "language": "ml",
+          "value": "പോപ്പ്! ഓഎസ്"
+        },
+        "fa": {
+          "language": "fa",
+          "value": "پاپ! اواس"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "بوب!_أو إس"
+        },
+        "th": {
+          "language": "th",
+          "value": "ป๊อป! โอเอส"
+        },
+        "mul": {
+          "language": "mul",
+          "value": "Pop!_OS"
+        }
+      },
+      "descriptions": {
+        "en": {
+          "language": "en",
+          "value": "Linux distribution"
+        },
+        "it": {
+          "language": "it",
+          "value": "Distribuzione di Linux basata su Ubuntu"
+        },
+        "de": {
+          "language": "de",
+          "value": "Linux-Distribution, die auf Ubuntu basiert"
+        },
+        "pt-br": {
+          "language": "pt-br",
+          "value": "Sistema operacional baseado em Ubuntu Linux"
+        },
+        "fr": {
+          "language": "fr",
+          "value": "distribution Linux"
+        },
+        "pl": {
+          "language": "pl",
+          "value": "dystrybucja Linuxa stworzona przez System76"
+        },
+        "eo": {
+          "language": "eo",
+          "value": "mastruma sistemo bazita sur Ubuntu"
+        },
+        "nl": {
+          "language": "nl",
+          "value": "Ubuntu-gebaseerd Linux-besturingssysteem van System76"
+        },
+        "ca": {
+          "language": "ca",
+          "value": "distribució de Linux gratuïta i de codi obert, basada en Ubuntu, amb un entorn d'escriptori basat en GTK conegut com COSMIC, que es basa en GNOME"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "توزيعة جنو/لينكس مبنية على أوبونتو"
+        },
+        "nb": {
+          "language": "nb",
+          "value": "Ubuntu-basert Linux-operativsystem"
+        },
+        "zh-tw": {
+          "language": "zh-tw",
+          "value": "以Ubuntu為基礎開發的Linux作業系統"
+        },
+        "zh": {
+          "language": "zh",
+          "value": "以Ubuntu為基礎開發的Linux作業系統"
+        },
+        "zh-hant": {
+          "language": "zh-hant",
+          "value": "以Ubuntu為基礎開發的Linux作業系統"
+        },
+        "en-us": {
+          "language": "en-us",
+          "value": "Linux distribution"
+        },
+        "es": {
+          "language": "es",
+          "value": "distribución de Linux"
+        },
+        "ru": {
+          "language": "ru",
+          "value": "дистрибутив Linux"
+        }
+      },
+      "aliases": {
+        "en": [
+          {
+            "language": "en",
+            "value": "pop os"
+          },
+          {
+            "language": "en",
+            "value": "pop! os"
+          }
+        ],
+        "ar": [
+          {
+            "language": "ar",
+            "value": "بوب! أو إس"
+          },
+          {
+            "language": "ar",
+            "value": "بوب أو إس"
+          }
+        ],
+        "mul": [
+          {
+            "language": "mul",
+            "value": "Pop OS"
+          },
+          {
+            "language": "mul",
+            "value": "Pop! OS"
+          }
+        ]
+      },
+      "claims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "0435f46ea8b084260e4844c5e50f5dfae8f00428",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 131669,
+                  "id": "Q131669"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$4532703e-4fab-f4bc-aa62-0e4ae3f44b57",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "3ba4d9aeec43149bd0a9095c197feb5225302906",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "2f0788d4acc71888d575d712727170c2fd410c3f",
+                      "datavalue": {
+                        "value": "https://distrowatch.com/table.php?distribution=popos",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "b0ce585a99b70236f6951fdabbfa988e4685f4dd",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 20983788,
+                  "id": "Q20983788"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$9c223cb1-4530-0294-3c14-289db39a3207",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "5f66321154bd8c8fbcf2b6c68921e2749ae2570d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 9135,
+                  "id": "Q9135"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$09b4d434-47a8-6e45-c7ce-68281846f6c2",
+            "rank": "normal"
+          }
+        ],
+        "P178": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P178",
+              "hash": "db4de2223ee5785ec3ca72ba69f224679e1cebdc",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 7663600,
+                  "id": "Q7663600"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$d29da906-4415-40a0-47b0-205de13b8a7e",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "9a68de1cc47f46f52804ab9ac060778e10858836",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "04acb75c3abf2a756a2eef1b36bccbe00c7e7b04",
+                      "datavalue": {
+                        "value": "https://pop.system76.com/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P144": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P144",
+              "hash": "14cb09a3549f53d32a88c4d8e858f6596b48b879",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 381,
+                  "id": "Q381"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$da7c1085-4e4b-54b7-0961-c2d8906ab89c",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "16920997475e5e92fae13cebfee300db8bdc0d95",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "634c3c5088aafc934f248130d7f292253f5c32a4",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20200401091829/https://system76.com/pop/tech",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P18": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P18",
+              "hash": "1cead3e35b622e95d02944a5a7031a78e2b60e54",
+              "datavalue": {
+                "value": "Apps Pop! OS 21.10.png",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P3831": [
+                {
+                  "snaktype": "value",
+                  "property": "P3831",
+                  "hash": "022ea46ff1d96bc4a282a848344dd8b3844fe0b5",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 208594,
+                      "id": "Q208594"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P348": [
+                {
+                  "snaktype": "value",
+                  "property": "P348",
+                  "hash": "e9b394b5e2be8f07ca7c47b01b7979a342f0042e",
+                  "datavalue": {
+                    "value": "21.10",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407",
+              "P3831",
+              "P348"
+            ],
+            "id": "Q81388644$0df0001b-412b-01f7-ae3f-7f5911759611",
+            "rank": "normal"
+          }
+        ],
+        "P856": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P856",
+              "hash": "f9fde1f1b2edadf49873d9997c6aaa6ad6011047",
+              "datavalue": {
+                "value": "https://pop.system76.com",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "92569fc163bb841d6f408130e2ad26cd58ec71e3",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 7976,
+                      "id": "Q7976"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P123": [
+                {
+                  "snaktype": "value",
+                  "property": "P123",
+                  "hash": "a61f994d538a4b32be2093579bc055a9fa44af03",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 7663600,
+                      "id": "Q7663600"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407",
+              "P123"
+            ],
+            "id": "Q81388644$11b7257d-448e-1358-0a03-42407adbb0ea",
+            "rank": "normal"
+          }
+        ],
+        "P2037": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P2037",
+              "hash": "5b14843bea6d729d19dcbe8d2bb1f5fa5210ae79",
+              "datavalue": {
+                "value": "pop-os",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$694140a4-4cc5-6e98-e635-e857cc01387b",
+            "rank": "normal"
+          }
+        ],
+        "P3112": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3112",
+              "hash": "1d135d818a4f7ea5fbe788c798504c3c2a184026",
+              "datavalue": {
+                "value": "popos",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$7a3742bf-41a0-b6da-3ddb-fc6f8b56e72d",
+            "rank": "normal"
+          }
+        ],
+        "P154": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P154",
+              "hash": "8d0731dfb9496b351af345cd3935a5d8fba951a3",
+              "datavalue": {
+                "value": "Pop OS-Logo-nobg.svg",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P8798": [
+                {
+                  "snaktype": "value",
+                  "property": "P8798",
+                  "hash": "2cdba8e78f291d90c13a8d613bd6ac1efa02d99e",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 101608434,
+                      "id": "Q101608434"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407",
+              "P8798"
+            ],
+            "id": "Q81388644$d62483cf-461b-6488-be5e-55e0e5f880e3",
+            "rank": "normal"
+          }
+        ],
+        "P1324": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1324",
+              "hash": "0fa1f2b824c8aa60e9f0855ca0f70306c598d0ca",
+              "datavalue": {
+                "value": "https://github.com/pop-os/pop",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P8423": [
+                {
+                  "snaktype": "value",
+                  "property": "P8423",
+                  "hash": "ce121f772d88712a3b496a80650ebcbc56afe6b9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 186055,
+                      "id": "Q186055"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P10627": [
+                {
+                  "snaktype": "value",
+                  "property": "P10627",
+                  "hash": "5e1fad984a9cf0e6be2c68760182ee59832c285a",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 364,
+                      "id": "Q364"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P8423",
+              "P10627"
+            ],
+            "id": "Q81388644$150a73bb-43bc-0a4e-1f84-bbd9ee6c0985",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "34d90030b001379e811593a95a579ce8d872ddd8",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "5e596c114c8e2c7d0afde3c38edfd92c9b92c4d0",
+                      "datavalue": {
+                        "value": "https://github.com/pop-os",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P275": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P275",
+              "hash": "f14f151e751340b872f799d74c9debb04da16c77",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 7603,
+                  "id": "Q7603"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$64d95905-4b98-d9ec-aa63-18d4a3d56bdd",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "a3ef76f2c9844f8c0f6d5532dee201c9814de3c9",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "2354504e3399bb1005f79bef0d7a45645a0521b8",
+                      "datavalue": {
+                        "value": "https://opensource.com/article/18/1/behind-scenes-popos-linux",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P348": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "2b62755cef78eb3ff24e6d443d59c7d0a14e694c",
+              "datavalue": {
+                "value": "20.04 LTS",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "c98efba799e1769013d5e0763a46d1af854063d9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-04-30T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "224de7bed967d3023bef0c873679c67a15349bc9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15726348,
+                      "id": "Q15726348"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P4945": [
+                {
+                  "snaktype": "value",
+                  "property": "P4945",
+                  "hash": "0b76e006a9ec183b01b7e81d520fcadb47b2af8b",
+                  "datavalue": {
+                    "value": "https://pop.system76.com/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P585",
+              "P548",
+              "P4945"
+            ],
+            "id": "Q81388644$3a78a4f0-4e7a-550b-7ea6-9fbaecb84492",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "50498dc430d518e3a87dc59a28c18286c70a6212",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "a8f6f3c31a78fd63e70dca41dda40488d7ea1437",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/616861064165031936/whats-new-with-popos-2004-lts",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "6498b8911e618862c1fd2dcc0198917eaf98777c",
+              "datavalue": {
+                "value": "20.10",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P4945": [
+                {
+                  "snaktype": "value",
+                  "property": "P4945",
+                  "hash": "0b76e006a9ec183b01b7e81d520fcadb47b2af8b",
+                  "datavalue": {
+                    "value": "https://pop.system76.com/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "2cce837f60231fb0e5d601cb50f61b82a012d934",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-10-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P4945",
+              "P548",
+              "P577"
+            ],
+            "id": "Q81388644$888a866e-4ba0-d9aa-ef22-645ca11a7ffc",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "f38a836722313dec2e8a59c90ed43ec9625cb632",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "9742b03efd929ad01021f02faf0e5b8ee5d9bf40",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/632781631953027072/whats-new-in-popos-2010",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "3c82287e32d2235c3babbed14067fff9151b61af",
+                      "datavalue": {
+                        "value": {
+                          "text": "What’s New in Pop!_OS 20.10",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "14863222cb7289642181bec97c87020cedd4d64a",
+              "datavalue": {
+                "value": "21.04",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "a7e1aefe3453cf101800f0f5fb03d9008f53b91b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-06-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4945": [
+                {
+                  "snaktype": "value",
+                  "property": "P4945",
+                  "hash": "0b76e006a9ec183b01b7e81d520fcadb47b2af8b",
+                  "datavalue": {
+                    "value": "https://pop.system76.com/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577",
+              "P4945"
+            ],
+            "id": "Q81388644$50ed6612-4cf5-f44a-5b27-69fa93092e1d",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "2464f6bc9fba549331bb171b051fe1991a7bee25",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "31f335570a0621f22d662e67c8aab0fd52cf41eb",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/655369428109869056/popos-2104-a-release-of-cosmic-proportions",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "ef9fef27383baf233f166d21d64ace727f86e965",
+                      "datavalue": {
+                        "value": {
+                          "text": "Pop!_OS 21.04: A Release of COSMIC Proportions",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "a7e1aefe3453cf101800f0f5fb03d9008f53b91b",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2021-06-29T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "1fc574f771ef943652bdf6649a98abce36cdb4cd",
+              "datavalue": {
+                "value": "17.10",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "7157a2202ec670ed025b7d033f6e7b347c72b6b3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2017-10-27T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577"
+            ],
+            "id": "Q81388644$571af423-41e7-b8b7-9bf9-15a3c4ccd112",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "cfeada4759d908c4bb1e47803f77e811e17d788d",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "89f6ae3aa1c66c94ec393b66d1d95fb86f74bc28",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/166852740523/blog-post-10-27-2017",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "7157a2202ec670ed025b7d033f6e7b347c72b6b3",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2017-10-27T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "9f8c5cf24951ee45be41281b129de07f0247372e",
+                      "datavalue": {
+                        "value": {
+                          "text": "Pop!_OS Released and Thank you!",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P577",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "e9b394b5e2be8f07ca7c47b01b7979a342f0042e",
+              "datavalue": {
+                "value": "21.10",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "bc7b1d31019442a4a6773789afdefae2f927597b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-12-14T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4945": [
+                {
+                  "snaktype": "value",
+                  "property": "P4945",
+                  "hash": "0b76e006a9ec183b01b7e81d520fcadb47b2af8b",
+                  "datavalue": {
+                    "value": "https://pop.system76.com/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577",
+              "P4945"
+            ],
+            "id": "Q81388644$e48a5206-4447-5937-4e65-c35b044ea8d7",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "1628715b782e1869be534faf48aa0a442c95db5f",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "3d2c299014628f28772750bcd3596652edc517b1",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/670564272872488960/popos-2110-has-landed",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "71ddfb1332cc02dd90500bc3decaf1c3d432f846",
+                      "datavalue": {
+                        "value": {
+                          "text": "Pop!_OS 21.10 has landed!",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "bc7b1d31019442a4a6773789afdefae2f927597b",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2021-12-14T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "369b9b36a1a72181d652c4a7b5c3e4ce8a589bb2",
+              "datavalue": {
+                "value": "22.04 LTS",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "224de7bed967d3023bef0c873679c67a15349bc9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15726348,
+                      "id": "Q15726348"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "6bdada95548d761ab752f92623244fa728077848",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-04-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P4945": [
+                {
+                  "snaktype": "value",
+                  "property": "P4945",
+                  "hash": "0b76e006a9ec183b01b7e81d520fcadb47b2af8b",
+                  "datavalue": {
+                    "value": "https://pop.system76.com/",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577",
+              "P4945"
+            ],
+            "id": "Q81388644$cbdddc1a-47e7-d6c0-8526-83f18e9590bd",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "76ce4869a9835f71a29504f9df7f5a14824a2143",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "a32612aa53a889195118d13d2f7355b23f05c427",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/682519660741148672/popos-2204-lts-has-landed",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "346cf62db0a490daed7488c211ddb1217e8c64ed",
+                      "datavalue": {
+                        "value": {
+                          "text": "Pop!_OS 22.04 LTS has landed!",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "6bdada95548d761ab752f92623244fa728077848",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2022-04-25T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "b565253f4a5b3375e0e7ea0d7490ee7b414d9c28",
+              "datavalue": {
+                "value": "24.04 LTS",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "224de7bed967d3023bef0c873679c67a15349bc9",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 15726348,
+                      "id": "Q15726348"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "05c37d239295619201bd44bea43880f7ceed25ac",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-12-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577"
+            ],
+            "id": "Q81388644$780f361a-47bc-a34b-78c6-d68c3051b7f1",
+            "rank": "preferred",
+            "references": [
+              {
+                "hash": "5363aca551b4d3140c90deee0373dcf0b196ef68",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "ab3dc754d6f155ee948fb7cfaeb90c8e7eb455be",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/pop-os-letter-from-our-founder",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "94db9c729530b5253e5e355a3616d5326689ae3e",
+                      "datavalue": {
+                        "value": {
+                          "text": "Pop!_OS 24.04 LTS Released: A Letter From Our Founder",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "05c37d239295619201bd44bea43880f7ceed25ac",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-12-11T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "5dac765e3b3c5003c5b75722356435cd65eb622c",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-12-11T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P813"
+                ]
+              }
+            ]
+          }
+        ],
+        "P577": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P577",
+              "hash": "7157a2202ec670ed025b7d033f6e7b347c72b6b3",
+              "datavalue": {
+                "value": {
+                  "time": "+2017-10-27T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            "type": "statement",
+            "id": "Q81388644$5294d28c-493f-5c13-120e-d35d4d481208",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "c240ebe7460feda03d3dbf25abf0a9ed81190360",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "e4dda9b144e90b7963b302a46781e13395779b14",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/166852740523/popos-released-and-thank-you",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P400": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "e5d4048ae65395f5a4c700cdbdcf6c1a77ccdb49",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 272629,
+                  "id": "Q272629"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$cdab1898-43db-e56a-6dca-9a44f5ee1ef2",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "cdc18ebcd96d0b02145ceb03e421cf12e0a6671e",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 18384745,
+                  "id": "Q18384745"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$b791834f-40dd-0479-57d9-d63c3011553c",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "809d480628aad3e77cd8eec8ece82a61acc60cf7",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "3d2c299014628f28772750bcd3596652edc517b1",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/670564272872488960/popos-2110-has-landed",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "d0c4dc2a5e4be4d55aeea99ab07849352de6155f",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 16980,
+                  "id": "Q16980"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$2d52d718-4b11-939b-7831-2945d0cb4939",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "86db52bc5d10ac19b4f3d2a4520d38f84a964077",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P4656": [
+                    {
+                      "snaktype": "value",
+                      "property": "P4656",
+                      "hash": "56e43d63c6cc5b169b2f5add3c70f725fbbda8c0",
+                      "datavalue": {
+                        "value": "https://ru.wikipedia.org/?oldid=0",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143",
+                  "P4656"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "055c8c7b0269eaceaa9d14a4df526e956721b6bb",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 245,
+                  "id": "Q245"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$be7c1719-49bb-2f37-3c22-4c5b7aa790aa",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "86db52bc5d10ac19b4f3d2a4520d38f84a964077",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P4656": [
+                    {
+                      "snaktype": "value",
+                      "property": "P4656",
+                      "hash": "56e43d63c6cc5b169b2f5add3c70f725fbbda8c0",
+                      "datavalue": {
+                        "value": "https://ru.wikipedia.org/?oldid=0",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143",
+                  "P4656"
+                ]
+              }
+            ]
+          }
+        ],
+        "P3033": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "3d081d9ffcdb925db04512bd994922ed623c50e7",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 230724,
+                  "id": "Q230724"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$db1c927d-483f-2c45-e438-5d87757825ca",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "f7458200e2daabf72b8849af20b47c7c286a2119",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 305892,
+                  "id": "Q305892"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$c28c370f-45c6-2b2f-7005-e687ec606302",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "86db52bc5d10ac19b4f3d2a4520d38f84a964077",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P4656": [
+                    {
+                      "snaktype": "value",
+                      "property": "P4656",
+                      "hash": "56e43d63c6cc5b169b2f5add3c70f725fbbda8c0",
+                      "datavalue": {
+                        "value": "https://ru.wikipedia.org/?oldid=0",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143",
+                  "P4656"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3033",
+              "hash": "d7cc9b95b6a8c71527910d2477ffbdc57bdaa738",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 22661286,
+                  "id": "Q22661286"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$ddee1bb1-4918-d3a3-3243-08db157de850",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "86db52bc5d10ac19b4f3d2a4520d38f84a964077",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P4656": [
+                    {
+                      "snaktype": "value",
+                      "property": "P4656",
+                      "hash": "56e43d63c6cc5b169b2f5add3c70f725fbbda8c0",
+                      "datavalue": {
+                        "value": "https://ru.wikipedia.org/?oldid=0",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143",
+                  "P4656"
+                ]
+              }
+            ]
+          }
+        ],
+        "P4107": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P4107",
+              "hash": "f7e9fd6a0423a422f3c954e4678699e0b7fb77b8",
+              "datavalue": {
+                "value": "popos",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$a188b57f-436e-5faa-c02a-d6f2c7128b83",
+            "rank": "normal"
+          }
+        ],
+        "P8687": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8687",
+              "hash": "a393c5df246f30d2cd33a64fd97d4ccd6359133e",
+              "datavalue": {
+                "value": {
+                  "amount": "+44927",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P6552": [
+                {
+                  "snaktype": "value",
+                  "property": "P6552",
+                  "hash": "519e194f4ba328ddc1eac671551741966a6967c5",
+                  "datavalue": {
+                    "value": "17051356",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "e38136bbd5ae40f88bc9d73ee09caa6cdef0a75a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-06-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P6552",
+              "P585"
+            ],
+            "id": "Q81388644$c634bd69-bb72-483e-a53a-9ec9e66cd4fa",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8687",
+              "hash": "b1e6f23bc1ca1e3042dcb756a31e3ce6821be412",
+              "datavalue": {
+                "value": {
+                  "amount": "+3977",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P4033": [
+                {
+                  "snaktype": "value",
+                  "property": "P4033",
+                  "hash": "7c8fdf3d20e2168c8ed7d3d265191df510144220",
+                  "datavalue": {
+                    "value": "pop_os_official@fosstodon.org",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "9d60d69fc8914e1e052163b51526bd50afbdf62b",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-02-12T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P4033",
+              "P585"
+            ],
+            "id": "Q81388644$12C9B6EE-06E0-41A8-A39D-CC8F3CA9562A",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8687",
+              "hash": "82866c36cd66ceaa222315f37f91c9b9c682f2c3",
+              "datavalue": {
+                "value": {
+                  "amount": "+4098",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P4033": [
+                {
+                  "snaktype": "value",
+                  "property": "P4033",
+                  "hash": "7c8fdf3d20e2168c8ed7d3d265191df510144220",
+                  "datavalue": {
+                    "value": "pop_os_official@fosstodon.org",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "a238e7341c8aa9bed8f85acab644a10b14752adc",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-03-16T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P4033",
+              "P585"
+            ],
+            "id": "Q81388644$81FBFCAC-E74E-4A27-937A-17A1BADCD411",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8687",
+              "hash": "9682250c040f77fbe2cb76c613e59d57ee159cab",
+              "datavalue": {
+                "value": {
+                  "amount": "+4136",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P4033": [
+                {
+                  "snaktype": "value",
+                  "property": "P4033",
+                  "hash": "7c8fdf3d20e2168c8ed7d3d265191df510144220",
+                  "datavalue": {
+                    "value": "pop_os_official@fosstodon.org",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "607184846106e630f6f06910d2df74dca931b9f0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-04-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P4033",
+              "P585"
+            ],
+            "id": "Q81388644$93DCE05F-28D4-4A2E-A094-7B63EBB4CD6D",
+            "rank": "normal"
+          }
+        ],
+        "P2671": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P2671",
+              "hash": "554cf16d6a6b0416bec1ec37e0ad7331a6a497cf",
+              "datavalue": {
+                "value": "/g/11frrdkp36",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$28E22AD4-3FAD-4CC8-A02E-B814614AD684",
+            "rank": "normal"
+          }
+        ],
+        "P3984": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3984",
+              "hash": "06241a13d572dd28a7d8b64128f0a27bcad2a213",
+              "datavalue": {
+                "value": "pop_os",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P580": [
+                {
+                  "snaktype": "value",
+                  "property": "P580",
+                  "hash": "eb18eae45717ce64adfdd24a50a63944a3028084",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2017-06-22T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1810": [
+                {
+                  "snaktype": "value",
+                  "property": "P1810",
+                  "hash": "46de9c32f616956c851f29f14258acbca8a41d42",
+                  "datavalue": {
+                    "value": "Pop!_OS",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ],
+              "P3744": [
+                {
+                  "snaktype": "value",
+                  "property": "P3744",
+                  "hash": "762670b392400cfcf550a85204e38edebdc1b43d",
+                  "datavalue": {
+                    "value": {
+                      "amount": "+35683",
+                      "unit": "1"
+                    },
+                    "type": "quantity"
+                  },
+                  "datatype": "quantity"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "c36aa2bd00b5a2e986c9b33c9d41439275f6b85c",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2021-07-24T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P580",
+              "P407",
+              "P1810",
+              "P3744",
+              "P585"
+            ],
+            "id": "Q81388644$1924af36-432a-8f47-b55d-f7c7b4548043",
+            "rank": "normal"
+          }
+        ],
+        "P6216": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P6216",
+              "hash": "5570347fdc76d2a80732f51ea10ee4b144a084e0",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 50423863,
+                  "id": "Q50423863"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$abf96022-4adf-d250-87eb-8b826b43e96e",
+            "rank": "normal"
+          }
+        ],
+        "P407": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P407",
+              "hash": "c757ac6da9712097bc0871742564687f009a3f64",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 20923490,
+                  "id": "Q20923490"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$03c96884-42d1-84c3-8b0e-868747a2374c",
+            "rank": "normal"
+          }
+        ],
+        "P8885": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8885",
+              "hash": "92120661a94d4d1bc2e2714aaf045f0fb454946f",
+              "datavalue": {
+                "value": "Pop!_OS",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$4f79ff6f-47eb-6e85-38db-fb83021f1d65",
+            "rank": "normal"
+          }
+        ],
+        "P373": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P373",
+              "hash": "8221b94950f9258149f3166c277a0c9e62f7b973",
+              "datavalue": {
+                "value": "Pop! OS",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q81388644$34903b82-c381-40c0-9125-947a8e282386",
+            "rank": "normal"
+          }
+        ],
+        "P123": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P123",
+              "hash": "a61f994d538a4b32be2093579bc055a9fa44af03",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 7663600,
+                  "id": "Q7663600"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q81388644$d35db02c-4bf1-68ca-383f-02703bf86ec6",
+            "rank": "normal"
+          }
+        ],
+        "P4033": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P4033",
+              "hash": "7c8fdf3d20e2168c8ed7d3d265191df510144220",
+              "datavalue": {
+                "value": "pop_os_official@fosstodon.org",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P580": [
+                {
+                  "snaktype": "value",
+                  "property": "P580",
+                  "hash": "0ec9f878b9c3c3cf67f7bba4a24b846386ea9c4a",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-04-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P580",
+              "P407"
+            ],
+            "id": "Q81388644$3d6f48e6-4ee9-d637-a311-9d212392c866",
+            "rank": "normal"
+          }
+        ],
+        "P9618": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P9618",
+              "hash": "8b4bf27e5bad7023fc446e222658cd30d8c8a796",
+              "datavalue": {
+                "value": "pop-_os",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$EE5629B6-DDE3-4705-B583-A7662561CC1A",
+            "rank": "normal"
+          }
+        ],
+        "P11947": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P11947",
+              "hash": "0f476a83708863ed6db3bd4634a9820a2f1a04aa",
+              "datavalue": {
+                "value": "pop_os@lemmy.world",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$4657ff9c-4dd3-57c6-a604-184c89980bf4",
+            "rank": "normal"
+          }
+        ],
+        "P571": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P571",
+              "hash": "808d3ce1d16d610d02a8aa9cb61d1c4798d1e115",
+              "datavalue": {
+                "value": {
+                  "time": "+2017-00-00T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 9,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            "type": "statement",
+            "id": "Q81388644$0b766a45-4415-298e-c7ef-c5370b1649fe",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "c9cba836eb9eb9671640bc02868b64b6a48caa3d",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "e4dda9b144e90b7963b302a46781e13395779b14",
+                      "datavalue": {
+                        "value": "https://blog.system76.com/post/166852740523/popos-released-and-thank-you",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1065": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1065",
+                      "hash": "3a4d5c5465ffce0c7a76066df87c9c4ea4c73f82",
+                      "datavalue": {
+                        "value": "https://web.archive.org/web/20180115021747/http://blog.system76.com/post/166852740523/popos-released-and-thank-you",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P2960": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2960",
+                      "hash": "67561259827b3908930fd47c5df2d39b3433b3a7",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2018-01-15T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1065",
+                  "P2960"
+                ]
+              },
+              {
+                "hash": "86db52bc5d10ac19b4f3d2a4520d38f84a964077",
+                "snaks": {
+                  "P143": [
+                    {
+                      "snaktype": "value",
+                      "property": "P143",
+                      "hash": "6a164248fc96bfa583bbb495cb63ae6401ec203c",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 206855,
+                          "id": "Q206855"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P4656": [
+                    {
+                      "snaktype": "value",
+                      "property": "P4656",
+                      "hash": "56e43d63c6cc5b169b2f5add3c70f725fbbda8c0",
+                      "datavalue": {
+                        "value": "https://ru.wikipedia.org/?oldid=0",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P143",
+                  "P4656"
+                ]
+              }
+            ]
+          }
+        ],
+        "P11909": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P11909",
+              "hash": "782714b7a5061873e51c4b6338897e9749342994",
+              "datavalue": {
+                "value": "popos",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$1ae2d6e0-4100-6923-db55-977ae3de168f",
+            "rank": "normal"
+          }
+        ],
+        "P2910": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P2910",
+              "hash": "97aeac03b3379e38ea13e95341cd9369289b1694",
+              "datavalue": {
+                "value": "Pop! OS Icon.svg",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "id": "Q81388644$683d1f35-46a4-7216-ef32-00fc9f5cb334",
+            "rank": "normal"
+          }
+        ],
+        "P13337": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P13337",
+              "hash": "b559e7e24eef385d2890d20bd3c77756a41e839e",
+              "datavalue": {
+                "value": "pop.system76.com",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$8baaf3e4-4380-ce77-4be8-bbe0c5d4423e",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P13337",
+              "hash": "726c60355f200a705480f2a097ad8aa42ebd35c1",
+              "datavalue": {
+                "value": "pop-os.org",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q81388644$2242b67c-4d09-ce5d-abd1-535c98ce4ca5",
+            "rank": "normal"
+          }
+        ],
+        "P4945": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P4945",
+              "hash": "13488b9a5ed98cda7cfd8ca49b5f02e74f59af96",
+              "datavalue": {
+                "value": "https://system76.com/pop/download/",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407"
+            ],
+            "id": "Q81388644$d30cfc97-4d1b-8097-087e-b624e3274caa",
+            "rank": "normal"
+          }
+        ]
+      },
+      "sitelinks": {
+        "commonswiki": {
+          "site": "commonswiki",
+          "title": "Category:Pop! OS",
+          "badges": []
+        },
+        "enwiki": {
+          "site": "enwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "frwiki": {
+          "site": "frwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "ptwiki": {
+          "site": "ptwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "mlwiki": {
+          "site": "mlwiki",
+          "title": "പോപ്പ്! ഓഎസ്",
+          "badges": []
+        },
+        "sahwiki": {
+          "site": "sahwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "plwiki": {
+          "site": "plwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "dewiki": {
+          "site": "dewiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "itwiki": {
+          "site": "itwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "bnwiki": {
+          "site": "bnwiki",
+          "title": "পপ! ওএস",
+          "badges": []
+        },
+        "eswiki": {
+          "site": "eswiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "nlwiki": {
+          "site": "nlwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "fawiki": {
+          "site": "fawiki",
+          "title": "پاپ! اواس",
+          "badges": []
+        },
+        "cawiki": {
+          "site": "cawiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "jawiki": {
+          "site": "jawiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "ruwiki": {
+          "site": "ruwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "trwiki": {
+          "site": "trwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "kowiki": {
+          "site": "kowiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "quwiki": {
+          "site": "quwiki",
+          "title": "Pop! OS",
+          "badges": []
+        },
+        "thwiki": {
+          "site": "thwiki",
+          "title": "ป๊อป! โอเอส",
+          "badges": []
+        },
+        "arwiki": {
+          "site": "arwiki",
+          "title": "بوب! أو إس",
+          "badges": []
+        },
+        "fiwiki": {
+          "site": "fiwiki",
+          "title": "Pop OS",
+          "badges": []
+        },
+        "zhwiki": {
+          "site": "zhwiki",
+          "title": "Pop! OS",
+          "badges": []
+        }
+      }
+    }
+  }
+}

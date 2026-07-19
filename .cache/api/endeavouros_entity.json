@@ -1,0 +1,2713 @@
+{
+  "entities": {
+    "Q67907497": {
+      "pageid": 67583436,
+      "ns": 0,
+      "title": "Q67907497",
+      "lastrevid": 2512638389,
+      "modified": "2026-07-01T14:15:13Z",
+      "type": "item",
+      "id": "Q67907497",
+      "labels": {
+        "bn": {
+          "language": "bn",
+          "value": "এন্ডেভার ওএস"
+        },
+        "pl": {
+          "language": "pl",
+          "value": "EndeavourOS"
+        },
+        "zh": {
+          "language": "zh",
+          "value": "EndeavourOS"
+        },
+        "fa": {
+          "language": "fa",
+          "value": "اندور او اس"
+        },
+        "ko": {
+          "language": "ko",
+          "value": "EndeavourOS"
+        },
+        "tr": {
+          "language": "tr",
+          "value": "EndeavourOS"
+        },
+        "lmo": {
+          "language": "lmo",
+          "value": "EndeavourOS"
+        },
+        "ja": {
+          "language": "ja",
+          "value": "EndeavourOS"
+        },
+        "nb": {
+          "language": "nb",
+          "value": "EndeavourOS"
+        },
+        "ga": {
+          "language": "ga",
+          "value": "EndeavourOS"
+        },
+        "ca": {
+          "language": "ca",
+          "value": "EndeavourOS"
+        },
+        "en-ca": {
+          "language": "en-ca",
+          "value": "EndeavourOS"
+        },
+        "en-gb": {
+          "language": "en-gb",
+          "value": "EndeavourOS"
+        },
+        "he": {
+          "language": "he",
+          "value": "EndeavourOS"
+        },
+        "qu": {
+          "language": "qu",
+          "value": "EndeavourOS"
+        },
+        "ru": {
+          "language": "ru",
+          "value": "EndeavourOS"
+        },
+        "eo": {
+          "language": "eo",
+          "value": "EndeavourOS"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "إنديفور أو إس"
+        },
+        "sah": {
+          "language": "sah",
+          "value": "EndeavourOS"
+        },
+        "fi": {
+          "language": "fi",
+          "value": "EndeavourOS"
+        },
+        "mul": {
+          "language": "mul",
+          "value": "EndeavourOS"
+        }
+      },
+      "descriptions": {
+        "es": {
+          "language": "es",
+          "value": "Distribucion Linux basado en Arch Linux"
+        },
+        "en": {
+          "language": "en",
+          "value": "Arch Linux-based Linux distribution"
+        },
+        "de": {
+          "language": "de",
+          "value": "Linux-Distribution, welche auf Arch-Linux basiert"
+        },
+        "fr": {
+          "language": "fr",
+          "value": "distribution Linux basée sur Arch Linux"
+        },
+        "tr": {
+          "language": "tr",
+          "value": "Arch tabanlı Linux dağıtımı"
+        },
+        "nb": {
+          "language": "nb",
+          "value": "linuxdistribusjon"
+        },
+        "it": {
+          "language": "it",
+          "value": "distribuzione Linux basata su Arch Linux"
+        },
+        "ca": {
+          "language": "ca",
+          "value": "distribució de Linux basada en Arch Linux"
+        },
+        "eo": {
+          "language": "eo",
+          "value": "distribuaĵo de GNUo/Linukso"
+        },
+        "ar": {
+          "language": "ar",
+          "value": "توزيعة لينكس مبنية على آرتش"
+        },
+        "ru": {
+          "language": "ru",
+          "value": "дистрибутив Linux, основанный на Arch Linux"
+        },
+        "uk": {
+          "language": "uk",
+          "value": "дистрибутив Linux"
+        },
+        "id": {
+          "language": "id",
+          "value": "Distribusi Linux berbasis Arch Linux"
+        }
+      },
+      "aliases": {
+        "en": [
+          {
+            "language": "en",
+            "value": "Endeavour"
+          },
+          {
+            "language": "en",
+            "value": "EOS"
+          }
+        ],
+        "ar": [
+          {
+            "language": "ar",
+            "value": "إنديفور"
+          }
+        ]
+      },
+      "claims": {
+        "P31": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P31",
+              "hash": "0435f46ea8b084260e4844c5e50f5dfae8f00428",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 131669,
+                  "id": "Q131669"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$93cc24e4-4623-052a-675c-71475e716b1a",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "766458e7942321df0bc48155e0ea4c58eb8ec4b0",
+                "snaks": {
+                  "P248": [
+                    {
+                      "snaktype": "value",
+                      "property": "P248",
+                      "hash": "6252af31253f15b8f2501137d364ddcd8d3812e9",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 121964054,
+                          "id": "Q121964054"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P248"
+                ]
+              }
+            ]
+          }
+        ],
+        "P154": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P154",
+              "hash": "f3ea871c062564d09a9749e574abcfa2a3944a7e",
+              "datavalue": {
+                "value": "EndeavourOS Logo.svg",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "id": "Q67907497$2048B99B-955F-4DDB-9476-CF6F5D5CC018",
+            "rank": "normal"
+          }
+        ],
+        "P3112": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3112",
+              "hash": "83a385b310e93904ee3310495c53569221d5a6b8",
+              "datavalue": {
+                "value": "endeavour",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q67907497$5fe1b954-4450-1478-ecad-05fb0d019573",
+            "rank": "normal"
+          }
+        ],
+        "P144": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P144",
+              "hash": "de3ba99287481aba21a5d4423e2b78bb34a8677d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 185576,
+                  "id": "Q185576"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$62834b73-4f17-ebb8-7574-f34e6b9107cd",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P144",
+              "hash": "29f9c49c8bd1c9e8eeb7abb91d3d3a82f662e7f6",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 13422835,
+                  "id": "Q13422835"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$329b847d-4d43-9c28-b220-e225298d077d",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "17faa2bc5e5e4167a2715e54f92fe4d5b3faaa49",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "86074c24b80e8ea623f460425f7054a5a5caa4fb",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/about-us/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P856": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P856",
+              "hash": "48e4a7587a4ea76baee41d86b12a849fe51bd821",
+              "datavalue": {
+                "value": "https://endeavouros.com",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P407"
+            ],
+            "id": "Q67907497$2fa5effc-4839-8b29-252d-8f733c9ae513",
+            "rank": "normal"
+          }
+        ],
+        "P348": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "6cd6309ba6e92f86ef0843d612940c1cff91846d",
+              "datavalue": {
+                "value": "2020.07.15",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "e298c71b0acf04402db5e13ac8d133ef61fdd2b8",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2020-07-15T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548"
+            ],
+            "id": "Q67907497$f90417e1-478f-a102-b5dc-4c0d7ad7de0c",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "025169efdc2d55a2c1ed41cb5229a6927f5a8bb6",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "7163d1c226f6dd3263104f0b3092f607e0b00694",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/our-first-anniversary-the-july-release-and-whats-next/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "92c55b665ef71f378323036b2cd7f73cd54b88cd",
+                      "datavalue": {
+                        "value": {
+                          "text": "Our first anniversary, the July release and what's next?!?",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "e298c71b0acf04402db5e13ac8d133ef61fdd2b8",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2020-07-15T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "cd9fcdc5c78fe5345ad0d97a78c7c8ed9371b6ba",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-12-27T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P407",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "2538a411a4783b42b3de34b82f13ee2a6c49ca2e",
+              "datavalue": {
+                "value": "22.12",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "fd5ffad11058ee4392811dfbb2b59fd30e4c5eb9",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2022-12-19T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "2db9ba538bb17b9c4a5c6d85c7aa8c0fa7f9ed04",
+                  "datavalue": {
+                    "value": {
+                      "text": "Cassini",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577",
+              "P1476"
+            ],
+            "id": "Q67907497$ae957de6-47ff-2efc-ae5a-88cb6025d0ad",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "bea23a712b370e282b4be36c1c5e02a0e2e14d1f",
+                "snaks": {
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "fd5ffad11058ee4392811dfbb2b59fd30e4c5eb9",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2022-12-19T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "a0c4f4813a9d9322cc9e9fb98839090ea6109719",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2022-12-23T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "60b735756231420091911864687b00e5452a17ef",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/cassini-packed-with-new-features-is-here/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "bea4b951f685cefd3f7d7b01ed2f212e3b3e5886",
+                      "datavalue": {
+                        "value": {
+                          "text": "Cassini, packed with new features, is here",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P577",
+                  "P813",
+                  "P854",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "109883dfb2235a6d134b13669d340a99416945a5",
+              "datavalue": {
+                "value": "03-2023",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "c5c23a07d2194fb9597f84a062cf2eb39e082602",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2023-03-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "afea25c56b29adc1d8b5e5275dbbe869dab1e32f",
+                  "datavalue": {
+                    "value": {
+                      "text": "Cassini Nova",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$c745dd37-45e0-f5fe-ab59-352f30751786",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "36426a6a09f9acdeffd11f58819db644454239fd",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "f94dda9eac0d69cbbf40af1ea2de425365616d32",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/latest-release/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "26bc56bd0f6698ab885a4824dfc6c725001edee7",
+                      "datavalue": {
+                        "value": {
+                          "text": "EndeavourOS Latest Release",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P407",
+                  "P813",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "0ad8478123c157a1288630f0b9ff4ba4faff250f",
+              "datavalue": {
+                "value": "01-2024",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "26812871b20668a3b69a63c4374126b1e4e514ea",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-01-25T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "aa351988782c965fc5b8161ca0e0dd40d3f9528d",
+                  "datavalue": {
+                    "value": {
+                      "text": "Galileo Neo",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$d8ec9556-45f0-b6e0-dbb5-e7bc8b87de21",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "6a3c8da4b85fc188ea134018ea052f50a187a68b",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "dd91ebe71543547e096f62aeaaa9c5891f2b86f8",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/galileo-neo-with-kernel-6-7-1-plasma-offline-and-calamares-fixes/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "86ebad0fad9667a1bbb082fab34873ef62feb996",
+                      "datavalue": {
+                        "value": {
+                          "text": "Galileo Neo with Kernel 6.7.1, Plasma offline and Calamares fixes",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "d29d15898d056b0bce311a3a9c6b07296890c602",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-01-27T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P407",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "afbeeab10622224645b007d3c3c711e25424cc68",
+              "datavalue": {
+                "value": "2024.09.22",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "48bee985a2011a82f908406e4882b9b906421659",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-09-22T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "c86435098fca1ee2e1d79af6023a3dd6a8d4c6be",
+                  "datavalue": {
+                    "value": {
+                      "text": "Endeavour Neo",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$be3a8a1a-4436-ff02-d0f1-4857c8f82a81",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "61158de44a006d9cf6615eb4d1ff4f4ea528f23d",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "ae8c859527af0fb952b465d370ff2165dcc8ec1a",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/our-refresh-release-endeavour-neo-is-available/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "d5e30406d6755307dd890dd3dfa66f00c485c483",
+                      "datavalue": {
+                        "value": {
+                          "text": "Our refresh release, Endeavour Neo, is available",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "be313ec0f299e872d62ad5f18d67830b9568a3c1",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2024-09-26T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P407",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "9bb37ab01cc1dcc61a6abba1c7b1486a812f3465",
+              "datavalue": {
+                "value": "2025.02.08",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "26cf627eba86c04835584ed2e904211c3142c050",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-02-10T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "9b9f75d275bb43ec47a2ec9b58ff17ae59483125",
+                  "datavalue": {
+                    "value": {
+                      "text": "Mercury",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$845f7738-4380-41ed-0d0c-750ca27f9328",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "06db00edecdae777aeda02411b2473c07e2ff308",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "bb1b3dad141e9e5d9d297806ae47f7e6ea9d5041",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/our-new-iso-release-is-here-meet-mercury/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "341c80bec78ebe40c108a31ac2e06c0ac46dc2cd",
+                      "datavalue": {
+                        "value": {
+                          "text": "Our new ISO release is here, meet Mercury",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "26cf627eba86c04835584ed2e904211c3142c050",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-02-10T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P407",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "4329f19ac7b317bdb6b043962f7ec941da1be05c",
+              "datavalue": {
+                "value": "2025.03.19",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "409e4e6f6be27c73ba214fe86c0bff1f34118d53",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-03-23T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "8a630b8f00995fa8c41e4b8eae35edde799fbad9",
+                  "datavalue": {
+                    "value": {
+                      "text": "Mercury Neo",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$fe6e1660-427e-d5a3-7d97-9777f67dcf06",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "5358571cd3ef9f0b4e625909b95160ca0e804836",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "a840ab793efc6465d60fe94cfb088527bf96cddf",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/mercury-neo-with-linux-6-13-7-and-arch-mirror-ranking-bug-fix/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "ac0a9dc95ab691f379836962dc886a60234023f5",
+                      "datavalue": {
+                        "value": {
+                          "text": "Mercury Neo with Linux 6.13.7 and Arch mirror ranking bug fix",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "409e4e6f6be27c73ba214fe86c0bff1f34118d53",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-03-23T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P407",
+                  "P813",
+                  "P2093"
+                ]
+              },
+              {
+                "hash": "8732ce8814065e4676a3eb8fab1e9c5dd5cfa55b",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "6385e9aee569b2d219b42fa49f0e6db84b5da4f9",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "8ab06e8b0f630cb28a3e3c760f53b9412958dcaa",
+                      "datavalue": {
+                        "value": {
+                          "text": "Home",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P407": [
+                    {
+                      "snaktype": "value",
+                      "property": "P407",
+                      "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                      "datavalue": {
+                        "value": {
+                          "entity-type": "item",
+                          "numeric-id": 1860,
+                          "id": "Q1860"
+                        },
+                        "type": "wikibase-entityid"
+                      },
+                      "datatype": "wikibase-item"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "ed4c941b2e9328338e1bce5cfdc374d581875248",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-08-31T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P407",
+                  "P813"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "b28be9e0bbd8ed66c3691174c92e25b60e0a9c74",
+              "datavalue": {
+                "value": "2026.01.15",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "251d8e7b3b4ab5e83df56376ee185bbe600313b3",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-01-15T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "e7280dac3dbc78e5cfc0d4e631aeb3e4ea056730",
+                  "datavalue": {
+                    "value": {
+                      "text": "Ganymede Neo",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$2e340ba4-454c-9968-a200-4e253b89785d",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "b49021b2c5b487647978e1c9573f91d3bce4c08b",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "c5fb710501586c02b8b9af0533925989e021ad19",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/ganymede-neo-is-out-with-core-updates-and-upstream-nvidia-changes/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "251d8e7b3b4ab5e83df56376ee185bbe600313b3",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2026-01-15T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "dbc730d65e5b613ae2f777d6a78cedb88141aeb7",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2026-01-29T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "0928e90de8deeb5cac3fa3f92ba992b803500ce2",
+                      "datavalue": {
+                        "value": {
+                          "text": "Ganymede Neo is out with core updates and upstream NVIDIA changes",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P577",
+                  "P813",
+                  "P2093",
+                  "P1476"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "768d1061365360b1674dcd3d9d81016bbd617d53",
+              "datavalue": {
+                "value": "2025.11.29",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "db24fed5d275314230282f8c38b9d7927dc22319",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2025-11-29T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "53ad7a8d0f0e8c42c62f35ae3f3a1e7bee779807",
+                  "datavalue": {
+                    "value": {
+                      "text": "Ganymede",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P577",
+              "P548",
+              "P1476"
+            ],
+            "id": "Q67907497$38dcae61-40bc-0ce6-1952-073e25c6b2d7",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "617a961696ae37b18036f8217e94aecf972e4a9e",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "7dbdeb83af94ccb4c0c255e2353a613f61a1f0ad",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/the-long-wait-is-over-ganymede-has-arrived/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "1a6cea02cca0d4d143aef50eb47e6a406f99964f",
+                      "datavalue": {
+                        "value": {
+                          "text": "The long wait is over, Ganymede has arrived",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "db24fed5d275314230282f8c38b9d7927dc22319",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2025-11-29T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "dbc730d65e5b613ae2f777d6a78cedb88141aeb7",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2026-01-29T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P348",
+              "hash": "179d547dd19927359fbce637f8ffe381a0c4e27e",
+              "datavalue": {
+                "value": "2026.03.06",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P548": [
+                {
+                  "snaktype": "value",
+                  "property": "P548",
+                  "hash": "e006ea8d2fa441433e0fa85bc4132b806e0fabee",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 2804309,
+                      "id": "Q2804309"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ],
+              "P577": [
+                {
+                  "snaktype": "value",
+                  "property": "P577",
+                  "hash": "f57c5d787b7c85eb59c1ea400dca82b719ef22e6",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-03-12T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P1476": [
+                {
+                  "snaktype": "value",
+                  "property": "P1476",
+                  "hash": "a401b1df54104c0932d6f0fe3592713e690089cd",
+                  "datavalue": {
+                    "value": {
+                      "text": "Titan",
+                      "language": "en"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P548",
+              "P577",
+              "P1476"
+            ],
+            "id": "Q67907497$f81c248b-44a5-1ca3-0ee4-faf7bdc0fe6d",
+            "rank": "preferred",
+            "references": [
+              {
+                "hash": "447b982b9c237f7a0bc579f4ef1cf9c2672f6400",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "4cb09c4171bd95fc0ec94517592dc81d51b069a3",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/news/whats-new-in-endeavouros-titan-release/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ],
+                  "P1476": [
+                    {
+                      "snaktype": "value",
+                      "property": "P1476",
+                      "hash": "e07d889c7d5af4bb78c26b831dd1a8fb3cd17c99",
+                      "datavalue": {
+                        "value": {
+                          "text": "What’s New in EndeavourOS Titan Release?",
+                          "language": "en"
+                        },
+                        "type": "monolingualtext"
+                      },
+                      "datatype": "monolingualtext"
+                    }
+                  ],
+                  "P577": [
+                    {
+                      "snaktype": "value",
+                      "property": "P577",
+                      "hash": "f57c5d787b7c85eb59c1ea400dca82b719ef22e6",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2026-03-12T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P813": [
+                    {
+                      "snaktype": "value",
+                      "property": "P813",
+                      "hash": "e65fdb435866a81b8b562d5c2064882797661f0d",
+                      "datavalue": {
+                        "value": {
+                          "time": "+2026-03-12T00:00:00Z",
+                          "timezone": 0,
+                          "before": 0,
+                          "after": 0,
+                          "precision": 11,
+                          "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                        },
+                        "type": "time"
+                      },
+                      "datatype": "time"
+                    }
+                  ],
+                  "P2093": [
+                    {
+                      "snaktype": "value",
+                      "property": "P2093",
+                      "hash": "2cb6c967bcbe25f9dcd5c55aa2687ea4fa004c33",
+                      "datavalue": {
+                        "value": "Bryanpwo",
+                        "type": "string"
+                      },
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854",
+                  "P1476",
+                  "P577",
+                  "P813",
+                  "P2093"
+                ]
+              }
+            ]
+          }
+        ],
+        "P2671": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P2671",
+              "hash": "eea0133ee2538440bac4fcfe3901b2c655cac6cf",
+              "datavalue": {
+                "value": "/g/11h57x_jdv",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q67907497$7FE87898-62B9-40F6-BE54-84F9AF0A6637",
+            "rank": "normal"
+          }
+        ],
+        "P373": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P373",
+              "hash": "4a84ceab9b56f3a80990780a17635ee37491e050",
+              "datavalue": {
+                "value": "EndeavourOS",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q67907497$c958c8de-4892-bc8a-7a3d-db536e3908dd",
+            "rank": "normal"
+          }
+        ],
+        "P18": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P18",
+              "hash": "79e9b2a4e9effc65bdd113ef2ed68c5863fdbfcb",
+              "datavalue": {
+                "value": "EndeavourOS 21.4 screenshot.png",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P2096": [
+                {
+                  "snaktype": "value",
+                  "property": "P2096",
+                  "hash": "5ee1f2aafb62aeb95a425c7c6a5c8e35858beec6",
+                  "datavalue": {
+                    "value": {
+                      "text": "EndeavourOS 21.4 \"Atlantis\" с рабочим столом Xfce",
+                      "language": "ru"
+                    },
+                    "type": "monolingualtext"
+                  },
+                  "datatype": "monolingualtext"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P2096"
+            ],
+            "id": "Q67907497$1ddc4187-4cf4-d1e7-b168-29ec773cc5f9",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P18",
+              "hash": "2ea6b903b41d17bbb5e58d65f73d2a232fcacbb7",
+              "datavalue": {
+                "value": "EndeavourOS Titan 2026.03.06.png",
+                "type": "string"
+              },
+              "datatype": "commonsMedia"
+            },
+            "type": "statement",
+            "id": "Q67907497$8b183844-4728-4338-cb70-d22bc8d06699",
+            "rank": "normal"
+          }
+        ],
+        "P9618": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P9618",
+              "hash": "21174d7e27f3b95ff5e98a89bbb51adb082b6b0a",
+              "datavalue": {
+                "value": "endeavouros",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q67907497$97ab6ebd-4366-9370-6f98-872ffb3dbb95",
+            "rank": "normal"
+          }
+        ],
+        "P10027": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P10027",
+              "hash": "c80bd8353f0c3cfded84aa6b4d5115ab6b5f15d9",
+              "datavalue": {
+                "value": "https://forum.endeavouros.com",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "id": "Q67907497$0c487e51-43f1-30d5-5b18-5832d07ac818",
+            "rank": "normal"
+          }
+        ],
+        "P4033": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P4033",
+              "hash": "85ecc0d9138392601fb1b01c60428a60899e62ec",
+              "datavalue": {
+                "value": "EndeavourOS@mastodon.social",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P580": [
+                {
+                  "snaktype": "value",
+                  "property": "P580",
+                  "hash": "34709c2313f792152caeec40402fa1521de46931",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2019-06-28T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P407": [
+                {
+                  "snaktype": "value",
+                  "property": "P407",
+                  "hash": "daf1c4fcb58181b02dff9cc89deb084004ddae4b",
+                  "datavalue": {
+                    "value": {
+                      "entity-type": "item",
+                      "numeric-id": 1860,
+                      "id": "Q1860"
+                    },
+                    "type": "wikibase-entityid"
+                  },
+                  "datatype": "wikibase-item"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P580",
+              "P407"
+            ],
+            "id": "Q67907497$adae718e-4f2e-3df7-50ec-52f471070000",
+            "rank": "normal"
+          }
+        ],
+        "P8687": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P8687",
+              "hash": "4ab875515939378ee52c56f44d983290d6aabe34",
+              "datavalue": {
+                "value": {
+                  "amount": "+3370",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            },
+            "type": "statement",
+            "qualifiers": {
+              "P4033": [
+                {
+                  "snaktype": "value",
+                  "property": "P4033",
+                  "hash": "85ecc0d9138392601fb1b01c60428a60899e62ec",
+                  "datavalue": {
+                    "value": "EndeavourOS@mastodon.social",
+                    "type": "string"
+                  },
+                  "datatype": "external-id"
+                }
+              ],
+              "P585": [
+                {
+                  "snaktype": "value",
+                  "property": "P585",
+                  "hash": "607184846106e630f6f06910d2df74dca931b9f0",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-04-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "qualifiers-order": [
+              "P4033",
+              "P585"
+            ],
+            "id": "Q67907497$36BC6530-06DE-4F12-BD71-B4DC9F203D5C",
+            "rank": "normal"
+          }
+        ],
+        "P11478": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P11478",
+              "hash": "facdc981535977c74138baf99d4e0d24588d3f0e",
+              "datavalue": {
+                "value": "#endeavouros-space:matrix.org",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q67907497$94dc6d62-4039-2393-4019-ab1503dcab5c",
+            "rank": "normal"
+          }
+        ],
+        "P2037": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P2037",
+              "hash": "84744cc6a3f9036020b85467d44850bde2453921",
+              "datavalue": {
+                "value": "endeavouros-team",
+                "type": "string"
+              },
+              "datatype": "external-id"
+            },
+            "type": "statement",
+            "id": "Q67907497$2e8952e3-4ebd-8606-5e31-44f7acb16b8f",
+            "rank": "normal"
+          }
+        ],
+        "P400": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "e5d4048ae65395f5a4c700cdbdcf6c1a77ccdb49",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 272629,
+                  "id": "Q272629"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$3946ff5a-42f1-08ce-6312-e518a294c14a",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P400",
+              "hash": "d0c4dc2a5e4be4d55aeea99ab07849352de6155f",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 16980,
+                  "id": "Q16980"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$6afb6408-40c6-44ad-6288-1c121b03d7ce",
+            "rank": "normal"
+          }
+        ],
+        "P571": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P571",
+              "hash": "ac59a53b27abf664aac13353773362fae743f6f3",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-07-15T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            "type": "statement",
+            "id": "Q67907497$36767402-457a-1a14-8286-99d93e96f860",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "6469bc7f602ac6969292f6ff80c3ef356a464015",
+                "snaks": {
+                  "P854": [
+                    {
+                      "snaktype": "value",
+                      "property": "P854",
+                      "hash": "ca47a183190d2834fff66c28a1c3ef3360b4e99f",
+                      "datavalue": {
+                        "value": "https://endeavouros.com/uncategorized/what-to-expect-on-the-first-release/",
+                        "type": "string"
+                      },
+                      "datatype": "url"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P854"
+                ]
+              }
+            ]
+          }
+        ],
+        "P179": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P179",
+              "hash": "a1959e0fc1751a2e9cec9da9ea95db0f27a67fe9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 388,
+                  "id": "Q388"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$f151590f-4d4c-10a9-056e-717311a626d8",
+            "rank": "normal"
+          }
+        ],
+        "P1414": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1414",
+              "hash": "61374ab942407db981feb9aebf28cb2734da6648",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 170821,
+                  "id": "Q170821"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$3b04657a-47c7-1dac-b7a6-fc52b8b3cb1b",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1414",
+              "hash": "034eb5b77e89424ad7d0ba2102180d4ac360dc7d",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 44316,
+                  "id": "Q44316"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$5a04ac3f-42a8-8ff1-f829-47d5043158af",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1414",
+              "hash": "69c865fe192d64c032f2bd0e43dbcc3c40537769",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 115839146,
+                  "id": "Q115839146"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$184ed62d-4b37-e39d-7fc6-2a547f3d8871",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1414",
+              "hash": "f92dd3cf5d8ccd6c3c46c8f1e5ee953c33a778e9",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 1092551,
+                  "id": "Q1092551"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$39578677-42d4-3f47-acc0-f5b7c735f6ab",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1414",
+              "hash": "dd1ba4612921a4194c5d7be986934ef4dec443e6",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 194090,
+                  "id": "Q194090"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q67907497$b82bd10c-48f7-b5ab-9072-c14ab47c3690",
+            "rank": "normal"
+          }
+        ],
+        "P577": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P577",
+              "hash": "bdfcc68e71962587a3a6eba3f307aa4afeb0e483",
+              "datavalue": {
+                "value": {
+                  "time": "+2019-07-15T00:00:00Z",
+                  "timezone": 0,
+                  "before": 0,
+                  "after": 0,
+                  "precision": 11,
+                  "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                },
+                "type": "time"
+              },
+              "datatype": "time"
+            },
+            "type": "statement",
+            "id": "Q67907497$acf3bc47-430f-c46c-4eb3-46efee75d937",
+            "rank": "normal"
+          }
+        ]
+      },
+      "sitelinks": {
+        "enwiki": {
+          "site": "enwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "dewiki": {
+          "site": "dewiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "bnwiki": {
+          "site": "bnwiki",
+          "title": "এন্ডেভার ওএস",
+          "badges": []
+        },
+        "eswiki": {
+          "site": "eswiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "ptwiki": {
+          "site": "ptwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "commonswiki": {
+          "site": "commonswiki",
+          "title": "Category:EndeavourOS",
+          "badges": []
+        },
+        "plwiki": {
+          "site": "plwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "frwiki": {
+          "site": "frwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "zhwiki": {
+          "site": "zhwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "fawiki": {
+          "site": "fawiki",
+          "title": "اندور او اس",
+          "badges": []
+        },
+        "kowiki": {
+          "site": "kowiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "trwiki": {
+          "site": "trwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "lmowiki": {
+          "site": "lmowiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "jawiki": {
+          "site": "jawiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "itwiki": {
+          "site": "itwiki",
+          "title": "Endeavouros",
+          "badges": []
+        },
+        "ukwiki": {
+          "site": "ukwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "cawiki": {
+          "site": "cawiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "hewiki": {
+          "site": "hewiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "quwiki": {
+          "site": "quwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "ruwiki": {
+          "site": "ruwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "arwiki": {
+          "site": "arwiki",
+          "title": "إنديفور أو إس",
+          "badges": []
+        },
+        "fiwiki": {
+          "site": "fiwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        },
+        "idwiki": {
+          "site": "idwiki",
+          "title": "EndeavourOS",
+          "badges": []
+        }
+      }
+    }
+  }
+}

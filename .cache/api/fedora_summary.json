@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Fedora Linux",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Fedora Linux</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q48267",
+  "titles": {
+    "canonical": "Fedora_Linux",
+    "normalized": "Fedora Linux",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Fedora Linux</span></span>"
+  },
+  "pageid": 9951070,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Fedora_44_Workstation.png/330px-Fedora_44_Workstation.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/32/Fedora_44_Workstation.png",
+    "width": 1920,
+    "height": 1080
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1364129113",
+  "tid": "68d42b39-7fad-11f1-9224-499c058db300",
+  "timestamp": "2026-07-14T17:56:59Z",
+  "description": "Linux distribution by Fedora Project",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Fedora_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Fedora_Linux?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Fedora_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Fedora_Linux"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Fedora_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Fedora_Linux",
+      "edit": "https://en.wikipedia.org/wiki/Fedora_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Fedora_Linux"
+    }
+  },
+  "extract": "Fedora Linux is a Linux distribution developed by the Fedora Project. It was originally developed in 2003 as a continuation of the Red Hat Linux project. It contains software distributed under various free and open-source licenses and aims to be on the leading edge of open-source technologies. It is now the upstream source for CentOS Stream and Red Hat Enterprise Linux.",
+  "extract_html": "<p><b>Fedora Linux</b> is a Linux distribution developed by the Fedora Project. It was originally developed in 2003 as a continuation of the Red Hat Linux project. It contains software distributed under various free and open-source licenses and aims to be on the leading edge of open-source technologies. It is now the upstream source for CentOS Stream and Red Hat Enterprise Linux.</p>"
+}

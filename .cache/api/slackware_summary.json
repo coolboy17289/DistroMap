@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Slackware",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Slackware</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q58436",
+  "titles": {
+    "canonical": "Slackware",
+    "normalized": "Slackware",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Slackware</span></span>"
+  },
+  "pageid": 28290,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Slackware_15.0_screenshot.png/330px-Slackware_15.0_screenshot.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Slackware_15.0_screenshot.png",
+    "width": 1920,
+    "height": 1080
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1362377050",
+  "tid": "27609467-76f2-11f1-8caf-0a93f99d3a17",
+  "timestamp": "2026-07-03T15:16:24Z",
+  "description": "Linux distribution",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Slackware",
+      "revisions": "https://en.wikipedia.org/wiki/Slackware?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Slackware?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Slackware"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Slackware",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Slackware",
+      "edit": "https://en.wikipedia.org/wiki/Slackware?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Slackware"
+    }
+  },
+  "extract": "Slackware is a Linux distribution created by Patrick Volkerding in 1993. Originally based on Softlanding Linux System (SLS), Slackware has been the basis for many other Linux distributions, most notably the first versions of SUSE Linux distributions, and is the oldest distribution that is still maintained.",
+  "extract_html": "<p><b>Slackware</b> is a Linux distribution created by Patrick Volkerding in 1993. Originally based on Softlanding Linux System (SLS), Slackware has been the basis for many other Linux distributions, most notably the first versions of SUSE Linux distributions, and is the oldest distribution that is still maintained.</p>"
+}

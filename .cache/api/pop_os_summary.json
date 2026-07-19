@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Pop! OS",
+  "displaytitle": "Pop!_OS",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q81388644",
+  "titles": {
+    "canonical": "Pop!_OS",
+    "normalized": "Pop! OS",
+    "display": "Pop!_OS"
+  },
+  "pageid": 63758101,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pop_OS-Logo-nobg.svg/330px-Pop_OS-Logo-nobg.svg.png",
+    "width": 330,
+    "height": 228
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Pop_OS-Logo-nobg.svg/1280px-Pop_OS-Logo-nobg.svg.png",
+    "width": 1012,
+    "height": 700
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1362318948",
+  "tid": "5566b9aa-769b-11f1-b126-0cf34b7955f9",
+  "timestamp": "2026-07-03T04:54:55Z",
+  "description": "Linux distribution developed by System76",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Pop!_OS",
+      "revisions": "https://en.wikipedia.org/wiki/Pop!_OS?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Pop!_OS?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Pop!_OS"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Pop!_OS",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Pop!_OS",
+      "edit": "https://en.wikipedia.org/wiki/Pop!_OS?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Pop!_OS"
+    }
+  },
+  "extract": "Pop OS is a free and open-source Linux distribution based on Ubuntu and developed by the American Linux computer manufacturer System76. It features the COSMIC desktop environment, a Rust-based and Wayland-only desktop created and maintained by System76. Pop!_OS is primarily designed to ship with the company’s computers, but it can also be downloaded and installed on most PCs.",
+  "extract_html": "<p><b>Pop OS</b> is a free and open-source Linux distribution based on Ubuntu and developed by the American Linux computer manufacturer System76. It features the COSMIC desktop environment, a Rust-based and Wayland-only desktop created and maintained by System76. Pop!_OS is primarily designed to ship with the company’s computers, but it can also be downloaded and installed on most PCs.</p>"
+}

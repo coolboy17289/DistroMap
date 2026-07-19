@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "EndeavourOS",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">EndeavourOS</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q67907497",
+  "titles": {
+    "canonical": "EndeavourOS",
+    "normalized": "EndeavourOS",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">EndeavourOS</span></span>"
+  },
+  "pageid": 61684994,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/EndeavourOS_Titan_2026.03.06.png/330px-EndeavourOS_Titan_2026.03.06.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/3/3b/EndeavourOS_Titan_2026.03.06.png",
+    "width": 1366,
+    "height": 768
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1362542014",
+  "tid": "fbb2dd73-77cd-11f1-9eb2-48f5cb83492a",
+  "timestamp": "2026-07-04T17:30:00Z",
+  "description": "Linux distribution based on Arch Linux",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/EndeavourOS",
+      "revisions": "https://en.wikipedia.org/wiki/EndeavourOS?action=history",
+      "edit": "https://en.wikipedia.org/wiki/EndeavourOS?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:EndeavourOS"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/EndeavourOS",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/EndeavourOS",
+      "edit": "https://en.wikipedia.org/wiki/EndeavourOS?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:EndeavourOS"
+    }
+  },
+  "extract": "EndeavourOS is a free and open-source Arch-based Linux distribution. EndeavourOS began as a successor to Antergos, a discontinued distribution also based on Arch Linux. It uses the same rolling release schedule as Arch Linux, but periodically releases updated installation media. As of March 16, 2026, the most recent release is \"EndeavourOS Titan.\"",
+  "extract_html": "<p><b>EndeavourOS</b> is a free and open-source Arch-based Linux distribution. EndeavourOS began as a successor to Antergos, a discontinued distribution also based on Arch Linux. It uses the same rolling release schedule as Arch Linux, but periodically releases updated installation media. As of March 16, 2026, the most recent release is \"EndeavourOS Titan.\"</p>"
+}

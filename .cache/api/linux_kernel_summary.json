@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Linux kernel",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Linux kernel</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q14579",
+  "titles": {
+    "canonical": "Linux_kernel",
+    "normalized": "Linux kernel",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Linux kernel</span></span>"
+  },
+  "pageid": 21347315,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/330px-Tux.svg.png",
+    "width": 330,
+    "height": 391
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Tux.svg/960px-Tux.svg.png",
+    "width": 512,
+    "height": 607
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1362001694",
+  "tid": "ecfdcaf4-7534-11f1-9d76-8ec63e0f6f52",
+  "timestamp": "2026-07-01T10:09:20Z",
+  "description": "Free Unix-like operating system kernel",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Linux_kernel",
+      "revisions": "https://en.wikipedia.org/wiki/Linux_kernel?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Linux_kernel?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Linux_kernel"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Linux_kernel",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Linux_kernel",
+      "edit": "https://en.wikipedia.org/wiki/Linux_kernel?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Linux_kernel"
+    }
+  },
+  "extract": "The Linux kernel is a free and open-source Unix-like kernel that is used in many computer systems worldwide. The kernel was created by Linus Torvalds in 1991 and was soon adopted as the kernel for the GNU operating system (OS), which was created to be a free replacement for Unix. Since the late 1990s, it has been included in many operating system distributions, many of which are called Linux. One such Linux kernel operating system is Android, which is used in many mobile and embedded devices.",
+  "extract_html": "<p>The <b>Linux kernel</b> is a free and open-source Unix-like kernel that is used in many computer systems worldwide. The kernel was created by Linus Torvalds in 1991 and was soon adopted as the kernel for the GNU operating system (OS), which was created to be a free replacement for Unix. Since the late 1990s, it has been included in many operating system distributions, many of which are called Linux. One such Linux kernel operating system is Android, which is used in many mobile and embedded devices.</p>"
+}

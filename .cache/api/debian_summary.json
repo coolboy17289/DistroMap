@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Debian",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Debian</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q7715973",
+  "titles": {
+    "canonical": "Debian",
+    "normalized": "Debian",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Debian</span></span>"
+  },
+  "pageid": 8242,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Debian_13_%28Trixie%29_screenshot_-_using_GNOME_desktop.png/330px-Debian_13_%28Trixie%29_screenshot_-_using_GNOME_desktop.png",
+    "width": 330,
+    "height": 186
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/5/50/Debian_13_%28Trixie%29_screenshot_-_using_GNOME_desktop.png",
+    "width": 1920,
+    "height": 1080
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1364776017",
+  "tid": "1005d73a-82ac-11f1-a5d3-38222e778c12",
+  "timestamp": "2026-07-18T13:24:54Z",
+  "description": "Free general-purpose operating system",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Debian",
+      "revisions": "https://en.wikipedia.org/wiki/Debian?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Debian?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Debian"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Debian",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Debian",
+      "edit": "https://en.wikipedia.org/wiki/Debian?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Debian"
+    }
+  },
+  "extract": "Debian is a free, general-purpose operating system developed by the Debian Project, a worldwide volunteer association founded by Ian Murdock on August 16, 1993. It is the second-oldest Linux distribution still being developed and forms the base of many others.",
+  "extract_html": "<p><b>Debian</b> is a free, general-purpose operating system developed by the Debian Project, a worldwide volunteer association founded by Ian Murdock on August 16, 1993. It is the second-oldest Linux distribution still being developed and forms the base of many others.</p>"
+}

@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Nobara (operating system)",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nobara (operating system)</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q121027163",
+  "titles": {
+    "canonical": "Nobara_(operating_system)",
+    "normalized": "Nobara (operating system)",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Nobara (operating system)</span></span>"
+  },
+  "pageid": 74361750,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Desktop_Nobara.png/330px-Desktop_Nobara.png",
+    "width": 330,
+    "height": 248
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Desktop_Nobara.png",
+    "width": 1024,
+    "height": 768
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1357120777",
+  "tid": "8ff5d51f-5d38-11f1-94b8-9746ea060949",
+  "timestamp": "2026-05-31T21:34:54Z",
+  "description": "Linux distribution",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Nobara_(operating_system)",
+      "revisions": "https://en.wikipedia.org/wiki/Nobara_(operating_system)?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Nobara_(operating_system)?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nobara_(operating_system)"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Nobara_(operating_system)",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Nobara_(operating_system)",
+      "edit": "https://en.wikipedia.org/wiki/Nobara_(operating_system)?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Nobara_(operating_system)"
+    }
+  },
+  "extract": "Nobara Linux is a Linux distribution based on Fedora Linux. It is developed by Thomas Crider, otherwise more colloquially referred to as \"Glorious Eggroll\", who is also known for developing Proton-GE, a modification of Valve Corporation's compatibility layer, widely used for running Windows games on Linux.",
+  "extract_html": "<p><b>Nobara Linux</b> is a Linux distribution based on Fedora Linux. It is developed by Thomas Crider, otherwise more colloquially referred to as \"Glorious Eggroll\", who is also known for developing Proton-GE, a modification of Valve Corporation's compatibility layer, widely used for running Windows games on Linux.</p>"
+}

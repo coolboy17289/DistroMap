@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "Arch Linux",
+  "displaytitle": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Arch Linux</span></span>",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q185576",
+  "titles": {
+    "canonical": "Arch_Linux",
+    "normalized": "Arch Linux",
+    "display": "<span lang=\"en\" dir=\"ltr\"><span class=\"mw-page-title-main\">Arch Linux</span></span>"
+  },
+  "pageid": 674891,
+  "thumbnail": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Archlinux-logo-standard-version.svg/330px-Archlinux-logo-standard-version.svg.png",
+    "width": 330,
+    "height": 109
+  },
+  "originalimage": {
+    "source": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Archlinux-logo-standard-version.svg/960px-Archlinux-logo-standard-version.svg.png",
+    "width": 600,
+    "height": 199
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1364328538",
+  "tid": "81267058-80a3-11f1-8172-3cdecdab9e57",
+  "timestamp": "2026-07-15T23:18:36Z",
+  "description": "Rolling release Linux distribution",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://en.wikipedia.org/wiki/Arch_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Arch_Linux?action=history",
+      "edit": "https://en.wikipedia.org/wiki/Arch_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Arch_Linux"
+    },
+    "mobile": {
+      "page": "https://en.wikipedia.org/wiki/Arch_Linux",
+      "revisions": "https://en.wikipedia.org/wiki/Special:History/Arch_Linux",
+      "edit": "https://en.wikipedia.org/wiki/Arch_Linux?action=edit",
+      "talk": "https://en.wikipedia.org/wiki/Talk:Arch_Linux"
+    }
+  },
+  "extract": "Arch Linux is an open source, rolling release Linux distribution. Arch Linux is kept up-to-date by regularly updating the individual pieces of software that it comprises. It provides monthly \"snapshots\" which are used as installation media. Arch Linux is intentionally minimal, and is meant to be configured by the user during installation to add only what is needed.",
+  "extract_html": "<p><b>Arch Linux</b> is an open source, rolling release Linux distribution. Arch Linux is kept up-to-date by regularly updating the individual pieces of software that it comprises. It provides monthly \"snapshots\" which are used as installation media. Arch Linux is intentionally minimal, and is meant to be configured by the user during installation to add only what is needed.</p>"
+}

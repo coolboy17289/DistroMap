@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""
+Build per-distro Markdown files from the cached API responses.
+
+For every distro in .cache/api/all.json, this script writes:
+
+  1. distros/<slug>/<slug>.md          (the human-facing dossier)
+  2. frontend/src/data/distros.json   (single-file data blob for the
+                                       Vite frontend, including the raw
+                                       markdown body as a string field)
+
+Both share the same source regex/structured-data fetch pipeline in
+.cache/fetch_distros.py — run them in order, refresh in under a minute.
+"""
+import json
+from pathlib import Path
+from datetime import datetime, timezone
+
+ROOT = Path(".")
+SRC  = ROOT / ".cache" / "api" / "all.json"
+MAR  = ROOT / ".cache" / "api" / "manual_overrides.json"
+DISTROS_OUT = ROOT / "distros"
+FE_OUT      = ROOT / "frontend" / "src" / "data"
+
+WIKIDATA_HOST = "https://www.wikidata.org/wiki"
+WIKI_HOST     = "https://en.wikipedia.org/wiki"
+
+# Per-family accent palette — keep in sync with frontend/tailwind.config.js
+# and frontend/src/data/distros.json (used as the seed when the api JSON
+# doesn't know a per-distro accent).
+FAMILY_ACCENT = {
+    "debian":    "#22d3ee",
+    "ubuntu":    "#67e8f9",
+    "linux_mint":"#a5f3fc",
+    "pop_os":    "#7dd3fc",
+    "arch":      "#818cf8",
+    "manjaro":   "#a5b4fc",
+    "endeavouros":"#6366f1",
+    "fedora":    "#fbbf24",
+    "nobara":    "#fcd34d",
+    "gentoo":    "#34d399",
+    "slackware": "#cbd5e1",
+    "linux_kernel":"#22d3ee",
+}
+
+# Approximate defaults for fields some distros don't expose on Wikidata.
+FAMILY_DEFAULTS = {
+    "debian":    {"release_model": "Point releases (~2 yr)",       "package_manager": "apt"},
+    "ubuntu":    {"release_model": "Point releases (LTS + interim)", "package_manager": "apt"},
+    "linux_mint":{"release_model": "Point releases",              "package_manager": "apt"},
+    "pop_os":    {"release_model": "Point releases",              "package_manager": "apt"},
+    "arch":      {"release_model": "Rolling release",             "package_manager": "pacman"},
+    "manjaro":   {"release_model": "Rolling release (delayed)",   "package_manager": "pacman + pamac"},
+    "endeavouros":{"release_model": "Rolling release",            "package_manager": "pacman + yay"},
+    "fedora":    {"release_model": "Point releases (~6 months)",  "package_manager": "dnf / rpm"},
+    "nobara":    {"release_model": "Rolling (follows Fedora)",    "package_manager": "dnf + Nobara tweaks"},
+    "gentoo":    {"release_model": "Rolling (source builds)",     "package_manager": "portage (emerge)"},
+    "slackware": {"release_model": "Point releases (slow)",       "package_manager": "pkgtools / slapt-get"},
+    "linux_kernel":{"release_model": "N/A",                       "package_manager": "N/A"},
+}
+
+TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+
+# ── Markdown dossier renderer (used twice: to .md file and to .md string) ─────
+
+def render_md(d: dict) -> str:
+    """Render a single distro to its Markdown dossier body (no leading heading)."""
+    parts: list[str] = []
+    parts.append(f"# {d['display']}\n")
+
+    if d.get("short_desc"):
+        parts.append(f"> {d['short_desc']}\n")
+
+    rows = []
+    rows.append(("Display name", d["display"]))
+    if d.get("qid"):
+        rows.append(("Wikidata ID", f"`{d['qid']}` &nbsp;·&nbsp; [open]({WIKIDATA_HOST}/{d['qid']})"))
+    if d.get("wiki_url"):
+        rows.append(("Wikipedia", f"[{d['display']} on en.wikipedia]({d['wiki_url']})"))
+    if d.get("official_website"):
+        rows.append(("Official website", f"<{d['official_website']}>"))
+    if d.get("developer"):
+        rows.append(("Developer / maintainer", d["developer"]))
+    if d.get("inception"):
+        rows.append(("First released", d["inception"]))
+    if d.get("based_on"):
+        rows.append(("Based on (Wikidata P144)", d["based_on"]))
+
+    parent = d.get("parent")
+    if parent:
+        rows.append(("Parent in DistroMap tree", f"[`{parent}`](../{parent}/{parent}.md)"))
+
+    if rows:
+        parts.append("| Field | Value |\n|---|---|")
+        for k, v in rows:
+            parts.append(f"| {k} | {v} |")
+        parts.append("")
+
+    if d.get("extract"):
+        parts.append("## Summary\n")
+        parts.append(d["extract"].strip())
+        parts.append("")
+
+    thumb = d.get("thumbnail")
+    if thumb and thumb.startswith("http"):
+        parts.append("## Logo / thumbnail\n")
+        parts.append(f"![{d['display']} logo]({thumb})\n")
+
+    parts.append("## Sources\n")
+    parts.append(
+        "All data on this page was retrieved from two free, public APIs:\n\n"
+        f"- **Wikipedia REST API** — `/page/summary/{d['wp_title']}`\n"
+        f"  <https://en.wikipedia.org/api/rest_v1/page/summary/{d['wp_title'].replace(' ', '_')}>\n"
+    )
+    if d.get("qid"):
+        parts.append(
+            f"- **Wikidata entity endpoint** — `{d['qid']}`\n"
+            f"  <{WIKIDATA_HOST}/Special:EntityData/{d['qid']}.json>\n"
+        )
+    parts.append(
+        "\nBoth endpoints are maintained by the Wikimedia Foundation, are free to "
+        "use, require no API key, and are licensed under CC-BY-SA."
+    )
+    parts.append(f"\n_Last regenerated: {TODAY}_\n")
+
+    return "\n".join(parts)
+
+
+# ── Frontend payload (single JSON for Vite) ──────────────────────────────
+
+def frontend_payload(d: dict, parent_map: dict) -> dict:
+    """Convert a .cache/api/all.json record into the Vite-friendly shape."""
+    accent = FAMILY_ACCENT.get(d["slug"], FAMILY_ACCENT.get(d.get("family", ""), "#22d3ee"))
+    defaults = FAMILY_DEFAULTS.get(d["slug"], {})
+
+    # Walk the actual parent chain to compute depth from root (kernel = 0).
+    depth = 0
+    cur = d["slug"]
+    while parent_map.get(cur):
+        depth += 1
+        cur = parent_map[cur]
+        if depth > 64:    # cycle guard
+            break
+
+    rec = {
+        "slug": d["slug"],
+        "display": d["display"],
+        "parent": d["parent"],
+        "depth": depth,
+        "accent": accent,
+        "family": d.get("family") or slug_to_family(d["slug"]),
+        "qid": d.get("qid"),
+        "short_desc": d.get("short_desc"),
+        "extract":    d.get("extract"),
+        "thumbnail":  d.get("thumbnail"),
+        "wiki_url":   d.get("wiki_url"),
+        "official_website": d.get("official_website"),
+        "developer":  d.get("developer"),
+        "inception":  d.get("inception"),
+        "based_on_label": _friendly_based_on(d.get("based_on")),
+        "release_model":  defaults.get("release_model", ""),
+        "package_manager":defaults.get("package_manager", ""),
+        # Markdown body embedded so Vue can render the full dossier.
+        "markdown": render_md(d),
+    }
+    return rec
+
+
+def slug_to_family(slug: str) -> str:
+    return {
+        "linux_kernel":"kernel",
+        "debian":   "debian",
+        "ubuntu":   "debian",
+        "linux_mint":"debian",
+        "pop_os":   "debian",
+        "arch":     "arch",
+        "manjaro":  "arch",
+        "endeavouros":"arch",
+        "fedora":   "fedora",
+        "nobara":   "fedora",
+        "gentoo":   "gentoo",
+        "slackware":"slackware",
+    }.get(slug, "other")
+
+
+def _friendly_based_on(b):
+    """Strip 'wd:Q<id>' values from the based_on field."""
+    if not b:
+        return None
+    if isinstance(b, str) and b.startswith("wd:"):
+        return None
+    return b
+
+
+# ── Pipeline ────────────────────────────────────────────────────────────
+
+def main() -> None:
+    data = json.loads(SRC.read_text(encoding="utf-8"))
+
+    # Optional: apply manual override layer (TODO: see README roadmap v0.2)
+    overrides: dict = {}
+    if MAR.exists():
+        overrides = json.loads(MAR.read_text(encoding="utf-8"))
+
+    parent_map = {d["slug"]: d["parent"] for d in data}
+
+    # 1. Write per-distro Markdown files
+    DISTROS_OUT.mkdir(parents=True, exist_ok=True)
+    for d in data:
+        slug = d["slug"]
+        (DISTROS_OUT / slug / f"{slug}.md").parent.mkdir(parents=True, exist_ok=True)
+        (DISTROS_OUT / slug / f"{slug}.md").write_text(render_md(d), encoding="utf-8")
+    print(f"  wrote {len(data)} dossiers under {DISTROS_OUT}/")
+
+    # 2. Write a single JSON for the frontend
+    FE_OUT.mkdir(parents=True, exist_ok=True)
+    fe_payload = [frontend_payload(d, parent_map) for d in data]
+    FE_OUT.joinpath("distros.json").write_text(
+        json.dumps(fe_payload, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+    print(f"  wrote frontend bundle → {FE_OUT/'distros.json'}")
+
+
+if __name__ == "__main__":
+    main()

@@ -2,7 +2,7 @@
 
 ![DistroMap placeholder logo](assets/logo.svg)
 
-> A visual knowledge graph of the Linux ecosystem.
+A visual knowledge graph of the Linux ecosystem.
 
 DistroMap maps Linux distributions and shows how they are connected —
 starting from the **Linux kernel** and branching out into the major

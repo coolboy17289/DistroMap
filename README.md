@@ -147,9 +147,11 @@ cited at the bottom of every dossier.
 - [x] **v0.1** — per-distro dossiers, fetch + build pipeline, this README
 - [x] **v0.2** — apply reviewer flag — Nobelium/P110 + Last-regenerated fix
 - [x] **v0.3** — interactive circular graph frontend (Vite + React + Vue + Tailwind)
-- [ ] **v0.4** — manual overrides layer (`.cache/manual_overrides.json`) for fields Wikidata doesn't have
-- [ ] **v0.5** — user-submitted "add a distro" flow, validated against the same Wikidata pipeline
-- [ ] **v0.6** — popularity scoring sourced from DistroWatch + pageview stats
+- [x] **v0.4** — **manual overrides layer** (`.cache/api/manual_overrides.json`, shallow-merged at build time; `fetch_distros.py` prints a missing-field report that suggests what to put in the override file)
+- [x] **v0.5** — **user-submitted "add a distro" flow** (FastAPI in `backend/`, file-backed queue at `.cache/api/suggestions.json`; redundant in-browser fallback to `localStorage` + a downloadable JSON so suggestions survive when the API is offline)
+- [x] **v0.6** — **popularity scoring** (Wikipedia pageviews over 30 days, log-transformed + quantile-binned into 1–5; raw signal exposed in the SidePanel). DistroWatch was originally listed as a co-signal, but their site actively blocks scripted traffic and the public ToS discourages scraping — pageviews-only ships in v0.6 and the scoring logger is structured so a second signal can be appended later without breaking the build script.
+
+See `backend/README.md` for the suggestion-API contract and `.cache/fetch_popularity.py` for the scoring details.
 
 ---
 
@@ -183,7 +185,14 @@ From the repo root:
 python3 .cache/fetch_distros.py      # pulls fresh data from Wikipedia + Wikidata
 python3 .cache/build_distro_files.py # writes distros/<slug>/<slug>.md +
                                     # frontend/src/data/distros.json
+python3 .cache/fetch_popularity.py   # v0.6 — fetches pageview signals → popularity.json
+python3 .cache/build_distro_files.py # re-run to merge popularity into distros.json
 cd frontend && npm run dev           # → http://127.0.0.1:5173
+
+# v0.5 — optional; the SuggestForm falls back to localStorage when the
+# backend is offline. The form's badge in the header shows "backend:live"
+# vs "backend:offline (local+download)" so you always know the path.
+cd frontend && npm run backend       # → http://127.0.0.1:8765/api/
 ```
 
 Refreshing all twelve distros takes well under a minute. Raw

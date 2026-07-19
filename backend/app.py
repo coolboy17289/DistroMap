@@ -25,6 +25,9 @@ Run
 from __future__ import annotations
 
 import json
+import os
+import tempfile
+import threading
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
@@ -58,6 +61,12 @@ app.add_middleware(
     allow_headers=["Content-Type"],
     allow_credentials=False,
 )
+
+# Single lock around the read-modify-write of SUGGESTIONS_FILE.
+# FastAPI runs sync `def` endpoints in a threadpool, so threading.Lock
+# is the right primitive (an asyncio.Lock would only protect coroutines
+# that yield control, which the file ops do not).
+_FILE_LOCK = threading.Lock()
 
 
 # ── Models ────────────────────────────────────────────────────────────
@@ -95,8 +104,32 @@ def _read_all() -> list[dict[str, Any]]:
 
 
 def _write_all(rows: list[dict[str, Any]]) -> None:
+    """
+    Atomic, crash-safe write. A crashed mid-write would otherwise leave
+    the file truncated to 0 bytes and brick subsequent POSTs — we
+    write to a temp file in the SAME directory and `os.replace()`
+    onto the target (atomic on POSIX, best-effort on Windows).
+    """
     _ensure_file()
-    SUGGESTIONS_FILE.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
+    payload = json.dumps(rows, indent=2, ensure_ascii=False)
+    fd, tmp_path = tempfile.mkstemp(
+        dir=str(SUGGESTIONS_FILE.parent),
+        prefix=".suggestions-",
+        suffix=".json.tmp",
+    )
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as fh:
+            fh.write(payload)
+            fh.flush()
+            os.fsync(fh.fileno())
+        os.replace(tmp_path, SUGGESTIONS_FILE)
+    except Exception:
+        # Best-effort cleanup; never leave .tmp files lying around.
+        try:
+            os.unlink(tmp_path)
+        except OSError:
+            pass
+        raise
 
 
 # ── Routes ────────────────────────────────────────────────────────────
@@ -119,20 +152,23 @@ def list_suggestions(limit: int = 100) -> list[dict[str, Any]]:
 
 @app.post("/api/suggestions", status_code=201)
 def post_suggestion(payload: SuggestionIn) -> dict[str, Any]:
-    # De-dup on (slug, wikipedia_title) so refresh-submits don't pile up.
-    rows = _read_all()
-    if any(r.get("slug") == payload.slug and r.get("wikipedia_title") == payload.wikipedia_title
-           for r in rows):
-        raise HTTPException(
-            status_code=409,
-            detail=f"Suggestion for slug '{payload.slug}' already on file.",
-        )
+    # Locked read-modify-write so two concurrent POSTs can't lose a
+    # row. The lock spans the de-dup check + the append + the atomic
+    # write so they form one logical unit.
+    with _FILE_LOCK:
+        rows = _read_all()
+        if any(r.get("slug") == payload.slug and r.get("wikipedia_title") == payload.wikipedia_title
+               for r in rows):
+            raise HTTPException(
+                status_code=409,
+                detail=f"Suggestion for slug '{payload.slug}' already on file.",
+            )
 
-    row = payload.dict()
-    row["id"] = f"{payload.slug}-{int(datetime.now(timezone.utc).timestamp())}-{uuid.uuid4().hex[:6]}"
-    row["received_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
-    rows.append(row)
-    _write_all(rows)
+        row = payload.dict()
+        row["id"] = f"{payload.slug}-{int(datetime.now(timezone.utc).timestamp())}-{uuid.uuid4().hex[:6]}"
+        row["received_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        rows.append(row)
+        _write_all(rows)
     return {"ok": True, "id": row["id"]}
 
 

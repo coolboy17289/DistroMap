@@ -34,8 +34,16 @@ export async function validateWikidataTitle(title: string): Promise<ValidationRe
   // The REST endpoint exposes a lot; we only pick the fields the
   // build script and SuggestionIn model both know about.
   const extract: string = (data.extract ?? '').trim();
+  // Use Wikipedia's wikibase_item (QID) directly; the pageid fallback
+  // is only used when the REST endpoint doesn't expose wikibase_item
+  // (some article types omit it). Writing `data.pageid ? \`Q${pageid}\` : null`
+  // was a bug — see the precedence note in PR review; QID is what we want.
+  const qid: string | null =
+    (typeof data.wikibase_item === 'string' && data.wikibase_item.length > 0)
+      ? data.wikibase_item
+      : (typeof data.pageid === 'number' ? `Q${data.pageid}` : null);
   return {
-    qid: data.wikibase_item ?? data.pageid ? `Q${data.pageid}` : null,
+    qid,
     short_desc: data.description ?? '',
     extract: extract.length > 1900 ? `${extract.slice(0, 1900)}…` : extract,
     thumbnail: data.thumbnail?.source ?? data.originalimage?.source ?? null,
@@ -106,7 +114,15 @@ export async function backendReachable(): Promise<boolean> {
   try {
     const r = await fetch(`${BACKEND_URL}/health`, { method: 'GET' });
     return r.ok;
-  } catch {
+  } catch (err) {
+    // Loud in dev console so the developer-DX case explains itself,
+    // silent for end users (the badge already says "backend:offline").
+    if (typeof console !== 'undefined') {
+      console.warn(
+        '[distromap] suggestion backend unreachable; falling back to localStorage + JSON download:',
+        err instanceof Error ? err.message : String(err),
+      );
+    }
     return false;
   }
 }

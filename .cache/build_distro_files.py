@@ -17,8 +17,9 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 ROOT = Path(".")
-SRC  = ROOT / ".cache" / "api" / "all.json"
-MAR  = ROOT / ".cache" / "api" / "manual_overrides.json"
+SRC       = ROOT / ".cache" / "api" / "all.json"
+MAR       = ROOT / ".cache" / "api" / "manual_overrides.json"
+POP       = ROOT / ".cache" / "api" / "popularity.json"
 DISTROS_OUT = ROOT / "distros"
 FE_OUT      = ROOT / "frontend" / "src" / "data"
 
@@ -129,7 +130,7 @@ def render_md(d: dict) -> str:
 
 # ── Frontend payload (single JSON for Vite) ──────────────────────────────
 
-def frontend_payload(d: dict, parent_map: dict) -> dict:
+def frontend_payload(d: dict, parent_map: dict, popularity: dict) -> dict:
     """Convert a .cache/api/all.json record into the Vite-friendly shape."""
     accent = FAMILY_ACCENT.get(d["slug"], FAMILY_ACCENT.get(d.get("family", ""), "#22d3ee"))
     defaults = FAMILY_DEFAULTS.get(d["slug"], {})
@@ -142,6 +143,11 @@ def frontend_payload(d: dict, parent_map: dict) -> dict:
         cur = parent_map[cur]
         if depth > 64:    # cycle guard
             break
+
+    # v0.6 — popularity score: prefer the computed 1-5, fall back to 3
+    # mid-range if popularity.json doesn't have a row for this slug.
+    pop_row = popularity.get(d["slug"])
+    pop_score = int(pop_row.get("score", 3)) if pop_row else 3
 
     rec = {
         "slug": d["slug"],
@@ -161,6 +167,8 @@ def frontend_payload(d: dict, parent_map: dict) -> dict:
         "based_on_label": _friendly_based_on(d.get("based_on")),
         "release_model":  defaults.get("release_model", ""),
         "package_manager":defaults.get("package_manager", ""),
+        "popularity": pop_score,
+        "popularity_signals": _pop_signals(pop_row),
         # Markdown body embedded so Vue can render the full dossier.
         "markdown": render_md(d),
     }
@@ -191,6 +199,61 @@ def _friendly_based_on(b):
     if isinstance(b, str) and b.startswith("wd:"):
         return None
     return b
+
+
+# ── v0.4 — manual override merge (shallow, slug-keyed) ──────────────────
+#
+# Top-level underscore keys in the override file are documentation /
+# comments and are ignored. For every other top-level key (a slug),
+# we shallow-merge those fields on top of the API record. Lists are
+# replaced whole; None values are kept (Wikidata already returns None
+# for missing fields). This is the least-surprising behaviour for the
+# maintainer: "what I wrote wins", no deep-merging surprises.
+def _load_overrides() -> dict:
+    if not MAR.exists():
+        return {}
+    raw = json.loads(MAR.read_text(encoding="utf-8"))
+    return {
+        slug: fields
+        for slug, fields in raw.items()
+        if not slug.startswith("_") and isinstance(fields, dict)
+    }
+
+
+def _apply_overrides(record: dict, overrides: dict) -> dict:
+    slug_overrides = overrides.get(record["slug"])
+    if slug_overrides:
+        for k, v in slug_overrides.items():
+            record[k] = v
+    return record
+
+
+# ── v0.6 — popularity merge ───────────────────────────────────────────
+#
+# .cache/api/popularity.json looks like { slug: { pageviews_30d, score,
+# source, fetched_at }, ... }. Slugs with no data get a null signal
+# so the frontend can render a "not yet fetched" hint.
+def _load_popularity() -> dict:
+    if not POP.exists():
+        return {}
+    raw = json.loads(POP.read_text(encoding="utf-8"))
+    return {
+        slug: fields
+        for slug, fields in raw.items()
+        if not slug.startswith("_") and isinstance(fields, dict)
+    }
+
+
+def _pop_signals(pop_row: dict | None) -> dict | None:
+    """Reshape the popularity.json row for the frontend's JSON shape."""
+    if not pop_row:
+        return None
+    raw = int(pop_row.get("pageviews_30d") or 0)
+    return {
+        "pageviews_30d": raw,
+        "source": pop_row.get("source") or "",
+        "fetched_at": pop_row.get("fetched_at") or "",
+    }
 
 
 # ── Pipeline ────────────────────────────────────────────────────────────

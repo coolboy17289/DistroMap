@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import GraphCanvas from '@/components/GraphCanvas';
 import SidePanel from '@/components/SidePanel';
 import Footer from '@/components/Footer';
+import SuggestForm from '@/components/SuggestForm';
 import type { Distro } from '@/types';
 
 const distros = distrosJson as Distro[];
@@ -12,6 +13,7 @@ const distros = distrosJson as Distro[];
 export default function App() {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<string | null>(null);
+  const [isSuggestOpen, setIsSuggestOpen] = useState(false);
 
   const selectedDistro = useMemo(
     () => (selected ? distros.find((d) => d.slug === selected) ?? null : null),
@@ -49,6 +51,7 @@ export default function App() {
         onQueryChange={setQuery}
         onClearQuery={() => setQuery('')}
         total={distros.length}
+        onSuggestClick={() => setIsSuggestOpen(true)}
       />
 
       <main className="flex-1 relative">
@@ -94,6 +97,11 @@ export default function App() {
       </main>
 
       <Footer />
+
+      {/* v0.5 — user-submitted suggestions live outside the main grid
+          so the modal can overlay the full canvas without z-fighting
+          with the sticky header or the side panel. */}
+      <SuggestForm open={isSuggestOpen} onClose={() => setIsSuggestOpen(false)} />
     </div>
   );
 }

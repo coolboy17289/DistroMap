@@ -158,15 +158,32 @@ def main() -> None:
             "developer": developer,
             "inception": inception,
             "based_on": based_on,
-        })
-
-      
+        })     
         time.sleep(0.4)
 
     Path(".cache/api/all.json").write_text(
         json.dumps(results, indent=2, ensure_ascii=False)
     )
     print(f"\nCached {len(results)} distros in .cache/api/")
+
+    # v0.4 — missing-field report. Helps a maintainer decide which
+    # entries to add to .cache/api/manual_overrides.json. We print to
+    # stdout; pipe it into a file if you want history.
+    optional_fields = ("developer", "inception", "based_on", "official_website")
+    print("\n--- missing-field report (Wikidata gaps) ---")
+    any_missing = False
+    for r in results:
+        gaps = [f for f in optional_fields if not r.get(f)]
+        if gaps:
+            any_missing = True
+            print(f"  {r['slug']:14s}  missing: {', '.join(gaps)}")
+        if not r.get("qid"):
+            print(f"  {r['slug']:14s}  missing: qid")
+            any_missing = True
+    if not any_missing:
+        print("  (none — every distro has every optional field)")
+    print("\nOverride any gap by editing .cache/api/manual_overrides.json and re-running")
+    print("  python3 .cache/build_distro_files.py\n")
 
 
 if __name__ == "__main__":

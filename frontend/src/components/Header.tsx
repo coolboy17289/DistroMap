@@ -7,6 +7,7 @@ interface HeaderProps {
   onQueryChange: (q: string) => void;
   onClearQuery: () => void;
   total: number;
+  onSuggestClick: () => void;
 }
 
 export default function Header({
@@ -14,6 +15,7 @@ export default function Header({
   onQueryChange,
   onClearQuery,
   total,
+  onSuggestClick,
 }: HeaderProps) {
   return (
     <header className="sticky top-0 z-30 border-b border-panel-border bg-bg/85 backdrop-blur-md">
@@ -41,6 +43,20 @@ export default function Header({
             </span>
             distros
           </span>
+          <button
+            type="button"
+            onClick={onSuggestClick}
+            aria-label="Suggest a distribution"
+            title="Suggest a distribution (v0.5)"
+            className="rounded-md border border-cyan-500/40 px-2.5 py-1.5
+                       text-[12px] font-mono uppercase tracking-wider
+                       text-cyan-300 bg-cyan-500/5
+                       hover:bg-cyan-500/15 hover:text-cyan-200 hover:border-cyan-400
+                       transition-all"
+          >
+            <span aria-hidden="true" className="mr-0.5">+</span>
+            <span className="hidden sm:inline">suggest</span>
+          </button>
           <ThemeToggle />
           <GithubButton />
         </div>

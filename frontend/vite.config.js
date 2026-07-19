@@ -16,6 +16,16 @@ export default defineConfig({
     host: '127.0.0.1',
     port: 5173,
     strictPort: true,
+    // v0.5 — proxy suggestion-API calls to the optional FastAPI
+    // backend (see ../backend/app.py and ../serve_backend.sh). If
+    // uvicorn isn't running, /api/* calls will 404 and the frontend
+    // silently falls back to localStorage + a JSON download.
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8765',
+        changeOrigin: false,
+      },
+    },
   },
   build: {
     target: 'es2022',

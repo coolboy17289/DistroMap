@@ -79,6 +79,23 @@ export default function SidePanel({ distro, onClose }: SidePanelProps) {
             </div>
             <Stars value={distro.popularity} />
           </div>
+          {distro.popularity_signals && distro.popularity_signals.pageviews_30d > 0 ? (
+            <p
+              className="mt-2 font-mono text-[10.5px] text-ink-400 leading-relaxed"
+              title={`Wikipedia pageviews, ${distro.popularity_signals.fetched_at}`}
+            >
+              {distro.popularity_signals.pageviews_30d.toLocaleString()}{' '}
+              views/day ·{' '}
+              <span className="text-cyan-300">
+                {distro.popularity_signals.source || 'no-source'}
+              </span>
+            </p>
+          ) : (
+            <p className="mt-2 font-mono text-[10.5px] text-ink-500">
+              raw signal not available yet — run{' '}
+              <code className="text-cyan-300">fetch_popularity.py</code>
+            </p>
+          )}
         </section>
 
         <FieldRow label="Description">

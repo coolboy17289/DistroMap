@@ -236,6 +236,60 @@ a different filename and update the header).
 
 ---
 
+## Deploying
+
+DistroMap ships split across two hosts on purpose:
+
+| Service     | Where it runs | Why |
+|-------------|---------------|-----|
+| Vite SPA    | **Vercel**    | Static bundle, edge cache, free preview deploys per branch |
+| FastAPI     | **Fly.io**    | Long-running process, persistent volume for the suggestion queue |
+
+Why not both on Vercel? Vercel Functions are serverless and stateless,
+so the file-on-disk queue at `.cache/api/suggestions.json` would be
+wiped between invocations. Fly.io runs it as a real container with a
+mounted volume.
+
+### Deploy the frontend (Vercel)
+
+```bash
+# One-time, from the repo root:
+vercel link                  # pick or create the project
+vercel env add VITE_API_URL production   # paste the Fly URL when prompted
+# Then for every deploy:
+vercel --prod                # reads vercel.json, builds frontend/, deploys dist/
+```
+
+`vercel.json` tells Vercel to treat `frontend/` as the Vite project
+root (`buildCommand: npm run build`, `outputDirectory: dist`). For
+preview URLs (`*.<hash>.vercel.app`) CORS is allowed automatically
+via the regex baked into `backend/app.py`.
+
+### Deploy the backend (Fly.io)
+
+```bash
+# First-time, from the repo root:
+fly launch --copy-config --no-deploy     # creates app "distromap-api"
+fly volumes create distro_suggestions -s 1 -r iad
+fly deploy                               # builds via Dockerfile, runs uvicorn:8080
+
+# Update CORS once the Vercel canonical URL is known:
+fly secrets set ALLOWED_ORIGINS="https://distromap-git-main.vercel.app"
+```
+
+Fly mounts the volume `distro_suggestions` at `/app/.cache/api`, which
+is exactly where `backend/app.py` writes `suggestions.json`. Writes
+persist across deploys; no extra migration needed.
+
+### Locally simulating deploy
+
+`npm run dev` (Vite on 5173) + `npm run backend` (uvicorn on 8765) is
+identical to production minus TLS. The Vite proxy already forwards
+`/api → 127.0.0.1:8765`, so the SuggestForm's modal badge says
+**backend:live** exactly like it will on Vercel.
+
+---
+
 ## Current coverage & known gaps
 
 The v0.1 data pipeline covers everything from `idea.md`'s example tree.

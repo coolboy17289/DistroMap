@@ -48,15 +48,35 @@ app = FastAPI(
     "only writer that matters.",
 )
 
-# CORS for local Vite dev (5173) and 127.0.0.1, plus file:// previews.
+# CORS — dev defaults + Vercel preview/prod regex + env-driven extras.
+#
+# Why a regex for vercel.app?
+# Vercel generates a new subdomain per branch / PR preview
+# (`distromap-<hash>-<team>.vercel.app`). Hard-coding them all is
+# brittle, but `allow_origin_regex` lets us match the whole family
+# with one pattern. The pattern only allows *.vercel.app which is
+# already a controlled namespace; non-Vercel browsers cannot claim it.
+_BASE_LOCAL_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:4173",
+    "http://127.0.0.1:4173",
+]
+_VERCEL_ORIGIN_REGEX = r"^https://[a-z0-9-]+(\-[a-z0-9-]+)*\.vercel\.app$"
+
+
+def _extra_origins() -> list[str]:
+    """Comma-separated `ALLOWED_ORIGINS` env var for custom domains or LAN IPs."""
+    raw = os.environ.get("ALLOWED_ORIGINS", "").strip()
+    if not raw:
+        return []
+    return [o.strip() for o in raw.split(",") if o.strip()]
+
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:4173",
-        "http://127.0.0.1:4173",
-    ],
+    allow_origins=_BASE_LOCAL_ORIGINS + _extra_origins(),
+    allow_origin_regex=_VERCEL_ORIGIN_REGEX,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type"],
     allow_credentials=False,

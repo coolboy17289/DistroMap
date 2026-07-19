@@ -16,9 +16,18 @@
 
 import type { Suggestion, ValidationResult } from '@/types';
 
-// Vite dev-server proxy maps /api → http://127.0.0.1:8765 (see vite.config.js).
-// In a static prod build this would point at an env-injected URL.
-const BACKEND_URL = '/api';
+// In dev:       leave VITE_API_URL unset → the Vite proxy maps /api→127.0.0.1:8765.
+// In production: pick up VITE_API_URL at build time (set on Vercel to
+//               https://distromap-api.fly.dev — see ../.env.example).
+// Trailing-slash normalization keeps `<API>/suggestions` valid even if
+// the user supplies `.../api/` (with a trailing slash) by mistake.
+const RAW_API_URL = (import.meta.env.VITE_API_URL ?? '').trim();
+const BACKEND_URL =
+  RAW_API_URL === ''
+    ? '/api'
+    : RAW_API_URL.endsWith('/')
+      ? RAW_API_URL.slice(0, -1)
+      : RAW_API_URL;
 const LOCAL_KEY = 'distromap-suggestions';
 
 const WIKI_HEADERS = { Accept: 'application/json' };

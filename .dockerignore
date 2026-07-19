@@ -1,0 +1,36 @@
+# Don't send the entire repo into the docker build context — most of
+# it is irrelevant to running backend.app.
+.git
+.github
+*.tsbuildinfo
+.venv
+.venv-test
+node_modules
+dist
+.cache/api/qid_label_map.json
+.cache/api/*.json
+# Keeps the .cache dir so the volume mount has an existing target,
+# but don't ship pre-cached API responses.
+.cache/api/all.json
+.cache/api/manual_overrides.json
+.cache/api/popularity.json
+.cache/api/suggestions.json
+.cache/api/debian_*.json
+.cache/api/ubuntu_*.json
+.cache/api/arch_*.json
+.cache/api/fedora_*.json
+.cache/api/gentoo_*.json
+.cache/api/linux_*.json
+.cache/api/manjaro_*.json
+.cache/api/pop_*.json
+.cache/api/nobara_*.json
+.cache/api/slackware_*.json
+.cache/api/endeavouros_*.json
+docs
+README.md
+*.md
+logo-extract
+frontend
+serve_backend.sh
+distros
+backend/README.md

@@ -1,0 +1,21 @@
+{
+  "_doc": "Per-slug field overrides applied on top of the Wikidata fetch. Build script merges shallowly (record.update(...)). Keep entries short and add a code-side comment in build_distro_files.py so a maintainer knows why the override exists. Top-level keys starting with '_' are ignored by the loader.",
+  "pop_os": {
+    "inception": "2017-09-27"
+  },
+  "manjaro": {
+    "qid": "Q1362599"
+  },
+  "nobara": {
+    "developer": "Thomas Crider (Glorious Eggroll)"
+  },
+  "arch": {
+    "developer": "Arch Linux Team"
+  },
+  "fedora": {
+    "developer": "Fedora Project (Red Hat)"
+  },
+  "linux_mint": {
+    "desktop_environments": ["Cinnamon", "MATE", "XFCE"]
+  }
+}

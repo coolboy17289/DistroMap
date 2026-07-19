@@ -8,6 +8,7 @@
 | Wikidata ID | `Q121027163` &nbsp;·&nbsp; [open](https://www.wikidata.org/wiki/Q121027163) |
 | Wikipedia | [Nobara on en.wikipedia](https://en.wikipedia.org/wiki/Nobara_(operating_system)) |
 | Official website | <https://nobaraproject.org/> |
+| Developer / maintainer | Thomas Crider (Glorious Eggroll) |
 | First released | 2019 |
 | Based on (Wikidata P144) | Fedora Linux |
 | Parent in DistroMap tree | [`fedora`](../fedora/fedora.md) |

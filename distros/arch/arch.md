@@ -8,6 +8,7 @@
 | Wikidata ID | `Q185576` &nbsp;·&nbsp; [open](https://www.wikidata.org/wiki/Q185576) |
 | Wikipedia | [Arch Linux on en.wikipedia](https://en.wikipedia.org/wiki/Arch_Linux) |
 | Official website | <https://archlinux.org> |
+| Developer / maintainer | Arch Linux Team |
 | First released | 2002-03-11 |
 | Parent in DistroMap tree | [`linux_kernel`](../linux_kernel/linux_kernel.md) |
 

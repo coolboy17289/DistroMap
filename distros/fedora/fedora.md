@@ -6,6 +6,7 @@
 |---|---|
 | Display name | Fedora |
 | Wikipedia | [Fedora on en.wikipedia](https://en.wikipedia.org/wiki/Fedora_Linux) |
+| Developer / maintainer | Fedora Project (Red Hat) |
 | Parent in DistroMap tree | [`linux_kernel`](../linux_kernel/linux_kernel.md) |
 
 ## Summary

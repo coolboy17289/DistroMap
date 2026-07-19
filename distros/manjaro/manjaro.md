@@ -5,6 +5,7 @@
 | Field | Value |
 |---|---|
 | Display name | Manjaro |
+| Wikidata ID | `Q1362599` &nbsp;·&nbsp; [open](https://www.wikidata.org/wiki/Q1362599) |
 | Wikipedia | [Manjaro on en.wikipedia](https://en.wikipedia.org/wiki/Manjaro) |
 | Parent in DistroMap tree | [`arch`](../arch/arch.md) |
 
@@ -22,6 +23,9 @@ All data on this page was retrieved from two free, public APIs:
 
 - **Wikipedia REST API** — `/page/summary/Manjaro_Linux`
   <https://en.wikipedia.org/api/rest_v1/page/summary/Manjaro_Linux>
+
+- **Wikidata entity endpoint** — `Q1362599`
+  <https://www.wikidata.org/wiki/Special:EntityData/Q1362599.json>
 
 
 Both endpoints are maintained by the Wikimedia Foundation, are free to use, require no API key, and are licensed under CC-BY-SA.

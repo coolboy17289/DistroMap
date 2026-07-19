@@ -8,7 +8,7 @@
 | Wikidata ID | `Q81388644` &nbsp;·&nbsp; [open](https://www.wikidata.org/wiki/Q81388644) |
 | Wikipedia | [Pop!_OS on en.wikipedia](https://en.wikipedia.org/wiki/Pop!_OS) |
 | Official website | <https://pop.system76.com> |
-| First released | 2017 |
+| First released | 2017-09-27 |
 | Based on (Wikidata P144) | Q381 |
 | Parent in DistroMap tree | [`ubuntu`](../ubuntu/ubuntu.md) |
 

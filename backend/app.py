@@ -73,8 +73,10 @@ _FILE_LOCK = threading.Lock()
 
 
 class SuggestionIn(BaseModel):
+    # v2-friendly constraint kwargs: `pattern` replaces the deprecated
+    # `regex` kwarg from Pydantic v1. Pinned in requirements.txt.
     wikipedia_title: constr(strip_whitespace=True, min_length=2, max_length=200)
-    slug:            constr(strip_whitespace=True, min_length=2, max_length=80, regex=r"^[a-z0-9_]+$")
+    slug:            constr(strip_whitespace=True, min_length=2, max_length=80, pattern=r"^[a-z0-9_]+$")
     parent:          constr(strip_whitespace=True, min_length=2, max_length=80) = "linux_kernel"
     reason:          constr(strip_whitespace=True, min_length=4, max_length=600)
     qid:             constr(strip_whitespace=True, min_length=1, max_length=40) | None = None
@@ -137,8 +139,11 @@ def _write_all(rows: list[dict[str, Any]]) -> None:
 
 @app.get("/api/health")
 def health() -> dict[str, Any]:
-    _ensure_file()
-    rows = _read_all()
+    # Take the file lock so a concurrent POST can't leave us reading
+    # a half-written (~empty) JSON. _read_all() is fast and the lock
+    # contention on a maintainer-only API is essentially zero.
+    with _FILE_LOCK:
+        rows = _read_all()
     return {"ok": True, "suggestions": len(rows), "file": str(SUGGESTIONS_FILE)}
 
 
@@ -146,7 +151,8 @@ def health() -> dict[str, Any]:
 def list_suggestions(limit: int = 100) -> list[dict[str, Any]]:
     if limit < 1 or limit > 500:
         raise HTTPException(status_code=400, detail="limit must be 1..500")
-    rows = _read_all()
+    with _FILE_LOCK:
+        rows = _read_all()
     return rows[-limit:][::-1]  # newest first
 
 

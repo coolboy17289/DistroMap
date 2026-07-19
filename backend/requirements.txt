@@ -1,3 +1,5 @@
 fastapi>=0.110.0
 uvicorn[standard]>=0.27.0
-pydantic>=1.10,<3
+# v0.5 — pin Pydantic to the v2 line so `constr(..., pattern=...)` works
+# cleanly. Older `regex=` is deprecated; we already migrated to `pattern=`.
+pydantic>=2.7,<3

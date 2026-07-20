@@ -794,7 +794,12 @@ async function handleFamilies(res: VercelResponse): Promise<boolean> {
     const entry = m.get(d.family) ?? { count: 0, active: 0, root: null };
     entry.count += 1;
     if (d.status === 'Active') entry.active += 1;
-    if (d.parent === null) entry.root = d.slug;
+    // A family root is the most-shallow record in the family. Prefer
+    // depth 1 (children of linux_kernel) so each family reports the
+    // distro the rest of the family descends from.
+    if (d.depth === 1) {
+      if (!entry.root || d.slug.length < entry.root.length) entry.root = d.slug;
+    }
     m.set(d.family, entry);
   }
   const out = Array.from(m.entries())

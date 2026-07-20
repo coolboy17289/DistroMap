@@ -34,6 +34,12 @@ const CATEGORY_KEYS = [
   'arm',
 ] as const;
 
+type CategoryKey = (typeof CATEGORY_KEYS)[number];
+
+function isCategoryKey(value: string): value is CategoryKey {
+  return (CATEGORY_KEYS as readonly string[]).includes(value);
+}
+
 /**
  * Parse a free-text query like "server debian rolling" or
  * "family:arch status:discontinued rolling".
@@ -64,39 +70,63 @@ function parseQuery(raw: string): ParsedQuery {
 }
 
 function matchesParsed(d: Distro, q: ParsedQuery): boolean {
-  for (const [k, v] of Object.entries(q.filters)) {
-    if (k === 'family' && d.family !== v) return false;
-    if (k === 'status' && d.status.toLowerCase() !== v) return false;
-    if (k === 'parent' && !(d.parents ?? []).includes(v) && d.parent !== v) return false;
-    if (k === 'package' && d.package_manager.toLowerCase() !== v) return false;
-    if (k === 'init' && d.init_system.toLowerCase() !== v) return false;
-    if (k === 'arch' && !(d.architecture ?? []).map((a) => a.toLowerCase()).includes(v)) return false;
-    if (k === 'country' && (d.country ?? '').toLowerCase() !== v) return false;
-    if (k === 'dev' && (d.developer ?? '').toLowerCase() !== v) return false;
-    if (k === 'license' && d.license.toLowerCase() !== v) return false;
-    if (k === 'cat' && !CATEGORY_KEYS.includes(v as (typeof CATEGORY_KEYS)[number])) {
-      return false;
-    }
-    if (CATEGORY_KEYS.includes(k as (typeof CATEGORY_KEYS)[number])) {
-      if (!d[k as (typeof CATEGORY_KEYS)[number]]) return false;
+  for (const [key, value] of Object.entries(q.filters)) {
+    switch (key) {
+      case 'family':
+        if (d.family.toLowerCase() !== value) return false;
+        break;
+      case 'status':
+        if (d.status.toLowerCase() !== value) return false;
+        break;
+      case 'parent':
+        if (!d.parents.includes(value) && d.parent !== value) return false;
+        break;
+      case 'package':
+        if (!d.package_manager.toLowerCase().includes(value)) return false;
+        break;
+      case 'init':
+        if (!d.init_system.toLowerCase().includes(value)) return false;
+        break;
+      case 'arch':
+        if (!d.architecture.some((arch) => arch.toLowerCase().includes(value))) {
+          return false;
+        }
+        break;
+      case 'country':
+        if (!(d.country ?? '').toLowerCase().includes(value)) return false;
+        break;
+      case 'dev':
+        if (!(d.developer ?? '').toLowerCase().includes(value)) return false;
+        break;
+      case 'license':
+        if (!d.license.toLowerCase().includes(value)) return false;
+        break;
+      case 'cat':
+        if (!isCategoryKey(value) || !d[value]) return false;
+        break;
+      default:
+        return false;
     }
   }
-  for (const t of q.terms) {
-    const ok =
-      d.display.toLowerCase().includes(t) ||
-      d.slug.toLowerCase().includes(t) ||
-      (d.short_desc ?? '').toLowerCase().includes(t) ||
-      d.family.toLowerCase().includes(t) ||
-      (d.description ?? '').toLowerCase().includes(t) ||
-      (d.country ?? '').toLowerCase().includes(t) ||
-      (d.developer ?? '').toLowerCase().includes(t) ||
-      d.package_manager.toLowerCase().includes(t) ||
-      (d.desktop_defaults ?? []).some((de) => de.toLowerCase().includes(t)) ||
-      (d.architecture ?? []).some((a) => a.toLowerCase().includes(t)) ||
-      CATEGORY_KEYS.includes(t as (typeof CATEGORY_KEYS)[number])
-        ? d[t as (typeof CATEGORY_KEYS)[number]]
-        : false;
-    if (!ok) return false;
+
+  for (const term of q.terms) {
+    const matchesText = [
+      d.display,
+      d.slug,
+      d.short_desc,
+      d.family,
+      d.description,
+      d.country ?? '',
+      d.developer ?? '',
+      d.package_manager,
+      d.init_system,
+      d.release_model,
+      ...d.desktop_defaults,
+      ...d.architecture,
+    ].some((value) => value.toLowerCase().includes(term));
+    const matchesCategory = isCategoryKey(term) && d[term];
+
+    if (!matchesText && !matchesCategory) return false;
   }
   return true;
 }

@@ -589,25 +589,46 @@
       "status": "Active"
     },
     {
+      "id": "comice_os",
+      "name": "Comice OS",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "condres",
+      "name": "Condres OS",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "cozy",
+      "name": "Cozy",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
       "id": "crunchbang",
       "name": "CrunchBang Linux",
       "family": "debian",
       "depth": 2,
-      "status": "Active"
+      "status": "Discontinued"
     },
     {
       "id": "crunchbangpp",
       "name": "CrunchBang++",
       "family": "debian",
       "depth": 2,
-      "status": "Active"
+      "status": "Discontinued"
     },
     {
       "id": "damn_small_linux",
       "name": "Damn Small Linux",
       "family": "debian",
       "depth": 2,
-      "status": "Active"
+      "status": "Discontinued"
     },
     {
       "id": "dvl",
@@ -633,6 +654,13 @@
     {
       "id": "debian_edu",
       "name": "Debian Edu (Skolelinux)",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_lvm",
+      "name": "Debian Installer (LVM)",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -666,6 +694,13 @@
       "status": "Active"
     },
     {
+      "id": "debian_rescue",
+      "name": "Debian Rescue",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "debian_science",
       "name": "Debian Science",
       "family": "debian",
@@ -673,8 +708,22 @@
       "status": "Active"
     },
     {
+      "id": "debian_cd_dvd",
+      "name": "Debian-CDs",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "devuan",
       "name": "Devuan",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "dietpi",
+      "name": "DietPi",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -698,7 +747,7 @@
       "name": "EasyPeasy",
       "family": "debian",
       "depth": 3,
-      "status": "Active"
+      "status": "Discontinued"
     },
     {
       "id": "edubuntu",
@@ -715,11 +764,25 @@
       "status": "Active"
     },
     {
+      "id": "elive_legacy",
+      "name": "Elive (legacy entry)",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
+    },
+    {
       "id": "endless_os",
       "name": "Endless OS",
       "family": "debian",
       "depth": 2,
       "status": "Active"
+    },
+    {
+      "id": "freesco",
+      "name": "FREESCO",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
     },
     {
       "id": "feren_os",
@@ -734,6 +797,13 @@
       "family": "debian",
       "depth": 2,
       "status": "Discontinued"
+    },
+    {
+      "id": "freedombox",
+      "name": "FreedomBox",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
     },
     {
       "id": "freedows",
@@ -769,6 +839,27 @@
       "family": "debian",
       "depth": 2,
       "status": "Discontinued"
+    },
+    {
+      "id": "ipcop",
+      "name": "IPCop",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "ipfire",
+      "name": "IPFire",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "indilinux",
+      "name": "IndiLinux",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
     },
     {
       "id": "kde_linux",
@@ -820,6 +911,13 @@
       "status": "Active"
     },
     {
+      "id": "kanotix",
+      "name": "Kanotix",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "knoppix",
       "name": "Knoppix",
       "family": "debian",
@@ -834,25 +932,39 @@
       "status": "Active"
     },
     {
-      "id": "lxle",
-      "name": "LXLE",
-      "family": "debian",
-      "depth": 3,
-      "status": "Active"
-    },
-    {
-      "id": "linspire",
-      "name": "Linspire",
+      "id": "kuliax",
+      "name": "Kuliax",
       "family": "debian",
       "depth": 2,
       "status": "Discontinued"
     },
     {
-      "id": "linux_kernel",
-      "name": "Linux Kernel",
+      "id": "ltsp",
+      "name": "LTSP",
       "family": "debian",
-      "depth": 0,
+      "depth": 2,
       "status": "Active"
+    },
+    {
+      "id": "lxle",
+      "name": "LXLE",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
+    },
+    {
+      "id": "lindows",
+      "name": "Lindows",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "linspire",
+      "name": "Linspire",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
     },
     {
       "id": "linux_lite",
@@ -890,10 +1002,31 @@
       "status": "Active"
     },
     {
+      "id": "meego",
+      "name": "MeeGo",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
+    },
+    {
       "id": "mempo",
       "name": "Mempo",
       "family": "debian",
       "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "minibian",
+      "name": "Minibian",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "moon_os",
+      "name": "MoonOS",
+      "family": "debian",
+      "depth": 3,
       "status": "Discontinued"
     },
     {
@@ -908,7 +1041,7 @@
       "name": "Netrunner (Ubuntu edition)",
       "family": "debian",
       "depth": 3,
-      "status": "Active"
+      "status": "Discontinued"
     },
     {
       "id": "nitrux",
@@ -920,6 +1053,13 @@
     {
       "id": "osmc",
       "name": "OSMC",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "openwrt",
+      "name": "OpenWrt",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -974,10 +1114,31 @@
       "status": "Active"
     },
     {
+      "id": "pinguy_os",
+      "name": "Pinguy OS",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
+    },
+    {
       "id": "pop_os",
       "name": "Pop!_OS",
       "family": "debian",
       "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "porteus",
+      "name": "Porteus",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "porteus_linux",
+      "name": "Porteus (Debian edition)",
+      "family": "debian",
+      "depth": 2,
       "status": "Active"
     },
     {
@@ -1016,8 +1177,29 @@
       "status": "Active"
     },
     {
+      "id": "raspbian",
+      "name": "Raspbian (legacy name)",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "rescatux",
+      "name": "Rescatux",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "security_auditor",
       "name": "Security Auditor",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "smoove",
+      "name": "Smoove Linux",
       "family": "debian",
       "depth": 2,
       "status": "Discontinued"
@@ -1044,6 +1226,13 @@
       "status": "Active"
     },
     {
+      "id": "sophos_utm",
+      "name": "Sophos UTM",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
       "id": "sparkylinux",
       "name": "SparkyLinux",
       "family": "debian",
@@ -1053,6 +1242,13 @@
     {
       "id": "spirallinux",
       "name": "Spiral Linux",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "super_grub2_disk",
+      "name": "Super Grub2 Disk",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -1072,10 +1268,24 @@
       "status": "Active"
     },
     {
+      "id": "trisquel_mate",
+      "name": "Trisquel MATE",
+      "family": "debian",
+      "depth": 3,
+      "status": "Active"
+    },
+    {
       "id": "trisquel_mini",
       "name": "Trisquel Mini",
       "family": "debian",
       "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "turnkey_linux",
+      "name": "TurnKey Linux",
+      "family": "debian",
+      "depth": 2,
       "status": "Active"
     },
     {
@@ -1091,6 +1301,13 @@
       "family": "debian",
       "depth": 3,
       "status": "Active"
+    },
+    {
+      "id": "ubuntuce",
+      "name": "Ubuntu Christian Edition",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
     },
     {
       "id": "ubuntu_cinnamon",
@@ -1156,11 +1373,32 @@
       "status": "Active"
     },
     {
+      "id": "untangle",
+      "name": "Untangle NG Firewall",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "ututo",
+      "name": "Ututo",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
       "id": "vanilla_os",
       "name": "Vanilla OS",
       "family": "debian",
       "depth": 3,
       "status": "Active"
+    },
+    {
+      "id": "vinux",
+      "name": "Vinux",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
     },
     {
       "id": "voyage_linux",
@@ -1174,6 +1412,13 @@
       "name": "Voyager",
       "family": "debian",
       "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "vyos",
+      "name": "VyOS",
+      "family": "debian",
+      "depth": 2,
       "status": "Active"
     },
     {
@@ -1191,10 +1436,24 @@
       "status": "Active"
     },
     {
+      "id": "wubi",
+      "name": "Wubi",
+      "family": "debian",
+      "depth": 3,
+      "status": "Discontinued"
+    },
+    {
       "id": "xubuntu",
       "name": "Xubuntu",
       "family": "debian",
       "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "yunohost",
+      "name": "YunoHost",
+      "family": "debian",
+      "depth": 2,
       "status": "Active"
     },
     {
@@ -1226,8 +1485,29 @@
       "status": "Active"
     },
     {
+      "id": "element",
+      "name": "elementary OS (legacy)",
+      "family": "debian",
+      "depth": 4,
+      "status": "Discontinued"
+    },
+    {
+      "id": "fli4l",
+      "name": "fli4l",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "gnewsense",
       "name": "gNewSense",
+      "family": "debian",
+      "depth": 2,
+      "status": "Discontinued"
+    },
+    {
+      "id": "open_invent",
+      "name": "openINV (legacy)",
       "family": "debian",
       "depth": 2,
       "status": "Discontinued"
@@ -1723,24 +2003,17 @@
       "status": "Active"
     },
     {
-      "id": "ipcop",
-      "name": "IPCop",
-      "family": "ipcop",
-      "depth": 1,
-      "status": "Discontinued"
-    },
-    {
-      "id": "ipfire",
-      "name": "IPFire",
-      "family": "ipfire",
-      "depth": 1,
-      "status": "Active"
-    },
-    {
       "id": "kaos",
       "name": "KaOS",
       "family": "kaos",
       "depth": 1,
+      "status": "Active"
+    },
+    {
+      "id": "linux_kernel",
+      "name": "Linux Kernel",
+      "family": "kernel",
+      "depth": 0,
       "status": "Active"
     },
     {
@@ -2171,13 +2444,6 @@
       "status": "Active"
     },
     {
-      "id": "porteus",
-      "name": "Porteus Linux",
-      "family": "slackware",
-      "depth": 2,
-      "status": "Active"
-    },
-    {
       "id": "salix",
       "name": "Salix OS",
       "family": "slackware",
@@ -2332,13 +2598,6 @@
       "status": "Discontinued"
     },
     {
-      "id": "pinguy_os",
-      "name": "Pinguy OS",
-      "family": "ubuntu",
-      "depth": 3,
-      "status": "Discontinued"
-    },
-    {
       "id": "sabily",
       "name": "Sabily",
       "family": "ubuntu",
@@ -2360,22 +2619,8 @@
       "status": "Discontinued"
     },
     {
-      "id": "ubuntuce",
-      "name": "Ubuntu CE",
-      "family": "ubuntu",
-      "depth": 3,
-      "status": "Discontinued"
-    },
-    {
       "id": "ubuntulite",
       "name": "Ubuntu Lite",
-      "family": "ubuntu",
-      "depth": 3,
-      "status": "Discontinued"
-    },
-    {
-      "id": "wubi",
-      "name": "Wubi",
       "family": "ubuntu",
       "depth": 3,
       "status": "Discontinued"
@@ -2836,6 +3081,18 @@
     },
     {
       "from": "debian",
+      "to": "comice_os"
+    },
+    {
+      "from": "debian",
+      "to": "condres"
+    },
+    {
+      "from": "debian",
+      "to": "cozy"
+    },
+    {
+      "from": "debian",
       "to": "crunchbang"
     },
     {
@@ -2872,6 +3129,10 @@
     },
     {
       "from": "debian",
+      "to": "debian_lvm"
+    },
+    {
+      "from": "debian",
       "to": "debian_jr"
     },
     {
@@ -2888,11 +3149,23 @@
     },
     {
       "from": "debian",
+      "to": "debian_rescue"
+    },
+    {
+      "from": "debian",
       "to": "debian_science"
     },
     {
       "from": "debian",
+      "to": "debian_cd_dvd"
+    },
+    {
+      "from": "debian",
       "to": "devuan"
+    },
+    {
+      "from": "debian",
+      "to": "dietpi"
     },
     {
       "from": "debian",
@@ -2915,8 +3188,16 @@
       "to": "elive"
     },
     {
+      "from": "elive",
+      "to": "elive_legacy"
+    },
+    {
       "from": "debian",
       "to": "endless_os"
+    },
+    {
+      "from": "debian",
+      "to": "freesco"
     },
     {
       "from": "ubuntu",
@@ -2925,6 +3206,10 @@
     {
       "from": "debian",
       "to": "flidas"
+    },
+    {
+      "from": "debian",
+      "to": "freedombox"
     },
     {
       "from": "debian",
@@ -2945,6 +3230,18 @@
     {
       "from": "debian",
       "to": "hiweed"
+    },
+    {
+      "from": "debian",
+      "to": "ipcop"
+    },
+    {
+      "from": "debian",
+      "to": "ipfire"
+    },
+    {
+      "from": "debian",
+      "to": "indilinux"
     },
     {
       "from": "neon",
@@ -2976,6 +3273,10 @@
     },
     {
       "from": "debian",
+      "to": "kanotix"
+    },
+    {
+      "from": "debian",
       "to": "knoppix"
     },
     {
@@ -2983,11 +3284,23 @@
       "to": "kubuntu"
     },
     {
+      "from": "debian",
+      "to": "kuliax"
+    },
+    {
+      "from": "debian",
+      "to": "ltsp"
+    },
+    {
       "from": "ubuntu",
       "to": "lxle"
     },
     {
       "from": "debian",
+      "to": "lindows"
+    },
+    {
+      "from": "lindows",
       "to": "linspire"
     },
     {
@@ -3019,8 +3332,20 @@
       "to": "mx_linux"
     },
     {
+      "from": "moblin",
+      "to": "meego"
+    },
+    {
       "from": "debian",
       "to": "mempo"
+    },
+    {
+      "from": "debian",
+      "to": "minibian"
+    },
+    {
+      "from": "ubuntu",
+      "to": "moon_os"
     },
     {
       "from": "debian",
@@ -3037,6 +3362,10 @@
     {
       "from": "debian",
       "to": "osmc"
+    },
+    {
+      "from": "debian",
+      "to": "openwrt"
     },
     {
       "from": "debian",
@@ -3068,7 +3397,19 @@
     },
     {
       "from": "ubuntu",
+      "to": "pinguy_os"
+    },
+    {
+      "from": "ubuntu",
       "to": "pop_os"
+    },
+    {
+      "from": "debian",
+      "to": "porteus"
+    },
+    {
+      "from": "debian",
+      "to": "porteus_linux"
     },
     {
       "from": "debian",
@@ -3092,7 +3433,19 @@
     },
     {
       "from": "debian",
+      "to": "raspbian"
+    },
+    {
+      "from": "debian",
+      "to": "rescatux"
+    },
+    {
+      "from": "debian",
       "to": "security_auditor"
+    },
+    {
+      "from": "debian",
+      "to": "smoove"
     },
     {
       "from": "debian",
@@ -3108,11 +3461,19 @@
     },
     {
       "from": "debian",
+      "to": "sophos_utm"
+    },
+    {
+      "from": "debian",
       "to": "sparkylinux"
     },
     {
       "from": "debian",
       "to": "spirallinux"
+    },
+    {
+      "from": "debian",
+      "to": "super_grub2_disk"
     },
     {
       "from": "debian",
@@ -3124,7 +3485,15 @@
     },
     {
       "from": "trisquel",
+      "to": "trisquel_mate"
+    },
+    {
+      "from": "trisquel",
       "to": "trisquel_mini"
+    },
+    {
+      "from": "debian",
+      "to": "turnkey_linux"
     },
     {
       "from": "debian",
@@ -3133,6 +3502,10 @@
     {
       "from": "ubuntu",
       "to": "ubuntu_budgie"
+    },
+    {
+      "from": "ubuntu",
+      "to": "ubuntuce"
     },
     {
       "from": "ubuntu",
@@ -3171,8 +3544,20 @@
       "to": "ubuntudde"
     },
     {
+      "from": "debian",
+      "to": "untangle"
+    },
+    {
+      "from": "debian",
+      "to": "ututo"
+    },
+    {
       "from": "ubuntu",
       "to": "vanilla_os"
+    },
+    {
+      "from": "ubuntu",
+      "to": "vinux"
     },
     {
       "from": "debian",
@@ -3184,6 +3569,10 @@
     },
     {
       "from": "debian",
+      "to": "vyos"
+    },
+    {
+      "from": "debian",
       "to": "weaknet_linux"
     },
     {
@@ -3192,7 +3581,15 @@
     },
     {
       "from": "ubuntu",
+      "to": "wubi"
+    },
+    {
+      "from": "ubuntu",
       "to": "xubuntu"
+    },
+    {
+      "from": "debian",
+      "to": "yunohost"
     },
     {
       "from": "ubuntu",
@@ -3211,8 +3608,20 @@
       "to": "elementary_os"
     },
     {
+      "from": "elementary_os",
+      "to": "element"
+    },
+    {
+      "from": "debian",
+      "to": "fli4l"
+    },
+    {
       "from": "debian",
       "to": "gnewsense"
+    },
+    {
+      "from": "debian",
+      "to": "open_invent"
     },
     {
       "from": "debian",
@@ -3512,14 +3921,6 @@
     },
     {
       "from": "linux_kernel",
-      "to": "ipcop"
-    },
-    {
-      "from": "linux_kernel",
-      "to": "ipfire"
-    },
-    {
-      "from": "linux_kernel",
       "to": "kaos"
     },
     {
@@ -3768,10 +4169,6 @@
     },
     {
       "from": "slackware",
-      "to": "porteus"
-    },
-    {
-      "from": "slackware",
       "to": "salix"
     },
     {
@@ -3860,10 +4257,6 @@
     },
     {
       "from": "ubuntu",
-      "to": "pinguy_os"
-    },
-    {
-      "from": "ubuntu",
       "to": "sabily"
     },
     {
@@ -3876,15 +4269,7 @@
     },
     {
       "from": "ubuntu",
-      "to": "ubuntuce"
-    },
-    {
-      "from": "ubuntu",
       "to": "ubuntulite"
-    },
-    {
-      "from": "ubuntu",
-      "to": "wubi"
     },
     {
       "from": "linux_kernel",

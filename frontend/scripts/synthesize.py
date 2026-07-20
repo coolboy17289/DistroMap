@@ -2,15 +2,21 @@
 """
 DistroMap synthesis step.
 
-Reads every slice under frontend/src/data/_slices/*.json, deduplicates by
-slug, validates parent references, computes children[] + depth + visual
-layout, and writes:
+This script is self-contained: running it from the `frontend/` directory
+regenerates the dataset that the React app and the serverless API read
+at runtime. No other scripts or data live outside this folder.
 
-  - frontend/src/data/distros.json   (full Vite payload)
-  - frontend/src/data/graph.json     (nodes + edges)
-  - frontend/src/data/layout.json    (precomputed xy per node)
+Pipeline:
+  - Read every JSON file under src/data/_slices/*.json
+  - Deduplicate records by slug (keep the most-detailed one)
+  - Validate parent references; auto-attach `linux_kernel` to family roots
+  - Compute depth (BFS from `linux_kernel`) and the inverse `children[]`
+  - Build src/data/distros.json — the full record the API + SPA read
+  - Build src/data/graph.json   — nodes + edges for the visual graph
+  - Build src/data/layout.json  — precomputed (x, y) per node
 
-Prints a summary so a maintainer can spot-check the result.
+Run via:  npm run synthesize        (from frontend/)
+  Or:     python3 scripts/synthesize.py
 """
 import json
 import math
@@ -19,11 +25,16 @@ from collections import defaultdict, deque
 from pathlib import Path
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parent  # /var/home/Lihan/DistroMap
-SLICES_DIR = ROOT / "frontend" / "src" / "data" / "_slices"
-OUT_DISTROS = ROOT / "frontend" / "src" / "data" / "distros.json"
-OUT_GRAPH = ROOT / "frontend" / "src" / "data" / "graph.json"
-OUT_LAYOUT = ROOT / "frontend" / "src" / "data" / "layout.json"
+# This script lives at frontend/scripts/synthesize.py; `frontend/` is
+# the root everything else resolves from. The data + slices all live
+# inside the same folder so the whole app is self-contained — clone
+# `frontend/`, run `npm install && npm run synthesize && npm run dev`,
+# and you have the full app on http://127.0.0.1:5173.
+ROOT = Path(__file__).resolve().parent.parent  # .../frontend
+SLICES_DIR = ROOT / "src" / "data" / "_slices"
+OUT_DISTROS = ROOT / "src" / "data" / "distros.json"
+OUT_GRAPH = ROOT / "src" / "data" / "graph.json"
+OUT_LAYOUT = ROOT / "src" / "data" / "layout.json"
 
 TAU = math.pi * 2
 MIN_STEP_RAD = TAU / 240

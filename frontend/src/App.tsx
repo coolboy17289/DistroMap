@@ -58,6 +58,14 @@ export default function App() {
         onQueryChange={setQuery}
         onClearQuery={() => setQuery('')}
         onSuggestClick={() => setIsSuggestOpen(true)}
+        onSelect={setSelected}
+        distros={distros.map((d) => ({
+          slug: d.slug,
+          name: d.display,
+          family: d.family,
+          status: d.status,
+          description: d.description,
+        }))}
       />
 
       <main className="flex-1 relative">

@@ -17586,7 +17586,11 @@
       "x86_64",
       "aarch64"
     ],
-    "desktop_defaults": "JWM / Openbox / LXQt",
+    "desktop_defaults": [
+      "JWM",
+      "Openbox",
+      "LXQt"
+    ],
     "license": "GPL-2.0",
     "website": "https://easyos.org",
     "source_code": "https://github.com/bkauler/woof-CE",

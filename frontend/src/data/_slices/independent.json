@@ -693,7 +693,7 @@
     "release_model": "Periodic point releases",
     "package_manager": "PKGget / Easy Containers",
     "package_format": "PET, SFS, easy.sfs",
-    "desktop_defaults": "JWM / Openbox / LXQt",
+    "desktop_defaults": ["JWM", "Openbox", "LXQt"],
     "init_system": "init",
     "architecture": ["x86_64", "aarch64"],
     "license": "GPL-2.0",

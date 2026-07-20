@@ -20,7 +20,7 @@ Vercel origin.
 
 ## What ships
 
-- **Radial graph** of 336 distros (227 active, 108 discontinued) — every
+- **Radial graph** of 348 distros (241 active, 106 discontinued) — every
   record has a slug, family, parents, status, package manager, init
   system, architectures, license, country, and 12 boolean category flags
   (server / gaming / immutable / rolling / LTS / security / privacy /
@@ -28,6 +28,10 @@ Vercel origin.
 - **Side panel** with the full record on click: status badge, all
   parents, direct children, version history, package format, license,
   maintainer, Wikipedia link, OG image, share to X.
+- **Family legend bar** under the header — every family as a clickable
+  chip, color-coded, with the distro count. Click to filter the canvas
+  to that family; double-click to focus on the family root. Press `f`
+  anywhere on the page to jump to the legend. Press `Esc` to clear.
 - **Auto-search** with smart filters:
   - Bare tokens (`server`, `gaming`, `rolling`, `debian`, `canonical`).
   - `key:value` filters: `family:debian`, `status:discontinued`,
@@ -38,6 +42,8 @@ Vercel origin.
 - **Theme toggle** (light / dark) with a strict 3-color palette per
   theme. Distro brand color tints the node border at low alpha so
   the structural palette stays dominant.
+- **URL state**: `?d=arch` opens the arch side panel, `?f=debian`
+  filters to debian family. Refresh / share-link both work.
 - **Suggestion form** so users can submit a missing distro. The form
   stores the suggestion in Vercel KV in production or in a local file
   in dev; a localStorage + downloadable-JSON fallback covers the case
@@ -251,23 +257,32 @@ one process, one port, one language.
 | **Tailwind CSS 3** | Dark / light theme, custom palette |
 | **`@vercel/node`** | One TypeScript file → one serverless function |
 
+### Keyboard shortcuts
+
+| Key | Action |
+|---|---|
+| `/` or `Cmd+K` / `Ctrl+K` | Focus the search bar |
+| `f` | Jump to the family legend |
+| `Esc` | Clear selection + family filter |
+| Click a node | Open the side panel for that distro |
+
 ---
 
-## Family coverage (336 distros across 49 families)
+## Family coverage (348 distros across 48 families)
 
 | Family | Distros | Notable members |
 |---|---:|---|
-| Debian | 84 | Debian, Ubuntu, Mint, Pop!_OS, Kali, Parrot, Tails, Raspberry Pi OS, Proxmox, Deepin, Raspbian, Whonix |
-| Arch | 51 | Arch, Manjaro, EndeavourOS, Garuda, CachyOS, Artix, BlackArch, ArcoLinux, SteamOS (Holo), ChimeraOS |
-| Fedora / RHEL | 50 | Fedora, RHEL, CentOS, Rocky, Alma, Oracle, Bazzite, Bluefin, Nobara, Silverblue, Kinoite, Ultramarine |
-| Slackware | 20 | Slackware, Slax, Salix, Zenwalk, Porteus, Vector, Absolute, Puppy |
-| Alpine | 19 | Alpine, postmarketOS, Wolfi, Kairos, Flatcar |
-| Gentoo | 13 | Gentoo, Funtoo, Calculate, Sabayon, Redcore, ChromeOS, Chromium, CloudReady |
-| openSUSE | 12 | openSUSE Leap, Tumbleweed, MicroOS, Aeon, Kalpa, GeckoLinux, Regata |
-| Linux From Scratch | 5 | LFS, BLFS, DIY |
-| Puppy | 5 | Puppy, EasyOS, Fatdog64 |
-| Void | 3 | Void, GoboLinux (adjacent) |
-| +38 smaller / specialized | 74 | NixOS, Guix, Solus, CRUX, Exherbo, Bedrock, Chimera, Clear Linux, Tiny Core, Buildroot, Yocto, OpenEmbedded, OpenMandriva, ROSA, Mageia, KaOS, ALT, Source Mage, Dragora, Venom, Obarun, ClearOS, IPFire, Endian, Smoothwall, Zeroshell, Lucide, Lunar, Sabotage, … |
+| Debian | ~85 | Debian, Ubuntu, Mint, Pop!_OS, Kali, Parrot, Tails, Raspberry Pi OS, Proxmox, Deepin, Whonix |
+| Arch | ~51 | Arch, Manjaro, EndeavourOS, Garuda, CachyOS, Artix, BlackArch, ArcoLinux, SteamOS (Holo), ChimeraOS |
+| Fedora / RHEL | ~50 | Fedora, RHEL, CentOS, Rocky, Alma, Oracle, Bazzite, Bluefin, Nobara, Silverblue, Kinoite, Ultramarine |
+| Slackware | ~20 | Slackware, Slax, Salix, Zenwalk, Porteus, Vector, Absolute, Puppy |
+| Alpine | ~19 | Alpine, postmarketOS, Wolfi, Kairos, Flatcar |
+| Gentoo | ~13 | Gentoo, Funtoo, Calculate, Sabayon, Redcore, ChromeOS, Chromium, CloudReady |
+| openSUSE | ~12 | openSUSE Leap, Tumbleweed, MicroOS, Aeon, Kalpa, GeckoLinux, Regata |
+| Linux From Scratch | ~5 | LFS, BLFS, DIY |
+| Puppy | ~5 | Puppy, EasyOS, Fatdog64 |
+| Void | ~3 | Void, GoboLinux (adjacent) |
+| +38 smaller / specialized | ~80 | NixOS, Guix, Solus, CRUX, Exherbo, Bedrock, Chimera, Clear Linux, Tiny Core, Buildroot, Yocto, OpenEmbedded, OpenMandriva, ROSA, Mageia, KaOS, ALT, Source Mage, Dragora, Venom, Obarun, ClearOS, IPFire, Endian, Smoothwall, Zeroshell, Lucide, Lunar, Sabotage, … |
 
 ---
 

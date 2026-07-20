@@ -786,12 +786,13 @@ async function handleSearch(
 
 async function handleFamilies(res: VercelResponse): Promise<boolean> {
   const all = await loadDistros();
-  // For each family, identify the depth-1 record with the most direct
-  // children — that's the "true" family root (Debian, Arch, etc.).
-  // Tiebreaker: shortest slug, then lexicographic. Records whose
-  // `family` field equals "linux_kernel" are deliberately excluded
-  // because that's used as a placeholder for independent-from-scratch
-  // distros (LFS, Puppy, etc.), not the actual Linux kernel.
+  // A family root is a record that is either `linux_kernel` itself
+  // or a direct child of `linux_kernel` (depth 1). It is the most
+  // connected node in the family so the rest of the family visually
+  // fans out from it. Records whose `family` field equals
+  // "linux_kernel" are excluded — that string is used as a
+  // placeholder for independent-from-scratch distros (LFS, Puppy,
+  // etc.), not the actual kernel.
   const childrenByParent = new Map<string, number>();
   for (const d of all) {
     if (d.parent) {
@@ -811,6 +812,10 @@ async function handleFamilies(res: VercelResponse): Promise<boolean> {
     };
     entry.count += 1;
     if (d.status === 'Active') entry.active += 1;
+    // Only consider depth-1 records (children of linux_kernel) as
+    // family roots. The family field for a depth-2+ record is often
+    // a sub-classification (e.g. "ubuntu" for misc ubuntu
+    // derivatives) rather than the actual family root.
     if (d.depth === 1 && d.family !== 'linux_kernel') {
       const kids = childrenByParent.get(d.slug) ?? 0;
       if (
@@ -821,6 +826,12 @@ async function handleFamilies(res: VercelResponse): Promise<boolean> {
         entry.root = d.slug;
         entry.rootChildren = kids;
       }
+    }
+    // Special case: the family with id="kernel" (only contains the
+    // linux_kernel record itself) reports linux_kernel as the root.
+    if (d.family === 'kernel' && d.slug === 'linux_kernel') {
+      entry.root = 'linux_kernel';
+      entry.rootChildren = 0;
     }
     m.set(d.family, entry);
   }

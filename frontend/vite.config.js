@@ -72,8 +72,13 @@ function apiServerPlugin() {
 export default defineConfig({
   plugins: [react(), apiServerPlugin()],
   resolve: {
+    // Vite resolves relative alias strings against the project root
+    // (the directory containing this vite.config.js), which is the
+    // frontend/ folder. Using './src' instead of `path.resolve(__dirname, …)`
+    // keeps the config valid in ESM — `package.json` has `"type": "module"`,
+    // so `__dirname` is undefined here. Same end result.
     alias: {
-      '@': path.resolve(__dirname, 'src'),
+      '@': './src',
     },
   },
   server: {

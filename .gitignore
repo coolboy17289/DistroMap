@@ -1,0 +1,25 @@
+# ── Python virtualenv leftovers from earlier backend prototyping ──
+# (the suggestion API is now a TS serverless function at frontend/api/index.ts;
+#  these .venv-* dirs are just unused weight at the repo root)
+.venv-*/
+
+# ── Python bytecode cache ─────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+
+# ── Working data cache (rebuilt by .cache/fetch_distros.py +
+#    .cache/build_distro_files.py + .cache/fetch_popularity.py) ──
+.cache/
+
+# ── Node — only matters inside frontend/, but ignore at the root
+#        in case anything else ends up with node_modules ──
+node_modules/
+
+# ── Vite build output, in case frontend/dist/ escapes the project root
+dist/
+
+# ── OS / editor noise ─────────────────────────────────────────────
+.DS_Store
+*.log
+Thumbs.db

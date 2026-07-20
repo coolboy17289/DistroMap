@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import path from 'node:path';
 
 // DistroMap frontend — React + TypeScript + React Flow + Tailwind v3.
 // Build configs are plain JS so Vite doesn't need ts-node at startup.

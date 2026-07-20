@@ -1,13 +1,6 @@
 {
   "nodes": [
     {
-      "id": "linux_kernel",
-      "name": "Linux Kernel",
-      "family": "kernel",
-      "depth": 0,
-      "status": "Active"
-    },
-    {
       "id": "4mlinux",
       "name": "4MLinux",
       "family": "4mlinux",
@@ -564,7 +557,7 @@
       "id": "av_linux",
       "name": "AV Linux",
       "family": "debian",
-      "depth": 2,
+      "depth": 3,
       "status": "Active"
     },
     {
@@ -600,11 +593,18 @@
       "name": "CrunchBang Linux",
       "family": "debian",
       "depth": 2,
-      "status": "Discontinued"
+      "status": "Active"
     },
     {
       "id": "crunchbangpp",
       "name": "CrunchBang++",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "damn_small_linux",
+      "name": "Damn Small Linux",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -624,6 +624,55 @@
       "status": "Active"
     },
     {
+      "id": "debian_backports",
+      "name": "Debian Backports",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_edu",
+      "name": "Debian Edu (Skolelinux)",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_jr",
+      "name": "Debian Jr.",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_live",
+      "name": "Debian Live",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_med",
+      "name": "Debian Med",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_media",
+      "name": "Debian Multimedia",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "debian_science",
+      "name": "Debian Science",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "devuan",
       "name": "Devuan",
       "family": "debian",
@@ -638,6 +687,20 @@
       "status": "Discontinued"
     },
     {
+      "id": "e_os",
+      "name": "EasyOS",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "easypeasy",
+      "name": "EasyPeasy",
+      "family": "debian",
+      "depth": 3,
+      "status": "Active"
+    },
+    {
       "id": "edubuntu",
       "name": "Edubuntu",
       "family": "debian",
@@ -645,15 +708,15 @@
       "status": "Active"
     },
     {
-      "id": "endless_os",
-      "name": "Endless OS",
+      "id": "elive",
+      "name": "Elive",
       "family": "debian",
       "depth": 2,
       "status": "Active"
     },
     {
-      "id": "e_os",
-      "name": "Endless OS (e OS)",
+      "id": "endless_os",
+      "name": "Endless OS",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -680,10 +743,24 @@
       "status": "Discontinued"
     },
     {
+      "id": "gparted",
+      "name": "GParted Live",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
       "id": "galliumos",
       "name": "GalliumOS",
       "family": "debian",
       "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "grml",
+      "name": "Grml",
+      "family": "debian",
+      "depth": 2,
       "status": "Active"
     },
     {
@@ -697,7 +774,7 @@
       "id": "kde_linux",
       "name": "KDE Linux",
       "family": "debian",
-      "depth": 2,
+      "depth": 4,
       "status": "Active"
     },
     {
@@ -723,7 +800,7 @@
     },
     {
       "id": "kali_lite",
-      "name": "Kali Linux Light",
+      "name": "Kali Linux (Light)",
       "family": "debian",
       "depth": 3,
       "status": "Active"
@@ -771,14 +848,14 @@
       "status": "Discontinued"
     },
     {
-      "id": "linux_lite",
-      "name": "Linux Lite",
+      "id": "linux_kernel",
+      "name": "Linux Kernel",
       "family": "debian",
-      "depth": 3,
+      "depth": 0,
       "status": "Active"
     },
     {
-      "id": "linuxlite",
+      "id": "linux_lite",
       "name": "Linux Lite",
       "family": "debian",
       "depth": 3,
@@ -828,14 +905,21 @@
     },
     {
       "id": "netrunner",
-      "name": "Netrunner",
+      "name": "Netrunner (Ubuntu edition)",
       "family": "debian",
       "depth": 3,
-      "status": "Discontinued"
+      "status": "Active"
     },
     {
       "id": "nitrux",
       "name": "Nitrux",
+      "family": "debian",
+      "depth": 3,
+      "status": "Active"
+    },
+    {
+      "id": "osmc",
+      "name": "OSMC",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -855,17 +939,17 @@
       "status": "Active"
     },
     {
-      "id": "parrot_mini",
-      "name": "Parrot Mini",
-      "family": "debian",
-      "depth": 3,
-      "status": "Active"
-    },
-    {
       "id": "parrot",
       "name": "Parrot OS",
       "family": "debian",
       "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "parrot_htb",
+      "name": "Parrot OS HTB Edition",
+      "family": "debian",
+      "depth": 3,
       "status": "Active"
     },
     {
@@ -876,17 +960,17 @@
       "status": "Active"
     },
     {
-      "id": "parrot_htb",
-      "name": "Parrot for HTB",
+      "id": "parrot_mini",
+      "name": "Parrot Security Mini",
       "family": "debian",
       "depth": 3,
       "status": "Active"
     },
     {
       "id": "peppermint",
-      "name": "Peppermint",
+      "name": "Peppermint OS",
       "family": "debian",
-      "depth": 2,
+      "depth": 3,
       "status": "Active"
     },
     {
@@ -968,7 +1052,7 @@
     },
     {
       "id": "spirallinux",
-      "name": "SpiralLinux",
+      "name": "Spiral Linux",
       "family": "debian",
       "depth": 2,
       "status": "Active"
@@ -983,6 +1067,13 @@
     {
       "id": "trisquel",
       "name": "Trisquel",
+      "family": "debian",
+      "depth": 2,
+      "status": "Active"
+    },
+    {
+      "id": "trisquel_mini",
+      "name": "Trisquel Mini",
       "family": "debian",
       "depth": 3,
       "status": "Active"
@@ -1672,13 +1763,6 @@
       "family": "lfs",
       "depth": 2,
       "status": "Discontinued"
-    },
-    {
-      "id": "linux_from_scratch",
-      "name": "Linux From Scratch",
-      "family": "lfs",
-      "depth": 1,
-      "status": "Active"
     },
     {
       "id": "lfs",
@@ -2727,7 +2811,7 @@
       "to": "crux"
     },
     {
-      "from": "debian",
+      "from": "ubuntu",
       "to": "av_linux"
     },
     {
@@ -2739,11 +2823,11 @@
       "to": "bodhi"
     },
     {
-      "from": "debian",
+      "from": "crunchbang",
       "to": "bunsenlabs"
     },
     {
-      "from": "crunchbang",
+      "from": "debian",
       "to": "bunsenlabs"
     },
     {
@@ -2755,12 +2839,20 @@
       "to": "crunchbang"
     },
     {
+      "from": "crunchbang",
+      "to": "crunchbangpp"
+    },
+    {
       "from": "debian",
       "to": "crunchbangpp"
     },
     {
-      "from": "crunchbang",
-      "to": "crunchbangpp"
+      "from": "debian",
+      "to": "damn_small_linux"
+    },
+    {
+      "from": "knoppix",
+      "to": "damn_small_linux"
     },
     {
       "from": "debian",
@@ -2772,6 +2864,34 @@
     },
     {
       "from": "debian",
+      "to": "debian_backports"
+    },
+    {
+      "from": "debian",
+      "to": "debian_edu"
+    },
+    {
+      "from": "debian",
+      "to": "debian_jr"
+    },
+    {
+      "from": "debian",
+      "to": "debian_live"
+    },
+    {
+      "from": "debian",
+      "to": "debian_med"
+    },
+    {
+      "from": "debian",
+      "to": "debian_media"
+    },
+    {
+      "from": "debian",
+      "to": "debian_science"
+    },
+    {
+      "from": "debian",
       "to": "devuan"
     },
     {
@@ -2779,16 +2899,24 @@
       "to": "dragon_linux"
     },
     {
+      "from": "debian",
+      "to": "e_os"
+    },
+    {
+      "from": "ubuntu",
+      "to": "easypeasy"
+    },
+    {
       "from": "ubuntu",
       "to": "edubuntu"
     },
     {
       "from": "debian",
-      "to": "endless_os"
+      "to": "elive"
     },
     {
       "from": "debian",
-      "to": "e_os"
+      "to": "endless_os"
     },
     {
       "from": "ubuntu",
@@ -2803,15 +2931,23 @@
       "to": "freedows"
     },
     {
+      "from": "debian",
+      "to": "gparted"
+    },
+    {
       "from": "ubuntu",
       "to": "galliumos"
+    },
+    {
+      "from": "debian",
+      "to": "grml"
     },
     {
       "from": "debian",
       "to": "hiweed"
     },
     {
-      "from": "debian",
+      "from": "neon",
       "to": "kde_linux"
     },
     {
@@ -2860,10 +2996,6 @@
     },
     {
       "from": "ubuntu",
-      "to": "linuxlite"
-    },
-    {
-      "from": "ubuntu",
       "to": "linux_mint"
     },
     {
@@ -2899,12 +3031,12 @@
       "to": "netrunner"
     },
     {
-      "from": "debian",
+      "from": "ubuntu",
       "to": "nitrux"
     },
     {
-      "from": "ubuntu",
-      "to": "nitrux"
+      "from": "debian",
+      "to": "osmc"
     },
     {
       "from": "debian",
@@ -2915,12 +3047,12 @@
       "to": "parrot_home"
     },
     {
-      "from": "parrot",
-      "to": "parrot_mini"
-    },
-    {
       "from": "debian",
       "to": "parrot"
+    },
+    {
+      "from": "parrot",
+      "to": "parrot_htb"
     },
     {
       "from": "parrot",
@@ -2928,10 +3060,10 @@
     },
     {
       "from": "parrot",
-      "to": "parrot_htb"
+      "to": "parrot_mini"
     },
     {
-      "from": "debian",
+      "from": "ubuntu",
       "to": "peppermint"
     },
     {
@@ -2987,8 +3119,12 @@
       "to": "tails"
     },
     {
-      "from": "ubuntu",
+      "from": "debian",
       "to": "trisquel"
+    },
+    {
+      "from": "trisquel",
+      "to": "trisquel_mini"
     },
     {
       "from": "debian",
@@ -3044,10 +3180,6 @@
     },
     {
       "from": "ubuntu",
-      "to": "voyager"
-    },
-    {
-      "from": "linux_mint",
       "to": "voyager"
     },
     {
@@ -3401,10 +3533,6 @@
     {
       "from": "lfs",
       "to": "hlfs"
-    },
-    {
-      "from": "linux_kernel",
-      "to": "linux_from_scratch"
     },
     {
       "from": "linux_kernel",

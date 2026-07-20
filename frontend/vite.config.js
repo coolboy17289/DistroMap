@@ -1,7 +1,19 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
+import { fileURLToPath, URL as NodeURL } from 'node:url';
 
 // DistroMap frontend — React + TypeScript + React Flow + Tailwind v3.
+
+// In ESM there is no `__dirname` — `frontend/package.json` has
+// `"type": "module"`. Resolve an ABSOLUTE path for the `@` alias
+// against this config file's location. A relative string (`'@':
+// './src'`) leaves the alias with the project-root prefix only
+// at resolve-time, which Rollup's parallel module loader can race
+// the extension-resolution plugin on, surfacing as
+// `vite:load-fallback` ENOENT on a non-deterministic component
+// during `vite build`. An absolute path ties the alias to a real
+// file URL so the resolver chain keeps its hands on the path.
+const SRC_ABS = fileURLToPath(new NodeURL('./src', import.meta.url));
 // Build configs are plain JS so Vite doesn't need ts-node at startup.
 
 /**
@@ -71,14 +83,20 @@ function apiServerPlugin() {
 export default defineConfig({
   plugins: [react(), apiServerPlugin()],
   resolve: {
-    // Vite resolves relative alias strings against the project root
-    // (the directory containing this vite.config.js), which is the
-    // frontend/ folder. Using './src' instead of `path.resolve(__dirname, …)`
-    // keeps the config valid in ESM — `package.json` has `"type": "module"`,
-    // so `__dirname` is undefined here. Same end result.
     alias: {
-      '@': './src',
+      // Absolute path resolved against this config file's own URL.
+      // ESM-safe (no __dirname). See the `SRC_ABS` declaration above
+      // for why an absolute alias is required instead of a relative
+      // string.
+      '@': SRC_ABS,
     },
+    // Belt-and-suspenders: declare the extension resolution list
+    // explicitly so Rollup's loader never has to fall back to opening
+    // a bare path like './src/components/Footer' (which manifested as
+    // the `vite:load-fallback` ENOENT bug pre-fix). These match Vite's
+    // default list — declaring them here costs nothing and removes any
+    // ambiguity in plugins that shorten resolve.extensions.
+    extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
   },
   server: {
     host: '127.0.0.1',

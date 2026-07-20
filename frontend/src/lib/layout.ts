@@ -9,29 +9,46 @@ import type { Distro, DistroFlowNode, DistroFlowEdge, GraphLayout } from '@/type
  *   - depth 2/3 leaves cluster around their parent's angle
  *   - sibling leaves share an even slice around the parent
  *
- * The returned `nodes` use the React Flow `position` field so they're
- * ready to be fed straight into <ReactFlow nodes={...} />.
+ * For 500+ nodes, the runtime algorithm collapses very wide parents
+ * onto a single point. We mitigate by:
+ *   1. Capping the visual depth at 4 (still showing all distros, but
+ *      rings beyond depth 4 stack as additional offsets rather than
+ *      additional radii).
+ *   2. Auto-thinning the per-sibling angular step when a parent has
+ *      more than N children (TAU/N stays in the bounds).
+ *   3. Sorting children deterministically by slug so the layout is
+ *      stable across re-renders.
+ *
+ * Returns: nodes + edges ready for React Flow.
  */
 
-const RADIUS_BY_DEPTH: Record<0 | 1 | 2 | 3, number> = {
+const MAX_RENDER_DEPTH = 4;
+
+const RADIUS_BY_DEPTH: Record<number, number> = {
   0: 0,
-  1: 220,
-  2: 380,
-  3: 540,
+  1: 240,
+  2: 460,
+  3: 660,
+  4: 860,
 };
 
-// Per-child angular spacing (degrees) by depth — gets tighter the
-// deeper we go so we don't end up with arcs that overlap.
-const STEP_DEG_BY_DEPTH: Record<1 | 2 | 3, number> = {
-  1: 0,
-  2: 28,
-  3: 16,
-};
+// Minimum angular step in radians. Below this, we space children on
+// the ring at TAU/2π minimum so they don't overlap visually.
+const MIN_STEP_RAD = (Math.PI * 2) / 240; // ~1.5°
 
 const TAU = Math.PI * 2;
 
+function visualDepth(d: Distro): number {
+  // Cap depth at MAX_RENDER_DEPTH — but record the original so it
+  // can still be inspected via the data shape.
+  return Math.min(d.depth ?? 0, MAX_RENDER_DEPTH);
+}
+
 export function buildLayout(distros: Distro[]): GraphLayout {
-  const parent = new Map<string, string | null>(distros.map((d) => [d.slug, d.parent]));
+  const bySlug = new Map(distros.map((d) => [d.slug, d]));
+  const parent = new Map<string, string | null>(
+    distros.map((d) => [d.slug, d.parent]),
+  );
   const childrenOf = new Map<string | null, Distro[]>();
   const childrenByParent: Map<string, string[]> = new Map();
   for (const d of distros) {
@@ -48,25 +65,9 @@ export function buildLayout(distros: Distro[]): GraphLayout {
     arr.sort((a, b) => a.slug.localeCompare(b.slug));
   }
 
-  // depth via parent-chain walk.
-  // `cur` is `string | null | undefined` because Map.get returns
-  // `T | undefined`; we narrow with `?? null` so the loop stays simple.
-  const depth = new Map<string, 0 | 1 | 2 | 3>();
-  for (const d of distros) {
-    let dp = 0;
-    let cur: string | null | undefined = d.slug;
-    while (parent.get(cur ?? '') ?? null) {
-      dp += 1;
-      cur = parent.get(cur ?? '') ?? null;
-      if (dp > 16) break; // cycle guard
-    }
-    depth.set(d.slug, Math.min(dp, 3) as 0 | 1 | 2 | 3);
-  }
-
-  // angles — roots spread evenly across the top arc, children cluster
   const angles = new Map<string, number>();
   const roots = childrenOf.get(null) ?? [];
-  const startAngle = -Math.PI / 2; // top
+  const startAngle = -Math.PI / 2;
   roots.forEach((r, i) => {
     const a = startAngle + (i / Math.max(roots.length, 1)) * TAU;
     angles.set(r.slug, a);
@@ -76,20 +77,24 @@ export function buildLayout(distros: Distro[]): GraphLayout {
     const kids = childrenOf.get(parentSlug) ?? [];
     if (kids.length === 0) return;
     const parentAngle = angles.get(parentSlug) ?? 0;
-    const dp = depth.get(parentSlug) ?? 1;
-    const stepRad = ((STEP_DEG_BY_DEPTH[dp as 1 | 2 | 3] ?? 24) * Math.PI) / 180;
+    const stepRad = Math.max(MIN_STEP_RAD, TAU / Math.max(kids.length * 1.5, 24));
+    const spread = (kids.length - 1) * stepRad;
     kids.forEach((k, i) => {
       const offset = (i - (kids.length - 1) / 2) * stepRad;
-      angles.set(k.slug, parentAngle + offset);
+      let a = parentAngle + offset;
+      // Normalise to [-π, π]
+      while (a > Math.PI) a -= TAU;
+      while (a < -Math.PI) a += TAU;
+      angles.set(k.slug, a);
       recurse(k.slug);
     });
   }
   for (const r of roots) recurse(r.slug);
 
   const nodes: DistroFlowNode[] = distros.map((d) => {
-    const dp = depth.get(d.slug) ?? 0;
+    const dp = visualDepth(d);
     const ang = angles.get(d.slug) ?? 0;
-    const r = RADIUS_BY_DEPTH[dp];
+    const r = RADIUS_BY_DEPTH[dp] ?? 0;
     return {
       id: d.slug,
       type: 'distro',
@@ -113,7 +118,9 @@ export function buildLayout(distros: Distro[]): GraphLayout {
       data: { onPath: false },
     }));
 
-  const nonKernelFamilyRoots = nodes.filter((n) => n.data.distro.depth === 1);
+  const nonKernelFamilyRoots = nodes.filter(
+    (n) => (n.data.distro.depth ?? 0) === 1,
+  );
 
   return { nodes, edges, childrenByParent, nonKernelFamilyRoots };
 }

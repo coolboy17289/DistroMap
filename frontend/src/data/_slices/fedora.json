@@ -4,7 +4,7 @@
     "name": "Fedora",
     "slug": "fedora",
     "family": "fedora",
-    "parents": [],
+    "parents": ["fedora"],
     "based_on": "Independent (Red Hat sponsored)",
     "kernel_root": "Linux Kernel",
     "first_release": "2003",

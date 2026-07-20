@@ -554,8 +554,8 @@ function buildAncestorChain(d: DistroRow, all: DistroRow[]): DistroRow[] {
     seen.add(current.slug);
     if (current.slug !== d.slug) chain.push(current);
     if (!current.parents.length) break;
-    const parentSlug = current.parents[0];
-    const parent = all.find((x) => x.slug === parentSlug);
+    const parentSlug: string = current.parents[0]!;
+    const parent: DistroRow | undefined = all.find((x) => x.slug === parentSlug);
     if (!parent) break;
     current = parent;
   }

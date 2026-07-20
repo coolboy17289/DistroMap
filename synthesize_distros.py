@@ -19,7 +19,7 @@ from collections import defaultdict, deque
 from pathlib import Path
 from urllib.parse import urlparse
 
-ROOT = Path(__file__).resolve().parents[1]  # /var/home/Lihan/DistroMap
+ROOT = Path(__file__).resolve().parent  # /var/home/Lihan/DistroMap
 SLICES_DIR = ROOT / "frontend" / "src" / "data" / "_slices"
 OUT_DISTROS = ROOT / "frontend" / "src" / "data" / "distros.json"
 OUT_GRAPH = ROOT / "frontend" / "src" / "data" / "graph.json"

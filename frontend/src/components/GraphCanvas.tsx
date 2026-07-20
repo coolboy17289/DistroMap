@@ -85,7 +85,7 @@ function matchesParsed(d: Distro, q: ParsedQuery): boolean {
     const ok =
       d.display.toLowerCase().includes(t) ||
       d.slug.toLowerCase().includes(t) ||
-      d.short_desc.toLowerCase().includes(t) ||
+      (d.short_desc ?? '').toLowerCase().includes(t) ||
       d.family.toLowerCase().includes(t) ||
       (d.description ?? '').toLowerCase().includes(t) ||
       (d.country ?? '').toLowerCase().includes(t) ||

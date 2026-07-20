@@ -45,7 +45,6 @@ function visualDepth(d: Distro): number {
 }
 
 export function buildLayout(distros: Distro[]): GraphLayout {
-  const bySlug = new Map(distros.map((d) => [d.slug, d]));
   const parent = new Map<string, string | null>(
     distros.map((d) => [d.slug, d.parent]),
   );
@@ -78,7 +77,6 @@ export function buildLayout(distros: Distro[]): GraphLayout {
     if (kids.length === 0) return;
     const parentAngle = angles.get(parentSlug) ?? 0;
     const stepRad = Math.max(MIN_STEP_RAD, TAU / Math.max(kids.length * 1.5, 24));
-    const spread = (kids.length - 1) * stepRad;
     kids.forEach((k, i) => {
       const offset = (i - (kids.length - 1) / 2) * stepRad;
       let a = parentAngle + offset;

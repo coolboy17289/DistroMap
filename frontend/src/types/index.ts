@@ -30,6 +30,8 @@ export interface Distro {
   parent: string | null;
   /** Pre-computed list of direct child slugs (filled in by synthesis). */
   children: string[];
+  /** BFS distance from linux_kernel. Filled in by synthesis. */
+  depth: number;
 
   /* Lineage + meta */
   based_on: string | null;    // e.g. "Ubuntu", "Debian", "Independent"
@@ -78,22 +80,24 @@ export interface Distro {
 
   /* Legacy fields — kept so the old components (SidePanel, GraphCanvas)
    * still typecheck. Newer fields are added above; older keys stay
-   * below and are populated by the build script from the same data. */
-  qid: string | null;
-  short_desc: string;
-  extract: string;
-  thumbnail: string | null;
-  favicon_url: string | null;
-  wiki_url: string;
-  official_website: string | null;
+   * below and are populated by the build script from the same data.
+   * All marked optional so the new synthesised distros.json (which
+   * doesn't carry these fields) typechecks directly. */
+  qid?: string | null;
+  short_desc?: string;
+  extract?: string;
+  thumbnail?: string | null;
+  favicon_url?: string | null;
+  wiki_url?: string;
+  official_website?: string | null;
   developer_legacy?: string | null;   // alias of `developer` (legacy key)
-  inception: string | null;           // legacy alias of first_release
-  based_on_label: string | null;      // legacy alias of based_on
+  inception?: string | null;           // legacy alias of first_release
+  based_on_label?: string | null;      // legacy alias of based_on
   release_model_legacy?: string;      // legacy alias of release_model
   package_manager_legacy?: string;    // legacy alias of package_manager
-  popularity: Popularity;
-  popularity_signals: PopularitySignals | null;
-  desktop_environments: string[];     // legacy alias of desktop_defaults
+  popularity?: Popularity;
+  popularity_signals?: PopularitySignals | null;
+  desktop_environments?: string[];     // legacy alias of desktop_defaults
   markdown?: string;                  // optional pre-rendered dossier
 }
 

@@ -1,5 +1,5 @@
 /**
- * v0.5 — client-side helpers for the "Add a distro" SuggestForm.
+ * Client-side helpers for the "Add a distro" SuggestForm.
  *
  * The flow the user sees is:
  *   1. They type a Wikipedia title in the modal.
@@ -9,16 +9,22 @@
  *      /api/suggestions first, and on network failure falls back to
  *      localStorage + a JSON download so the suggestion survives.
  *
- * The backend is intentionally optional — the v0.5 contract is
- * "redundant submission", so a missing uvicorn never blocks the user
- * from contributing.
+ * The backend is a TypeScript serverless function at api/index.ts —
+ * same stack as the frontend. In dev the Vite dev server serves it
+ * in-process on the same port (no separate backend command); in prod
+ * Vercel deploys it as a @vercel/node function at the same origin.
+ *
+ * The submission path is intentionally redundant — a missing/offline
+ * API never blocks the user from contributing.
  */
 
 import type { Suggestion, ValidationResult } from '@/types';
 
-// In dev:       leave VITE_API_URL unset → the Vite proxy maps /api→127.0.0.1:8765.
-// In production: pick up VITE_API_URL at build time (set on Vercel to
-//               https://distromap-api.fly.dev — see ../.env.example).
+// In dev:    leave VITE_API_URL unset → same-origin /api/* is served
+//            in-process by the Vite apiServerPlugin (vite.config.js).
+// In prod:   leave VITE_API_URL unset → same-origin /api/* on Vercel,
+//            rewritten to the @vercel/node function at api/index.ts.
+// Set VITE_API_URL ONLY if the API lives on a different host.
 // Trailing-slash normalization keeps `<API>/suggestions` valid even if
 // the user supplies `.../api/` (with a trailing slash) by mistake.
 const RAW_API_URL = (import.meta.env.VITE_API_URL ?? '').trim();
@@ -81,7 +87,7 @@ export async function postSuggestion(
     }
     throw new Error(`backend ${r.status}`);
   } catch (err) {
-    // Network down / uvicorn not running → localStorage fallback.
+    // Network down / API not running → localStorage fallback.
     saveLocalSuggestion(payload);
     return { ok: true, via: 'local' };
   }

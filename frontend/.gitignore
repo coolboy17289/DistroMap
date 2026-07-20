@@ -1,11 +1,6 @@
 node_modules/
 dist/
 .vite/
-# Python artifacts (the suggestion API lives at api/index.py now)
-.venv/
-__pycache__/
-*.pyc
-*.pyo
 # Local-dev suggestion storage (file-mode fallback when KV isn't set);
 # production uses Vercel KV, so we don't commit local submissions.
 .cache/
@@ -14,3 +9,5 @@ __pycache__/
 .DS_Store
 .env
 .env.*
+# Ship the template so contributors see it; real .env* stays ignored.
+!.env.example

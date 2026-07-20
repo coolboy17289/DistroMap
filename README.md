@@ -50,20 +50,16 @@ DistroMap/
 ├── assets/
 │   └── logo.svg                    ← placeholder; replaced by Figma export when ready
 ├── distros/                        ← one folder per Linux distribution (the dossier)
-├── frontend/                       ← Vite SPA + FastAPI: React + TypeScript + Tailwind 3
+├── frontend/                       ← Vite SPA + TS serverless API: React + TypeScript + Tailwind 3
 │   ├── src/                        ← React app shell, components, layout
 │   ├── public/logo.svg             ← Figma export
 │   ├── api/
-│   │   └── index.py                ← v0.5 — FastAPI suggestion API + Mangum wrap
-│   │                                 (single file: Vercel detects exactly one
-│   │                                 Python function under api/, so the
-│   │                                 FastAPI app + Mangum handler live in
-│   │                                 the same module)
-│   ├── requirements.txt            ← fastapi, mangum, pydantic (for Vercel +
-│   │                                 local venv)
-│   ├── vercel.json                 ← framework: vite + /api/(.*) → /api/index.py
-│   ├── scripts/serve_backend.sh    ← local uvicorn launcher (api.index:app)
-│   └── vite.config.js              ← React SWC plugin, /api proxy → :8765 in dev
+│   │   └── index.ts                ← suggestion API — @vercel/node function in prod,
+│   │                                 served in-process by the Vite dev server in dev
+│   │                                 (one `npm run dev`, one process, no Python venv)
+│   ├── tsconfig.api.json           ← typechecks api/ with Node types (separate from src/)
+│   ├── vercel.json                 ← framework: vite + @vercel/node + /api/(.*) → /api/index
+│   └── vite.config.js              ← React SWC plugin + apiServerPlugin (serves /api/* in dev)
 └── .cache/                         ← working data (NOT user content; safe to gitignore later)
     ├── fetch_distros.py            ← pulls from Wikipedia + Wikidata
     └── build_distro_files.py       ← emits distros/<slug>/<slug>.md + frontend/src/data/distros.json
@@ -150,10 +146,10 @@ cited at the bottom of every dossier.
 - [x] **v0.2** — apply reviewer flag — Nobelium/P110 + Last-regenerated fix
 - [x] **v0.3** — interactive circular graph frontend (Vite + React + Vue + Tailwind)
 - [x] **v0.4** — **manual overrides layer** (`.cache/api/manual_overrides.json`, shallow-merged at build time; `fetch_distros.py` prints a missing-field report that suggests what to put in the override file)
-- [x] **v0.5** — **user-submitted "add a distro" flow** (single-file FastAPI at `frontend/api/index.py`, file-backed queue at `frontend/.cache/api/suggestions.json`; redundant in-browser fallback to `localStorage` + a downloadable JSON so suggestions survive when the API is offline)
+- [x] **v0.5** — **user-submitted "add a distro" flow** (TypeScript serverless function at `frontend/api/index.ts`, file-backed queue at `frontend/.cache/api/suggestions.json`; redundant in-browser fallback to `localStorage` + a downloadable JSON so suggestions survive when the API is offline. Originally FastAPI/Python in v0.5, rewritten in TypeScript so the whole stack is one language — no Python venv, one `npm install`)
 - [x] **v0.6** — **popularity scoring** (Wikipedia pageviews over 30 days, log-transformed + quantile-binned into 1–5; raw signal exposed in the SidePanel). DistroWatch was originally listed as a co-signal, but their site actively blocks scripted traffic and the public ToS discourages scraping — pageviews-only ships in v0.6 and the scoring logger is structured so a second signal can be appended later without breaking the build script.
 
-See `frontend/api/index.py` (header docstring) for the suggestion-API contract and `.cache/fetch_popularity.py` for the scoring details.
+See `frontend/api/index.ts` (header comment) for the suggestion-API contract and `.cache/fetch_popularity.py` for the scoring details.
 
 ---
 
@@ -190,12 +186,14 @@ python3 .cache/build_distro_files.py # writes distros/<slug>/<slug>.md +
 python3 .cache/fetch_popularity.py   # v0.6 — fetches pageview signals → popularity.json
 python3 .cache/build_distro_files.py # re-run to merge popularity into distros.json
 cd frontend && npm run dev           # → http://127.0.0.1:5173
-
-# v0.5 — optional; the SuggestForm falls back to localStorage when the
-# backend is offline. The form's badge in the header shows "backend:live"
-# vs "backend:offline (local+download)" so you always know the path.
-cd frontend && npm run backend       # → http://127.0.0.1:8765/api/
+                                    # (serves BOTH the SPA and the /api/* API
+                                    #  in-process — no separate backend command)
 ```
+
+> The SuggestForm falls back to `localStorage` + a JSON download if the
+> API is ever offline. The form's badge shows "backend:live" vs
+> "backend:offline (local+download)" so you always know the path. In dev,
+> the API is always live (served by the Vite dev server itself).
 
 Refreshing all twelve distros takes well under a minute. Raw
 responses are cached under `.cache/api/` so you can diff the cache
@@ -220,12 +218,13 @@ Phase 1 from [`docs/idea.md`](docs/idea.md) ships as a Vite SPA in the
 
 ```bash
 cd frontend
-npm install       # ~150 packages
-npm run dev       # vite dev server on :5173 + /api proxy → :8765
+npm install       # ~150 packages (frontend + API, one language)
+npm run dev       # vite dev server on :5173 — serves the SPA AND /api/*
+                   # in-process (apiServerPlugin loads api/index.ts via SSR).
+                   # One command, one process, no Python venv.
 npm run build     # tsc -b && vite build → frontend/dist/
 npm run preview   # serve the production bundle
-npm run backend   # FastAPI on :8765 (single file: frontend/api/index.py)
-npm run typecheck # tsc -b --noEmit (no JS output)
+npm run typecheck # tsc -b --noEmit (frontend) + tsc -p tsconfig.api.json (API)
 ```
 
 When you have finished the Figma logo export, drop it over both
@@ -244,14 +243,14 @@ auto-deploys both. No other accounts are required.
 | Layer | Where it runs | Free-tier constraints |
 |-------|---------------|----------------------|
 | Static Vite SPA    | **Vercel** (`frontend/dist`) | 100 GB/mo bandwidth |
-| FastAPI suggestion intake | **Vercel Python function** (`frontend/api/index.py`) | 100 GB-hr/mo, 10s execution |
+| Suggestion intake API | **Vercel Node function** (`frontend/api/index.ts`, `@vercel/node`) | 100 GB-hr/mo, 10s execution |
 | Suggestion queue   | **Vercel KV** (Upstash Redis REST) | 256 MB, 30K commands/mo |
 
 The SPA and the API share the same Vercel origin. The
-`frontend/vercel.json` rewrite `/api/(.*) → /api/index.py` lets a
-single Mangum-wrapped FastAPI app handle every suggestion API
-endpoint, so no CORS config is required and the SuggestForm's badge
-always reads **backend:live** when KV is linked.
+`frontend/vercel.json` rewrite `/api/(.*) → /api/index` routes every
+`/api/*` request to the single TypeScript serverless function, so no
+CORS config is required for same-origin calls and the SuggestForm's
+badge always reads **backend:live** when KV is linked.
 
 ### One-time setup
 
@@ -259,15 +258,15 @@ always reads **backend:live** when KV is linked.
    flow. Set the **Project Root Directory** to **`frontend/`** in the
    "Build & Development Settings" step. Vercel reads
    `frontend/vercel.json` and knows the project is a Vite app with a
-   Python function.
+   Node.js (`@vercel/node`) serverless function.
 2. From the project dashboard, open **Storage → Create Database → KV**.
    Vercel auto-injects `KV_REST_API_URL` and `KV_REST_API_TOKEN` into
-   the Production + Preview environments; the FastAPI app picks them
-   up on import and switches from file mode to KV mode automatically.
+   the Production + Preview environments; the API picks them up on
+   cold start and switches from file mode to KV mode automatically.
 3. **File mode will 500 on production POSTs.** Vercel's serverless
    filesystem is read-only (only `/tmp` is writable); without the KV
    store linked, the very first POST to `/api/suggestions` will fail
-   with `OSError: Read-only file system`. Link KV.
+   with a filesystem error. Link KV.
 
 ### Deploys
 
@@ -292,26 +291,27 @@ regex; add your custom domain here on the backend.
 
 ```bash
 cd frontend
-npm run dev      # Vite on :5173 + proxy /api → :8765
-npm run backend  # uvicorn api.index:app on :8765 (no KV needed)
+npm run dev      # Vite on :5173 — serves the SPA AND /api/* in-process
+                 # (no separate backend, no second port, no Python)
 ```
 
-Without KV env vars the backend uses the local
-`frontend/.cache/api/suggestions.json` path (file mode) that the
-prior concurrency test already validated (10/10 rows). Once you set
-`KV_REST_API_URL` + `KV_REST_API_TOKEN` (e.g. via `direnv` or a
-`.env` you `source`) and restart uvicorn, the same backend switches
-to KV mode without code changes.
+Without KV env vars the API uses the local
+`frontend/.cache/api/suggestions.json` path (file mode) with a
+promise-chain mutex around read-modify-write so concurrent POSTs
+don't lose rows. Once you set `KV_REST_API_URL` +
+`KV_REST_API_TOKEN` (e.g. via a `.env` file) and restart `npm run dev`,
+the same API switches to KV mode without code changes.
 
-### Why a single-file `frontend/api/index.py`?
+### Why a single TypeScript function at `frontend/api/index.ts`?
 
-Vercel's `@vercel/python` runtime auto-discovers every `.py` file
-under the project root's `api/` directory and creates one
-serverless function per file. Splitting the FastAPI app from the
-Mangum wrapper would create a stub `/api/app` function that 500s on
-every request. Keeping both in one file means there's exactly one
-function at `/api` (and the rewrite rule `/api/(.*) → /api/index.py`
-covers every suggestion API path), with no dead endpoints.
+Keeping the whole API in one file means there's exactly one Vercel
+serverless function at `/api` (and the rewrite rule
+`/api/(.*) → /api/index` covers every suggestion API path), with no
+dead endpoints. The same file runs unchanged in local dev — the
+`apiServerPlugin` in `vite.config.js` loads it via Vite's SSR module
+graph (`server.ssrLoadModule`) and calls its default export directly
+against the dev server's req/res. One command (`npm run dev`), one
+process, one port, one language.
 
 ### Why not just stick the backend on Fly.io?
 

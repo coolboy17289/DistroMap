@@ -1,19 +1,15 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import { fileURLToPath, URL as NodeURL } from 'node:url';
+import { fileURLToPath } from 'node:url';
 
 // DistroMap frontend — React + TypeScript + React Flow + Tailwind v3.
 
 // In ESM there is no `__dirname` — `frontend/package.json` has
 // `"type": "module"`. Resolve an ABSOLUTE path for the `@` alias
-// against this config file's location. A relative string (`'@':
-// './src'`) leaves the alias with the project-root prefix only
-// at resolve-time, which Rollup's parallel module loader can race
-// the extension-resolution plugin on, surfacing as
-// `vite:load-fallback` ENOENT on a non-deterministic component
-// during `vite build`. An absolute path ties the alias to a real
-// file URL so the resolver chain keeps its hands on the path.
-const SRC_ABS = fileURLToPath(new NodeURL('./src', import.meta.url));
+// against this config file's URL. `URL` is a Node global, so no
+// node:url import is needed for the constructor; we only need
+// fileURLToPath to convert the resulting URL to a path string.
+const SRC_ABS = fileURLToPath(new URL('./src', import.meta.url));
 // Build configs are plain JS so Vite doesn't need ts-node at startup.
 
 /**
@@ -90,13 +86,6 @@ export default defineConfig({
       // string.
       '@': SRC_ABS,
     },
-    // Belt-and-suspenders: declare the extension resolution list
-    // explicitly so Rollup's loader never has to fall back to opening
-    // a bare path like './src/components/Footer' (which manifested as
-    // the `vite:load-fallback` ENOENT bug pre-fix). These match Vite's
-    // default list — declaring them here costs nothing and removes any
-    // ambiguity in plugins that shorten resolve.extensions.
-    extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
   },
   server: {
     host: '127.0.0.1',

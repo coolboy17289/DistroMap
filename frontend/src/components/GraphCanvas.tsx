@@ -1,5 +1,10 @@
-import { useCallback, useMemo, useState } from 'react';
-import { ReactFlow, Controls, type NodeMouseHandler } from '@xyflow/react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import {
+  ReactFlow,
+  Controls,
+  useReactFlow,
+  type NodeMouseHandler,
+} from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 
 import { buildLayout } from '@/lib/layout';
@@ -201,6 +206,25 @@ export default function GraphCanvas({
   const onNodeLeave: NodeMouseHandler = useCallback(() => setHovered(null), []);
   const onPaneClick = useCallback(() => onSelect(null), [onSelect]);
 
+  // When the search/filter changes, re-fit the view to the highlighted
+  // nodes so the user doesn't have to pan/zoom manually.
+  const { fitView } = useReactFlow();
+  useEffect(() => {
+    if (!trimmed) return;
+    const ids = nodes.filter((n) => n.data.highlighted).map((n) => n.id);
+    if (ids.length === 0) return;
+    // Defer one frame so ReactFlow has mounted the updated nodes.
+    const t = window.setTimeout(() => {
+      try {
+        fitView({ nodes: ids.map((id) => ({ id })), padding: 0.25, duration: 350 });
+      } catch {
+        // Fallback: fit the whole canvas
+        fitView({ padding: 0.3, duration: 350 });
+      }
+    }, 50);
+    return () => window.clearTimeout(t);
+  }, [trimmed, nodes, fitView]);
+
   return (
     <div className="h-full w-full">
       <ReactFlow
@@ -221,6 +245,20 @@ export default function GraphCanvas({
         proOptions={{ hideAttribution: true }}
       >
         <Controls position="bottom-right" showInteractive={false} />
+        {trimmed && (
+          <div
+            className="absolute top-3 left-3 z-20 px-2.5 py-1 rounded border
+                       border-panel-border bg-bg/80 backdrop-blur-sm
+                       font-mono text-[11px] text-ink-400"
+          >
+            <span className="text-ink-50">
+              {nodes.filter((n) => n.data.highlighted).length}
+            </span>
+            <span className="text-ink-500"> of </span>
+            <span className="text-ink-400">{distros.length}</span>
+            <span className="ml-1.5 text-ink-500">match</span>
+          </div>
+        )}
       </ReactFlow>
     </div>
   );

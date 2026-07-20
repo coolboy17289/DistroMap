@@ -5,6 +5,7 @@ import GraphCanvas from '@/components/GraphCanvas';
 import SidePanel from '@/components/SidePanel';
 import Footer from '@/components/Footer';
 import SuggestForm from '@/components/SuggestForm';
+import FamilyLegend from '@/components/FamilyLegend';
 import type { Distro } from '@/types';
 
 const distros = distrosJson as Distro[];
@@ -15,9 +16,14 @@ function selectedSlugFromUrl(): string | null {
   return slug && distroSlugs.has(slug) ? slug : null;
 }
 
+function selectedFamilyFromUrl(): string | null {
+  return new URLSearchParams(window.location.search).get('f');
+}
+
 export default function App() {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<string | null>(selectedSlugFromUrl);
+  const [family, setFamily] = useState<string | null>(selectedFamilyFromUrl);
   const [isSuggestOpen, setIsSuggestOpen] = useState(false);
 
   const selectedDistro = useMemo(
@@ -36,6 +42,11 @@ export default function App() {
         input?.focus();
       } else if (e.key === 'Escape') {
         setSelected(null);
+        setFamily(null);
+      } else if (e.key === 'f' && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        // 'f' focuses the family legend by focusing the first chip
+        const first = document.querySelector<HTMLButtonElement>('[data-testid="family-legend"] button');
+        first?.focus();
       }
     };
     window.addEventListener('keydown', handler);
@@ -49,16 +60,33 @@ export default function App() {
     } else {
       url.searchParams.delete('d');
     }
+    if (family) {
+      url.searchParams.set('f', family);
+    } else {
+      url.searchParams.delete('f');
+    }
     window.history.replaceState(window.history.state, '', url);
-  }, [selected]);
+  }, [selected, family]);
 
   useEffect(() => {
-    const syncSelectionFromUrl = () => setSelected(selectedSlugFromUrl());
+    const syncSelectionFromUrl = () => {
+      setSelected(selectedSlugFromUrl());
+      setFamily(selectedFamilyFromUrl());
+    };
     window.addEventListener('popstate', syncSelectionFromUrl);
     return () => window.removeEventListener('popstate', syncSelectionFromUrl);
   }, []);
 
   const onClosePanel = useCallback(() => setSelected(null), []);
+
+  // Combine the family filter with the search query so the canvas can
+  // highlight nodes in both. Family is AND-ed with the search terms.
+  const combinedQuery = useMemo(() => {
+    if (!family) return query;
+    const famToken = `family:${family}`;
+    if (query.includes(famToken)) return query;
+    return query.trim() ? `${query} ${famToken}` : famToken;
+  }, [query, family]);
 
   return (
     <div className="min-h-screen flex flex-col bg-bg text-ink-50">
@@ -85,20 +113,26 @@ export default function App() {
         }))}
       />
 
+      <FamilyLegend
+        selectedFamily={family}
+        onSelectFamily={setFamily}
+        onSelectRoot={(slug) => setSelected(slug)}
+      />
+
       <main className="flex-1 relative">
         <section className="absolute inset-0">
-          {query.trim() && (
+          {combinedQuery.trim() && (
             <div
               className="pointer-events-none absolute top-3 right-4 z-20 px-2.5 py-1
                          rounded border border-panel-border
                          font-mono text-[11px] text-ink-400"
             >
-              filter:&nbsp;<span className="text-ink-50">"{query}"</span>
+              filter:&nbsp;<span className="text-ink-50">"{combinedQuery}"</span>
             </div>
           )}
           <GraphCanvas
             distros={distros}
-            query={query}
+            query={combinedQuery}
             selected={selected}
             onSelect={setSelected}
           />

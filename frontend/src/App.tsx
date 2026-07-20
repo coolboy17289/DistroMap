@@ -8,10 +8,16 @@ import SuggestForm from '@/components/SuggestForm';
 import type { Distro } from '@/types';
 
 const distros = distrosJson as Distro[];
+const distroSlugs = new Set(distros.map((d) => d.slug));
+
+function selectedSlugFromUrl(): string | null {
+  const slug = new URLSearchParams(window.location.search).get('d');
+  return slug && distroSlugs.has(slug) ? slug : null;
+}
 
 export default function App() {
   const [query, setQuery] = useState('');
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selected, setSelected] = useState<string | null>(selectedSlugFromUrl);
   const [isSuggestOpen, setIsSuggestOpen] = useState(false);
 
   const selectedDistro = useMemo(
@@ -36,9 +42,20 @@ export default function App() {
     return () => window.removeEventListener('keydown', handler);
   }, []);
 
-  // When the underlying dataset changes identity, clear stale selection
   useEffect(() => {
-    setSelected((cur) => (cur && distros.some((d) => d.slug === cur) ? cur : null));
+    const url = new URL(window.location.href);
+    if (selected) {
+      url.searchParams.set('d', selected);
+    } else {
+      url.searchParams.delete('d');
+    }
+    window.history.replaceState(window.history.state, '', url);
+  }, [selected]);
+
+  useEffect(() => {
+    const syncSelectionFromUrl = () => setSelected(selectedSlugFromUrl());
+    window.addEventListener('popstate', syncSelectionFromUrl);
+    return () => window.removeEventListener('popstate', syncSelectionFromUrl);
   }, []);
 
   const onClosePanel = useCallback(() => setSelected(null), []);

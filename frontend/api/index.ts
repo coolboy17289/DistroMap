@@ -786,24 +786,49 @@ async function handleSearch(
 
 async function handleFamilies(res: VercelResponse): Promise<boolean> {
   const all = await loadDistros();
+  // For each family, identify the depth-1 record with the most direct
+  // children — that's the "true" family root (Debian, Arch, etc.).
+  // Tiebreaker: shortest slug, then lexicographic. Records whose
+  // `family` field equals "linux_kernel" are deliberately excluded
+  // because that's used as a placeholder for independent-from-scratch
+  // distros (LFS, Puppy, etc.), not the actual Linux kernel.
+  const childrenByParent = new Map<string, number>();
+  for (const d of all) {
+    if (d.parent) {
+      childrenByParent.set(d.parent, (childrenByParent.get(d.parent) ?? 0) + 1);
+    }
+  }
   const m = new Map<
     string,
-    { count: number; active: number; root: string | null }
+    { count: number; active: number; root: string | null; rootChildren: number }
   >();
   for (const d of all) {
-    const entry = m.get(d.family) ?? { count: 0, active: 0, root: null };
+    const entry = m.get(d.family) ?? {
+      count: 0,
+      active: 0,
+      root: null,
+      rootChildren: -1,
+    };
     entry.count += 1;
     if (d.status === 'Active') entry.active += 1;
-    // A family root is the most-shallow record in the family. Prefer
-    // depth 1 (children of linux_kernel) so each family reports the
-    // distro the rest of the family descends from.
-    if (d.depth === 1) {
-      if (!entry.root || d.slug.length < entry.root.length) entry.root = d.slug;
+    if (d.depth === 1 && d.family !== 'linux_kernel') {
+      const kids = childrenByParent.get(d.slug) ?? 0;
+      if (
+        entry.root === null ||
+        kids > entry.rootChildren ||
+        (kids === entry.rootChildren && d.slug.length < entry.root.length)
+      ) {
+        entry.root = d.slug;
+        entry.rootChildren = kids;
+      }
     }
     m.set(d.family, entry);
   }
   const out = Array.from(m.entries())
-    .map(([family, info]) => ({ family, ...info }))
+    .map(([family, info]) => {
+      const { rootChildren: _rc, ...rest } = info;
+      return { family, ...rest };
+    })
     .sort((a, b) => b.count - a.count);
   sendJSON(res, 200, { count: out.length, families: out });
   return true;
